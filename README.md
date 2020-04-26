@@ -8,11 +8,13 @@ This is my one-page landing site. Over the years, its predecessors have gone fro
 * A cat that swats at loose fibre optic cables
 * Inconveniences like keeping servers updated or not having credentials of `root:root` >:(
 
-Tired of these drawbacks, I moved to GitHub Pages... which immediately had a *meh* month for uptime because the universe wants to punish my existence. These days it's hosted on 200+ POPs around the world thanks to the magic of [Cloudflare Workers](https://workers.cloudflare.com/) and $5/mo.
+Tired of these drawbacks, I moved to GitHub Pages... which immediately had a *meh* month for uptime because the universe wants to punish my existence. So I moved again to serverless tech. These days it's hosted on 200+ POPs around the world thanks to the magic of [Cloudflare Workers](https://workers.cloudflare.com/) and $5/mo.
 
 ### Buy Why?
 
 I was using Cloudflare anyway because most of the domains I run are in there. Previously it handled DoS protection for my actual projects, and load balanced incoming traffic across the two internet connections I have going to my current place of residence. So I can't actually selfhost a site anymore *without* Cloudflare or getting a VPS, which costs about $3/mo from my favorite providers. $2/mo more to have the sickest load speed time ever *and* never have to maintain a server was a no brainer.
+
+Also I didn't have to change much of anything. Create a bucket in Cloudflare and copy a few keys, initialize the repository with the `workers-site` folder, do some minor configuration in `wrangler.toml`, dump some of the keys in `wrangler.toml`, dump the rest in GitHub Secrets, and create a quick/dirty GitHub Actions workflow in `.github/workflows/`. Call it an hour of learning curve and fifteen minutes of work.
 
 ### Benefits
 
