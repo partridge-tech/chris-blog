@@ -6,5 +6,5 @@ route = "chris.partridge.tech/*"
 zone_id = "36b12e0ec5729dabd2578243ec77a007"
 
 [site]
-bucket = "."
+bucket = "./public"
 entry-point = "workers-site"
