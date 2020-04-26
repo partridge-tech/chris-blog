@@ -11,6 +11,7 @@ const DEBUG = false
 
 addEventListener('fetch', event => {
   try {
+    event.passThroughOnException();
     event.respondWith(handleEvent(event))
   } catch (e) {
     if (DEBUG) {
