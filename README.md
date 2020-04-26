@@ -10,7 +10,7 @@ This is my one-page landing site. Over the years, its predecessors have gone fro
 
 Tired of these drawbacks, I moved to GitHub Pages... which immediately had a *meh* month for uptime because the universe wants to punish my existence. So I moved again to serverless tech. These days it's hosted on 200+ POPs around the world thanks to the magic of [Cloudflare Workers](https://workers.cloudflare.com/) and $5/mo.
 
-### Buy Why?
+### But Why?
 
 I was using Cloudflare anyway because most of the domains I run are in there, since I need ingress controls and load balancing for all of my stuff to work on the two home internet connections I have. So I can't actually selfhost a site anymore *without* Cloudflare or getting a VPS, which costs about $3/mo from my favorite providers. $2/mo more to have the sickest load speed time ever *and* never have to maintain a server was a no brainer.
 
