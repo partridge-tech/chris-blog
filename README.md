@@ -14,7 +14,7 @@ Tired of these drawbacks, I moved to GitHub Pages... which immediately had a *me
 
 I was using Cloudflare anyway because most of the domains I run are in there, since I need ingress controls and load balancing for all of my stuff to work on the two home internet connections I have. So I can't actually selfhost a site anymore *without* Cloudflare or getting a VPS, which costs about $3/mo from my favorite providers. $2/mo more to have the sickest load speed time ever *and* never have to maintain a server was a no brainer.
 
-Also I didn't have to change much of anything. Create a bucket in Cloudflare and copy a few keys, initialize the repository with the `workers-site` folder, do some minor configuration in `wrangler.toml`, dump some of the keys in `wrangler.toml`, dump the rest in GitHub Secrets, and create a quick/dirty GitHub Actions workflow in `.github/workflows/`. Call it an hour of learning curve and fifteen minutes of work.
+Also I didn't have to change much of anything. Create a bucket in Cloudflare and copy a few keys, initialize the repository with the `workers-site` folder, add `event.passThroughOnException();`, do some minor configuration in `wrangler.toml`, dump some of the keys in `wrangler.toml`, dump the rest in GitHub Secrets, and create a quick/dirty GitHub Actions workflow in `.github/workflows/`. Call it an hour of learning curve and fifteen minutes of work.
 
 ### Benefits
 
