@@ -1,11 +1,10 @@
-# The name of your Workers application
 name = "landing-chris"
-
-# Your Cloudflare account ID
-account_id = "583a61916394f22ed8f17c5734e3c970"
-
-# The kind of application you're deploying to Cloudflare
 type = "webpack"
+account_id = "583a61916394f22ed8f17c5734e3c970"
+workers_dev = false
+route = "chris.partridge.tech/*"
+zone_id = "36b12e0ec5729dabd2578243ec77a007"
 
-# Publish to workers.dev by default
-workers_dev = true
+[site]
+bucket = "."
+entry-point = "workers-site"
