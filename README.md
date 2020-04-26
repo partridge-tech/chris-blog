@@ -32,4 +32,6 @@ Beyond that, *why* exactly I'm optimizing my personal site for viewership in Mos
 
 ### Architecture
 
-![I crave death.](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Child_scribble_age_1y10m.jpg/1280px-Child_scribble_age_1y10m.jpg)
+I push code to the repository, which runs a GitHub Actions job, which I should edit if I get around to using a static site generator for this instead of the one lovingly hand-coded HTML webshit that I've been running for a while now, which deploys things to a specific worker bin up in the cloud. After that, it presumably operates like this:
+
+![I crave death.](https://camo.githubusercontent.com/47ef43ad728becb30430eed1b27dddcc03abd5da/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f642f64322f4368696c645f7363726962626c655f6167655f317931306d2e6a70672f3132383070782d4368696c645f7363726962626c655f6167655f317931306d2e6a7067)
