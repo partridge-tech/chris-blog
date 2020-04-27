@@ -1,0 +1,8 @@
+pages:
+  script:
+    - echo "wow such build"
+  only:
+    - master
+  artifacts:
+    paths:
+    - public
