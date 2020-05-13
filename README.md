@@ -34,7 +34,7 @@ I'm sellout-ready by the way. I'll write an extra paragraph about how good Cloud
 
 ### Detriments
 
-Technically Cloudflare's DNS & CDN & Workers runners are a single point of failure, though the prior setup relied on those *plus* my test server, my power, my fibre optic being undamaged by cat claws, etc. Though as a Cloudflare customer for years, I can attest it has historically much better uptime than my regional power provider, and outclasses many production applications I've helped run.
+Technically Cloudflare's DNS & CDN & Workers runners are a single point of failure, though the prior setup relied on two of those *plus* my test server, my power, my fibre optic being undamaged by cat claws, etc. Though as a Cloudflare customer for years, I can attest it has historically much better uptime than my regional power provider, and outclasses many production applications I've helped run.
 
 Also I'm feeding money to an internet megacorporation, and all the people that go to my site are being spied on, because any provider that decrypts TLS sessions can technically do so but have thus far Been Quite Nice About It(tm).
 
