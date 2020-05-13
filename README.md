@@ -10,13 +10,15 @@ This is my one-page landing site. Over the years, its predecessors have gone fro
 
 Tired of these drawbacks, I moved to GitHub Pages... which immediately had a *meh* month for uptime because the universe wants to punish my existence. So I moved again to serverless tech. These days it's hosted on 200+ POPs around the world thanks to the magic of [Cloudflare Workers](https://workers.cloudflare.com/) and $5/mo.
 
-### But Why?
+### Reasoning
 
 I was using Cloudflare anyway because most of the domains I run are in there, since I need ingress controls and load balancing for all of my stuff to work on the two home internet connections I have. So I can't actually selfhost a site anymore *without* Cloudflare or getting a VPS, which costs about $3/mo from my favorite providers. $2/mo more to have the sickest load speed time ever *and* never have to maintain a server was a no brainer.
 
-Also I didn't have to change much of anything. Create a bucket in Cloudflare and copy a few keys, initialize the repository with the `workers-site` folder, do some minor configuration in `wrangler.toml`, dump some of the keys in `wrangler.toml`, dump the rest in GitHub Secrets, and create a quick/dirty GitHub Actions workflow in `.github/workflows/`. Call it an hour of learning curve and fifteen minutes of work.
+### How
 
-Then in another ten, I added `event.passThroughOnException();` to the Workers script, added a dummy `.gitlab-ci.yml` "build" job for GitLab Pages, and set up a lazily-auto-updating repository - so if for whatever reason the Cloudflare KV is down, content will be served from a backup source.
+I didn't have to change much of anything. Create a bucket in Cloudflare and copy a few keys, initialize the repository with the `workers-site` folder, do some minor configuration in `wrangler.toml`, dump some of the keys in `wrangler.toml`, dump the rest in GitHub Secrets, and create a quick/dirty GitHub Actions workflow in `.github/workflows/`. Oh, and move my static content to `public/` because this is not a generated site a la Jekyll, it's just raw HTML from a time before I was a software developer. Call it an hour of learning curve and fifteen minutes of work.
+
+Since I'm paranoidn about downtime, I also added `event.passThroughOnException();` to the Workers script, added a dummy `.gitlab-ci.yml` "build" job for GitLab Pages, and set up a lazily-auto-updating repository - so if for whatever reason the Cloudflare KV is down, content will be served from a backup source. Took maybe another 15 minutes of work + no learning curve.
 
 I might use Jekyll to make this site also a blog, and if I do, I'll write up how preposterously easy this was. The hardest part was admitting "maybe it'd be nice to not have to manually update an out-of-band server every once in a while." It really makes me think: what would happen to an engineering organization if you gave everyone one day per month (or per sprint, or one sprint per year, etc.) to exclusively do their own research? Food for thought.
 
