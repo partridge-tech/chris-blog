@@ -34,6 +34,8 @@ I'm sellout-ready by the way. I'll write an extra paragraph about how good Cloud
 
 ### Detriments
 
-Technically it's a single point of failure, but it's one that has historically much better uptime than my regional power provider, and outclasses many production applications I've helped run. Also I'm feeding money to an internet megacorporation, and all the people that go to my site are being spied on, because any provider that decrypts TLS sessions can technically do so but have thus far Been Quite Nice About It(tm).
+Technically Cloudflare's DNS & CDN & Workers runners are a single point of failure, though the prior setup relied on those *plus* my test server, my power, my fibre optic being undamaged by cat claws, etc. Though as a Cloudflare customer for years, I can attest it has historically much better uptime than my regional power provider, and outclasses many production applications I've helped run.
+
+Also I'm feeding money to an internet megacorporation, and all the people that go to my site are being spied on, because any provider that decrypts TLS sessions can technically do so but have thus far Been Quite Nice About It(tm).
 
 Beyond that, *why* exactly I'm optimizing my personal site for viewership in Moscow as much as I'm optimizing it for viewership from my parents is a fucking mystery. Also it's $5/mo, as opposed to the lean $0.05 of power a Raspberry Pi would sip, if you didn't want to over-optimize your site. But I assume those people stopped reading long before we got here.
