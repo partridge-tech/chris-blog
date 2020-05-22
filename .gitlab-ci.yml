@@ -1,6 +1,7 @@
 pages:
   script:
-    - echo "wow such build"
+    - bundle install
+    - bundle exec jekyll build -d public
   only:
     - master
   artifacts:
