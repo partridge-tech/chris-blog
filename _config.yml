@@ -5,9 +5,6 @@ description: "Chris' low-budget hot cybersecurity takes"
 keywords: "cybersecurity, hacking, software engineering, best practices, research"
 url: https://chris.partridge.tech
 baseurl: ""
-# baseurl: null
-
-google_analytics: 
 repo: https://github.com/partridge-tech/chris-blog
 
 # Build settings
@@ -17,7 +14,6 @@ highlighter: rouge
 
 paginate: 6
 paginate_path: "/page/:num/"
-comments: true
 
 source: .
 destination: public
