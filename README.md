@@ -1,6 +1,6 @@
 # Chris's Homepage
-[![mastered on github](https://img.shields.io/badge/master-github-black.svg)](https://github.com/partridge-tech/landing-chris)
-[![mirrored on gitlab](https://img.shields.io/badge/mirror-gitlab-orange.svg)](https://gitlab.com/partridge-tech/landing-chris)
+[![mastered on github](https://img.shields.io/badge/master-github-black.svg)](https://github.com/partridge-tech/chris-blog)
+[![mirrored on gitlab](https://img.shields.io/badge/mirror-gitlab-orange.svg)](https://gitlab.com/partridge-tech/chris-blog)
 
 This is my one-page landing site. Over the years, its predecessors have gone from being hosted on a scavenged Lenovo ThinkCentre M55, a Dell PowerEdge 1950, to custom Xeon D-1541 based servers. However, selfhosting comes with certain drawbacks, including:
 * Many single points of failure, including electrical power

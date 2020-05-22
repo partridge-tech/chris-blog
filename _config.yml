@@ -1,0 +1,60 @@
+
+# SEO settings
+title: tweedge
+description: "Chris' low-budget hot cybersecurity takes"
+keywords: "cybersecurity, hacking, software engineering, best practices, research"
+url: https://chris.partridge.tech
+baseurl: ""
+# baseurl: null
+
+google_analytics: 
+repo: https://github.com/partridge-tech/chris-blog
+
+# Build settings
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+paginate: 6
+paginate_path: "/page/:num/"
+comments: true
+
+source: .
+destination: public
+
+# Sass configuration
+sass:
+  sass_dir: scss
+  style: compressed # expanded
+
+# Author settings
+author:
+  name     : Chris Partridge
+  job      : Product Security Engineer
+  bio      : "I do cybersecurity things with a focus on effective software security and internet-scale research."
+  thumb    : /images/author.png
+  email    : chris@partridge.tech
+  url      : https://chris.partridge.tech
+  github   : https://github.com/tweedge
+  gitlab   : https://gitlab.com/tweedge
+  twitter  : https://twitter.com/_tweedge
+  facebook : https://facebook.com/tweedge
+  linkedin : https://linkedin.com/in/tweedge
+
+# social settings
+og_locale: "en_US"
+twitter_card: "summary_large_image"
+twitter_site: "@_tweedge"
+
+gems:
+  - bourbon
+  - jekyll-paginate
+
+# navbar pages
+navbar:
+  - slug : about
+    title: About
+  - slug : blog
+    title: Blog
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md", "workers-site", "wrangler.toml", "LICENSE"]

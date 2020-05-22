@@ -11,6 +11,11 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@master
+      - name: Build
+        uses: gha-utilities/jekyll-build@v0.0.4
+        with:
+          source: ./
+          destination: ./public
       - name: Publish
         uses: cloudflare/wrangler-action@1.1.0
         with:
