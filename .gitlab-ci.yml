@@ -1,6 +1,6 @@
 pages:
+  image: ruby:2.7
   script:
-    - bundle update --bundler
     - bundle install
     - bundle exec jekyll build -d public
   only:
