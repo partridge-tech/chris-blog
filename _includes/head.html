@@ -61,7 +61,7 @@
   <meta property="article:section" content="{{ page.tags | join: ', ' }}">
   <meta property="article:tag" content="{{ page.tags | join: ', ' }}">
   <meta property="article:published_time" content="{{ page.date }}">
-{% else%}
+{% else %}
   <meta property="og:type" content="website">
 {% endif %}
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">

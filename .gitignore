@@ -1,3 +1,4 @@
+.jekyll-cache/**
 public/**
 .sass-cache
 .jekyll-metadata
