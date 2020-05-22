@@ -2,7 +2,7 @@
 [![mastered on github](https://img.shields.io/badge/master-github-black.svg)](https://github.com/partridge-tech/chris-blog)
 [![mirrored on gitlab](https://img.shields.io/badge/mirror-gitlab-orange.svg)](https://gitlab.com/partridge-tech/chris-blog)
 
-This is my one-page landing site. Over the years, its predecessors have gone from being hosted on a scavenged Lenovo ThinkCentre M55, a Dell PowerEdge 1950, to custom Xeon D-1541 based servers. However, selfhosting comes with certain drawbacks, including:
+This is my personal blog, resume piece, and so forth. Over the years, its predecessors have gone from being hosted on a scavenged Lenovo ThinkCentre M55, a Dell PowerEdge 1950, to custom Xeon D-1541 based servers. However, selfhosting comes with certain drawbacks, including:
 * Many single points of failure, including electrical power
 * Accidents on the test servers that my site would run on
 * A cat that swats at loose fibre optic cables
@@ -16,11 +16,11 @@ I was using Cloudflare anyway because most of the domains I run are in there, si
 
 ### How
 
-I didn't have to change much of anything. Create a bucket in Cloudflare and copy a few keys, initialize the repository with the `workers-site` folder, do some minor configuration in `wrangler.toml`, dump some of the keys in `wrangler.toml`, dump the rest in GitHub Secrets, and create a quick/dirty GitHub Actions workflow in `.github/workflows/`. Oh, and move my static content to `public/` because this is not a generated site a la Jekyll, it's just raw HTML from a time before I was a software developer. Call it an hour of learning curve and fifteen minutes of work.
+I didn't have to change much of anything. Create a bucket in Cloudflare and copy a few keys, initialize the repository with the `workers-site` folder, do some minor configuration in `wrangler.toml`, dump some of the keys in `wrangler.toml`, dump the rest in GitHub Secrets, and create a quick/dirty GitHub Actions workflow in `.github/workflows/`. Call it an hour of learning curve and fifteen minutes of work.
 
-Since I'm paranoid about downtime, I also added `event.passThroughOnException();` to the Workers script, added a dummy `.gitlab-ci.yml` "build" job for GitLab Pages, and set up a lazily-auto-updating repository - so if for whatever reason the Cloudflare KV is down, content will be served from a backup source. Took maybe another 15 minutes of work + no learning curve.
+Since I'm paranoid about downtime, I also added `event.passThroughOnException();` to the Workers script, added a build step to the Github Actions workflow + a `.gitlab-ci.yml` build job for GitLab Pages, and set up a lazily-auto-updating repository - so if for whatever reason the Cloudflare KV is down, content will be served from a backup source. Took maybe another 15 minutes of work + no learning curve.
 
-I might use Jekyll to make this site also a blog, and if I do, I'll write up how preposterously easy this was. The hardest part was admitting "maybe it'd be nice to not have to manually update an out-of-band server every once in a while." It really makes me think: what would happen to an engineering organization if you gave everyone one day per month (or per sprint, or one sprint per year, etc.) to exclusively do their own research? Food for thought.
+I ended up making this site into a blog with Jekyll, and I should make a post on how preposterously easy this was. The hardest part was admitting "maybe it'd be nice to not have to manually update an out-of-band server every once in a while." It really makes me think: what would happen to an engineering organization if you gave everyone one day per month (or per sprint, or one sprint per year, etc.) to exclusively do their own research? Food for thought.
 
 ### Benefits
 
