@@ -1,9 +1,11 @@
 <head>
+  <!-- Charset & HTTP content set -->
   <meta charset="utf-8">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Core information - title + description -->
   {% assign page_title = '' %}
   {% if page.title == "Home" %}
       {% capture page_title %}
@@ -44,6 +46,13 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
 
+  <!-- Favicon + Manifest -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Page image for backlinks -->
   {% assign page_image = '' %}
   {% capture page_image %}
       {% if page.cover %}
@@ -83,7 +92,7 @@
   <meta itemprop="description" content="{{ page_description }}">
   <meta itemprop="image" content="{{ page_image }}">
 
-  <!-- rel prev and next -->
+  <!-- Paginator related + next -->
   {% if paginator.previous_page %}
     <link rel="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl | prepend: site.url }}">
   {% endif %}
