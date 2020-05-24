@@ -19,3 +19,23 @@ layout: default
     {% include post-share.html %}
   </div>
 </article>
+
+<section class="post-list">
+  <div class="container">
+
+    <h3>Recent Posts</h3>
+
+    {% assign rsort_posts = site.posts | sort: 'date' | reverse %}
+    {% for post in rsort_posts limit:3 %}
+      <article class="post-item">
+        <p>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>  — 
+          <strong><a class="post-link" href="{{ post.url}}">{{ post.title }}</a></strong>
+          <br>
+          <span>{{ post.description }}</span> <a class="post-link readmore" href="{{ post.url}}">Read more</a></p>
+      </article>
+    {% endfor %}
+
+    <h5>Want more? Go hack to the <a href="{{ '/'}}">home</a> page!</h5>
+  </div>
+</section>
