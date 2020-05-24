@@ -14,7 +14,7 @@ I've been slowly expanding my quackery-avoidant biohacking since September 2018.
 
 Due to COVID-19, I have been working from home, and the jarring changes across my life began to impact my ability to focus at work. I raised this with a coworker and received a strong recommendation for meditation, and after a while I decided that I wanted to collect more metrics and information on how much meditation is helping me from a bodily standpoint. So I've also recently expanded my biohacking to include regular meditiation which is monitored by a [Muse 2](https://choosemuse.com/muse-2/) headband, and I'm testing out focus monitoring while I'm working with a [Foci](https://fociai.com/) but have yet to realize a benefit from it.
 
-This is a post about the things that I do, why I do them, and how I feel about each component of my biohacked life.
+This is a post about the devices I use, why I use them, and how I feel about each technical component of my biohacked life.
 
 ## What?
 
