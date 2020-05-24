@@ -14,9 +14,9 @@ title: Home
       <article class="post-item">
         <p>
           <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>  — 
-          <strong><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></strong>
+          <strong><a class="post-link" href="{{ post.url}}">{{ post.title }}</a></strong>
           <br>
-          <span>{{ post.description }}</span> <a class="post-link readmore" href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
+          <span>{{ post.description }}</span> <a class="post-link readmore" href="{{ post.url}}">Read more</a></p>
       </article>
     {% endfor %}
   </div>

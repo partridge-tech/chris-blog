@@ -1,10 +1,9 @@
 
 # SEO settings
-title: tweedge
-description: "Chris' low-budget hot cybersecurity takes"
-keywords: "cybersecurity, hacking, software engineering, best practices, research"
+title: tweedge's blog
+description: "A software/security engineer's blog about his projects, research, philosophy, and career."
+keywords: "cybersecurity, hacking, software engineering, best practices, research, web, technology"
 url: https://chris.partridge.tech
-baseurl: ""
 repo: https://github.com/partridge-tech/chris-blog
 
 # Build settings

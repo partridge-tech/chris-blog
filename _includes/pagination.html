@@ -1,7 +1,7 @@
 {% if paginator.total_pages > 1 %}
 <nav class="pagination" role="pagination">
   <ul>
-    {% assign url = site.baseurl | append: "/" %}
+    {% assign url = "/" %}
     {% if paginator.previous_page %}
       {% if paginator.previous_page > 1 %}
         {% assign prev = 'page/' | append: paginator.previous_page %}
