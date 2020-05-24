@@ -18,7 +18,7 @@ This is a post about the things that I do, why I do them, and how I feel about e
 
 ## What?
 
-Right. So a quick primer - [biohacking](https://en.wikipedia.org/wiki/Do-it-yourself_biology) is a broad topic, encapsulating any modification you make to yourself or your environment to enrich your biological experience. This can range from hardcore pseudoscience (like injecting younger peoples' blood into your body - yikes), to holistic improvements such as changing your diet or meditating, to getting technological body modifications.
+Right. So a quick primer - [biohacking](https://en.wikipedia.org/wiki/Do-it-yourself_biology) is a broad topic, encapsulating any modification you make to yourself or your environment to enrich your biological experience. This can range from hardcore pseudoscience (like injecting younger peoples' [blood](https://www.fda.gov/news-events/press-announcements/statement-fda-commissioner-scott-gottlieb-md-and-director-fdas-center-biologics-evaluation-and-0) into your body - yikes), to holistic improvements such as changing your diet or meditating, to getting technological body modifications.
 
 Biohacking is a hot topic for a few parties - most notably including Silicon Valley tech leaders (ex. Jack Dorsey) looking for ways to optimize their body or mind for performance, people frustrated with long FDA turnaround times for new drugs or medicine that are willing to experiment on themselves, outright scammers pushing understudied "miracle" vitamins, people who are really obsessed with matcha as a nootropic enhancer, and so on.
 
@@ -53,9 +53,9 @@ The biggest immediate negative would be the chance of getting an infection durin
 
 #### Security Considerations
 
-It's important to understand that the xNT is not a protected, cryptography-capable implant. While it has some built in write protection to minimize the chance of a bad write, its plaintext ID & contents can be read by any NFC reader. If you put your phone or some other NFC reader on my hand, you have just stolen my workstation's user password. Fortunately for me, you've not stolen my full disk encryption password, and changing my user password in exactly one place is quite simple. Either way, if you're that physically close enough to me a [$5 wrench](https://xkcd.com/538/) is going to serve you better than stealthily reading my xNT.
+It's important to understand that the xNT is not a protected, cryptography-capable implant. While it has some built in write protection to minimize the chance of a bad write, its plaintext ID & contents can be read by any NFC reader. If you put your phone or some other NFC reader on my hand, you have just stolen my workstation's user password. Fortunately for me, you've not stolen my full disk encryption password, and changing my user password in exactly one place is quite simple. Either way, if you're that physically close to me a [$5 wrench](https://xkcd.com/538/) is going to serve you better than stealthily reading my xNT.
 
-I would hesitate to use the same technology to bypass more important, less-well-guarded access controls in my life. For example, xNT chips can also be used for contactless NFC-based smart door locks, which would be similarly easy to skim and wouldn't have any other protections, is much harder to change, and so on. Unless you had additional traditional locks, which negates the convenience significantly (as opposed to slightly, in the case of an entered-once-on-boot FDE password).
+I would hesitate to use the same technology to bypass more important, less-well-guarded access controls in my life. For example, xNT chips can also be used for contactless NFC-based smart door locks, which would be similarly easy to skim and wouldn't have any other protections, are much harder to change, and so on. Unless you had additional traditional locks, which negates the convenience significantly (as opposed to slightly, in the case of an entered-once-on-boot FDE password).
 
 #### In Daily Life
 
@@ -75,11 +75,11 @@ The xNT was admittedly more of a "why not" decision than a "why." I can't really
 
 ## About the Muse 2
 
-On to something that is going to be more familiar to people - regular, wearable technology like the Muse 2. This will read more like a review of the Muse 2 rather than "inserting chips in your hand 101."
+On to something that is going to be more familiar to people - regular, wearable technology like the [Muse 2](https://amzn.to/2LMaJfK). This will read more like a review of the Muse 2 rather than "inserting chips in your hand 101."
 
 In short, Muse's technology uses a number of sensors including EEG, heart rate, and others to help track a number of bodily metrics while you meditate (linking back to an app on your phone), in order to help you better understand and connect with your meditative sessions. Overall, I will say that I feel positively about the Muse, and enjoy using it for my meditative sessions, though it has some rough edges.
 
-While the Muse *can* be the sole source of your meditation information, I strongly recommend coupling it with reading material about meditation to help understand its benefits and create goals that will really help you. A recommendation given to me - which I now recommend to you as well - is [The Mindful Geek](https://themindfulgeek.com/) by Michael W. Taft. It is practical, thorough, and well-cited. So my focus on the Muse is from a tracking and organizational standpoint, and I don't think it would be as effective *without* some background information and reading material.
+While the Muse *can* be the sole source of your meditation information, I strongly recommend coupling it with reading material about meditation to help understand its benefits and create goals that will really help you. A recommendation given to me - which I now recommend to you as well - is [The Mindful Geek](https://amzn.to/3bOMet1) by [Michael W. Taft](https://deconstructingyourself.com/michael-w-taft). It is practical, thorough, and well-cited. So my focus on the Muse is from a tracking and organizational standpoint, and I don't think it would be as effective *without* some background information and reading material.
 
 #### The Good
 
@@ -125,7 +125,5 @@ I'm a little worried the Foci might be too imprecise to actually help me stay fo
 ## Tidying Up
 
 I'm looking forward to doing some more serious biohacking in the future - as my biohacking so far has been a success - and I'm excited for biohacking equipment to be appearing in people's daily lives. The more we know about ourselves and our bodies, the more informed decisions we can make to take care of ourselves, physically and mentally. I welcome discussion on this topic, and would be happy to chat about it by my normal methods of communication, which you can find on my [About](https://chris.partridge.tech/about/) page!
-
-If you're interested in trying out things that have worked for me *and* are interested in supporting my writing + Jeff Bezos, you can get the Muse 2 off Amazon [here](https://amzn.to/2LMaJfK), as well as "The Mindful Geek" [here](https://amzn.to/3bOMet1). Full dicslosure, those are referral links and Amazon will know what site you've been on. Frankly they'd know *anyway* based on your referrer information if you clicked on an Amazon link even without my Amazon Associates code. The Alexa crypto-blockchain-AI-bionic implants coming to skulls near you in 2030 will also retrieve this snarky memory and deduct $10 in Amazon Gift Cards from my account, so there's that too.
 
 And of course, thank you for reading. It means a lot to me, since it would have been much easier for you to see how long this was and decide not to bother. <3
