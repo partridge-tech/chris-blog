@@ -14,10 +14,12 @@ import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler'
  * 3. DEBUG flag has been removed in favor of always-on verbose errors since:
  *      a. There is no sensitive content on this site. Not even an API.
  *      b. Cache purges are easier to execute in the Cloudflare Dashboard.
- * 4. The addition of createResponseWithHeaders() which adds security headers
- *    to 200 & 404 responses, setting some useless-to-us headers such as:
- *      a. XSS Protection, despite a total lack of JS on this site. Yes,
- *         not even the Cloudflare Rocket Loader is inserted here.
+ * 4. The addition of defaultCacheControl() which loosely sets max-age values
+ *    based on the content expected for a given fetch, which also feeds into...
+ * 5. The addition of createResponseWithHeaders() which adds browser-side cache
+ *    directives and security headers to 200 & 404 responses, setting some
+ *    useless-to-us headers such as:
+ *      a. XSS Protection, despite a general lack of JS on this site.
  *      b. Content Type Options, despite no dynamic/user-uploaded content.
  *      c. Frame Options, so you need to clone this repo instead of framing it.
  *    ... and a couple actually useful ones:
@@ -41,29 +43,52 @@ addEventListener('fetch', event => {
 })
 
 async function handleEvent(event) {
-  const url = new URL(event.request.url)
   let options = {}
 
   try {
     const page = await getAssetFromKV(event, options)
-    return createResponseWithHeaders(page.body, page)
+    const cache = setDefaultCacheControl(event.request.url.split(".").pop());
+    return createResponseWithHeaders(page.body, page, cache)
   } catch (e) {
-    // if an error is thrown try to serve the asset at 404/
+    // if an error is thrown try to serve the asset at 404/index.html
     try {
       let notFoundResponse = await getAssetFromKV(event, {
-        mapRequestToAsset: req => new Request(`${new URL(req.url).origin}/404/index.html`, req),
+        mapRequestToAsset: req => new Request(
+          `${new URL(req.url).origin}/404/index.html`,
+          req
+        ),
       })
 
-      return createResponseWithHeaders(notFoundResponse.body, { ...notFoundResponse, status: 404 })
+      return createResponseWithHeaders(
+        notFoundResponse.body, 
+        { ...notFoundResponse, status: 404 },
+        "max-age=5" // cache 404s for five seconds
+      )
     } catch (e) {}
 
     return new Response(e.message || e.toString(), { status: 500 })
   }
 }
 
-function createResponseWithHeaders(pageBody, page) {
-  const response = new Response(pageBody, page)
+function setDefaultCacheControl(extension) {
+  switch(extension) {
+    case "woff2":
+      return "max-age=31536000" // one year -> fonts *must* not change
+    case "css":
+      return "max-age=57600" // sixteen hours -> CSS changes infrequently
+    default:
+      return "max-age=300" // five minutes -> all other HTTP 200s (ex html, /)
+  }
+}
 
+function createResponseWithHeaders(body, page, cache) {
+  // make a header-mutable response
+  const response = new Response(body, page)
+
+  // performance headers
+  response.headers.set("Cache-Control", cache);
+
+  // security headers
   response.headers.set('X-XSS-Protection', '1; mode=block')
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('X-Frame-Options', 'DENY')
