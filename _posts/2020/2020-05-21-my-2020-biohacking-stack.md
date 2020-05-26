@@ -5,9 +5,8 @@ description: "I may have asked a bio student to stab me in the hand with a needl
 date: 2020-05-21 00:00:00
 tags:
 - biohacking
+- wearables
 - nfc
-- 2fa
-- meditation
 ---
 
 I've been slowly expanding my quackery-avoidant biohacking since September 2018. I took the plunge and unified a tiny part of my technological life with my physical body by implanting an NFC chip (think: work badge, bootleg Amiibo, etc.) under my skin. The specific chip I had put in was the [xNT](https://dangerousthings.com/product/xnt/) tag from [Dangerous Things](https://dangerousthings.com/), a cylindrical bioglass-encased gizmo which can receive, store, and send nearly 1kb of data.
