@@ -20,4 +20,4 @@ Dear reader - I do have something to ask of you as well. My previous full-time r
 
 ## What is "tweedge"?
 
-The moniker I use came from a close friend. Chris "Partridge" became "Partweedge" - the "ee" sound mostly from screaming at each other - and then eventually just "'tweedge." It stuck for years, and I'm happy to have it be my handle these days.
+The moniker I use came from a close friend. Chris "Partridge" became "Partweedge" - the "ee" sound mostly from howling it in laughter - and then eventually just "'tweedge." It stuck for years, and I'm happy to have it be my handle these days.
