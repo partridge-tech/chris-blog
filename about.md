@@ -6,7 +6,7 @@ permalink: /about/
 
 Howdy - again! I'm Chris, a ~~basement-dweller~~ ~~eboy~~ cybersecurity fella on the internet. At the moment, I work with midsize businesses to help build or expand security practices, particularly around software engineering.
 
-I try to be a jack-of-all-trades in my work to develop a more holistic view of the cybersecurity landscape. This has meant hopping between a number of roles before, during, and after my college career ([RIT CSEC](https://www.rit.edu/computing/department-computing-security) BS '18). Thus far I've done everything from frontline IT, to information security strategy, to penetration testing, to software engineering in a high velocity & full-stack environment.
+I try to be a jack-of-all-trades in my work to develop a more holistic view of the cybersecurity landscape. This has meant hopping between a number of roles before, during, and after my college career ([RIT CSEC](https://www.rit.edu/computing/department-computing-security) BS '18, with a minor in Psychology). Thus far I've done everything from frontline IT, to information security strategy, to penetration testing, to software engineering in a high velocity & full-stack environment.
 
 Ultimately, I'd like to make it easier for technical and nontechnical people to be safe on the internet. Despite the [InfoSec Bingo](https://github.com/swagitda/infosec-buzzword-bingo)-ness, much of the work I do revolves around security visibility and accessibility, which I stand by as core tenets of effective software security.
 
