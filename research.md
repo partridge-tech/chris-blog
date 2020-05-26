@@ -18,6 +18,7 @@ A talk on the earlier rendition of Threatwork (then-titled 'dnstrace,' now a coo
 
 #### "From Bear to Vault: Designing a New Protocol to Extend the APT Communications Toolset"
 ##### Authors: Partridge, Chris; Hendee, Nicholas.
-##### Accepted: December 13-15, 2018 to the 2018 International Conference on Computational Science and Computational Intelligence, in the Symposium on Cyber Warfare, Cyber Defense, and Cyber Security.
+##### Accepted: December 12-14, 2018 to the 2018 International Conference on Computational Science and Computational Intelligence, in the Symposium on Cyber Warfare, Cyber Defense, and Cyber Security.
+##### Published: January 2, 2020 in IEEE Xplore&reg;, ISBN 978-1-7281-1360-9.
 
-Investigating what contemporary APTs do for covert communication, we prototype a novel system combining the more potent ideas from a number of adversaries, which allows for highly flexible data exfiltration and C2 ... if you're willing to write some wrappers. Our paper is available [here](https://american-cse.org/csci2018/pdfs/CSCI2018-3OvSlHpbnpxVCh7wjFqa17/dsybTn8QtwFaOJvB5AfpG/3MqFHlj5nPd6Ve3UmuBWti.pdf) from the American CSE proceedings portal, but if that goes down let me know and I'll reupload here, probably. I'm a new author so I don't actually know what I'm allowed to do yet.
+Investigating what contemporary APTs do for covert communication, we prototype a novel system combining the more potent ideas from a number of adversaries, which allows for highly flexible data exfiltration and C2 ... if you're willing to write some wrappers. Our paper is available [here](https://american-cse.org/csci2018/pdfs/CSCI2018-3OvSlHpbnpxVCh7wjFqa17/dsybTn8QtwFaOJvB5AfpG/3MqFHlj5nPd6Ve3UmuBWti.pdf) from the American CSE proceedings portal. This work was indexed in and published by IEEE Xplore, and is additionally available [here](https://ieeexplore.ieee.org/document/8947765) if you are an IEEE member.
