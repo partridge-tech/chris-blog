@@ -16,7 +16,8 @@ import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler'
  *      b. Cache purges are easier to execute in the Cloudflare Dashboard.
  * 4. The addition of createResponseWithHeaders() which adds security headers
  *    to 200 & 404 responses, setting some useless-to-us headers such as:
- *      a. XSS Protection, despite a total lack of JS on this site.
+ *      a. XSS Protection, despite a total lack of JS on this site. Yes,
+ *         not even the Cloudflare Rocket Loader is inserted here.
  *      b. Content Type Options, despite no dynamic/user-uploaded content.
  *      c. Frame Options, so you need to clone this repo instead of framing it.
  *    ... and a couple actually useful ones:
