@@ -53,9 +53,10 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <!-- Font Preloading to Enhance Render Speed -->
-  <link rel="preload" href="/fonts/opensans-light.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="/fonts/opensans-regular.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="/fonts/opensans-bold.woff2" as="font" type="font/woff2">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content -->
+  <link rel="preload" href="/fonts/opensans-light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/opensans-bold.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Page image for backlinks -->
   {% assign page_image = '' %}
