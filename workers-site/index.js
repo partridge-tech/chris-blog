@@ -96,7 +96,7 @@ function setDefaultCacheControl(extension) {
       return "max-age=345600"
 
     /* FIVE MINUTE CACHE
-     * For: no trailing extension, html, xml, txt, everything else
+     * For: no trailing extension, html, xml, txt, json, everything else
      * Changes: frequently/unknown
      */
     default:
