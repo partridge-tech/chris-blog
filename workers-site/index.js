@@ -72,12 +72,39 @@ async function handleEvent(event) {
 
 function setDefaultCacheControl(extension) {
   switch(extension) {
+    /* ONE YEAR CACHE
+     * For: fonts
+     * Changes: never
+     */
     case "woff2":
-      return "max-age=31536000" // one year -> fonts *must* not change
+      return "max-age=31536000"
+
+    /* TWO WEEK CACHE
+     * For: photos, videos, icons
+     * Changes: unlikely
+     */
+    case "ico":
+      return "max-age=1209600"
+    case "jpg":
+      return "max-age=1209600"
+    case "png":
+      return "max-age=1209600"
+
+    /* FOUR DAY CACHE
+     * For: css, manifests
+     * Changes: likely but infrequent
+     */
     case "css":
-      return "max-age=57600" // sixteen hours -> CSS changes infrequently
+      return "max-age=345600"
+    case "webmanifest":
+      return "max-age=345600"
+
+    /* FIVE MINUTE CACHE
+     * For: no trailing extension, html, xml, txt, everything else
+     * Changes: frequently/unknown
+     */
     default:
-      return "max-age=300" // five minutes -> all other HTTP 200s (ex html, /)
+      return "max-age=300"
   }
 }
 
