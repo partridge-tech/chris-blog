@@ -7,16 +7,12 @@ import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler'
  * Some changes of note are:
  * 1. This adds passThroughOnException() to all events, so if the Workers KV
  *    is down, data will be served from a backup source (GitLab Pages).
- * 2. 404s are served from 404/, not 404.html, which is a bad practice but
- *    is broken on GitLab Pages anyway, per
- *    https://gitlab.com/gitlab-org/gitlab-pages/-/issues/183
- *    ...and I might fix this to be 404.html when it's resolved.
- * 3. DEBUG flag has been removed in favor of always-on verbose errors since:
+ * 2. DEBUG flag has been removed in favor of always-on verbose errors since:
  *      a. There is no sensitive content on this site. Not even an API.
  *      b. Cache purges are easier to execute in the Cloudflare Dashboard.
- * 4. The addition of defaultCacheControl() which loosely sets max-age values
+ * 3. The addition of defaultCacheControl() which loosely sets max-age values
  *    based on the content expected for a given fetch, which also feeds into...
- * 5. The addition of createResponseWithHeaders() which adds browser-side cache
+ * 4. The addition of createResponseWithHeaders() which adds browser-side cache
  *    directives and security headers to 200 & 404 responses, setting some
  *    useless-to-us headers such as:
  *      a. XSS Protection, despite a general lack of JS on this site.
@@ -50,11 +46,11 @@ async function handleEvent(event) {
     const cache = setDefaultCacheControl(event.request.url.split(".").pop());
     return createResponseWithHeaders(page.body, page, cache)
   } catch (e) {
-    // if an error is thrown try to serve the asset at 404/index.html
+    // if an error is thrown try to serve the asset at 404.html
     try {
       let notFoundResponse = await getAssetFromKV(event, {
         mapRequestToAsset: req => new Request(
-          `${new URL(req.url).origin}/404/index.html`,
+          `${new URL(req.url).origin}/404.html`,
           req
         ),
       })
