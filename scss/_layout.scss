@@ -145,6 +145,7 @@ hr {
   }
 
   .readmore {
+    display: inline-block;
     font-style: italic;
   }
 }
@@ -154,7 +155,11 @@ hr {
   font-style: italic;
 }
 
-.post-link,
+.post-link {
+  @extend .link;
+  display: inline;
+}
+
 .post a,
 .page a {
   @extend .link;
