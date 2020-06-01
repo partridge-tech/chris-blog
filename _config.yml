@@ -11,9 +11,6 @@ permalink: /:year/:title/
 markdown: kramdown
 highlighter: rouge
 
-paginate: 6
-paginate_path: "/page/:num/"
-
 source: .
 destination: public
 
@@ -43,8 +40,30 @@ twitter_site: "@_tweedge"
 
 gems:
   - bourbon
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-sitemap
 
 # do not publish
 exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md", "workers-site", "wrangler.toml", "LICENSE", "scss"]
+
+# collections
+collections:
+  content:
+    output: true
+    permalink: /:path/
+
+# pagination v2 settings
+pagination:
+  enabled: true
+  debug: true
+  collection: 'content'
+  per_page: 5
+  sort_reverse: true
+  # The permalink structure for the paginated pages (this can be any level deep)
+  permalink: '/page/:num/' # Pages are index.html inside this folder (default)
+  #permalink: '/page/:num.html' # Pages are simple html files 
+  #permalink: '/page/:num' # Pages are html files, linked jekyll extensionless permalink style.
+  # Optional the title format for the paginated pages (supports :title for original page title, :num for pagination page number, :max for total number of pages)
+  title: ':title - page :num'
+  # Limit how many pagenated pages to create (default: 0, means all)
+  limit: 0

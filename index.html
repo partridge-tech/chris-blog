@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Home
+pagination: 
+  enabled: true
 ---
 
 {% include intro.html %}
@@ -10,13 +12,13 @@ title: Home
 
     <h2>Also, sometimes I write stuff.</h2>
 
-    {% for post in paginator.posts %}
+    {% for article in paginator.posts %}
       <article class="post-item">
         <p>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>  — 
-          <strong><a class="post-link" href="{{ post.url}}">{{ post.title }}</a></strong>
+          <span class="post-meta">{{ article.date | date: "%b %-d, %Y" }}</span>  — 
+          <strong><a class="post-link" href="{{ article.url}}">{{ article.title }}</a></strong>
           <br>
-          <span>{{ post.description }}</span> <a class="post-link readmore" href="{{ post.url}}">Read more</a></p>
+          <span>{{ article.description }}</span> <a class="post-link readmore" href="{{ article.url}}">Read more</a></p>
       </article>
     {% endfor %}
   </div>

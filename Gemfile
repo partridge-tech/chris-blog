@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'html-proofer'
 gem 'jekyll'
-gem 'jekyll-paginate'
+gem 'jekyll-paginate-v2'
 gem 'sass'
 gem 'bourbon'
 gem 'jekyll-sitemap'
