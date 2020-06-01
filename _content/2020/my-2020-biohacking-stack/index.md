@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "My 2020 Biohacking Stack"
+permalink: /2020/my-2020-biohacking-stack/
 description: "I may have asked a bio student to stab me in the hand with a needle I bought on the internet to plant a microchip under my skin. This is the current state of my biohacked life."
 date: 2020-05-21 00:00:00
 tags:
