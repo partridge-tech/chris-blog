@@ -12,7 +12,7 @@ tags:
 
 I've been slowly expanding my quackery-avoidant biohacking since September 2018. I took the plunge and unified a tiny part of my technological life with my physical body by implanting an NFC chip (think: work badge, bootleg Amiibo, etc.) under my skin. The specific chip I had put in was the [xNT](https://dangerousthings.com/product/xnt/) tag from [Dangerous Things](https://dangerousthings.com/), a cylindrical bioglass-encased gizmo which can receive, store, and send nearly 1kb of data.
 
-Due to COVID-19, I have been working from home, and the jarring changes across my life began to impact my ability to focus at work. I raised this with a coworker and received a strong recommendation for meditation, and after a while I decided that I wanted to collect more metrics and information on how much meditation is helping me from a bodily standpoint. So I've also recently expanded my biohacking to include regular meditiation which is monitored by a [Muse 2](https://choosemuse.com/muse-2/) headband, and I'm testing out focus monitoring while I'm working with a [Foci](https://fociai.com/) but have yet to realize a benefit from it.
+Due to COVID-19, I have been working from home, and the jarring changes across my life began to impact my ability to focus at work. I raised this with a coworker and received a strong recommendation for meditation, and after a while I decided that I wanted to collect more metrics and information on how much meditation is helping me from a bodily standpoint. So I've also recently expanded my biohacking to include regular meditation which is monitored by a [Muse 2](https://choosemuse.com/muse-2/) headband, and I'm testing out focus monitoring while I'm working with a [Foci](https://fociai.com/) but have yet to realize a benefit from it.
 
 This is a post about the devices I use, why I use them, and how I feel about each technical component of my biohacked life.
 
@@ -34,7 +34,7 @@ My xNT implant enables my body to send and receive information over Near Field C
 
 #### Implant Procedure
 
-This particular chip is 2mm wide by 10mm long and can be thought of as a very long grain of rice. Getting the xNT into your body is pretty straightforward, and they come preloaded into a large sterile injector alongside some packaged sterile & sterilization equipment. While whoever is doing the procedure should be knowledgable in working with flesh (ex. piercing or other body modification professional), it's not a surgical procedure and doesn't strictly require a medical professional.
+This particular chip is 2mm wide by 10mm long and can be thought of as a very long grain of rice. Getting the xNT into your body is pretty straightforward, and they come preloaded into a large sterile injector alongside some packaged sterile & sterilization equipment. While whoever is doing the procedure should be knowledgeable in working with flesh (ex. piercing or other body modification professional), it's not a surgical procedure and doesn't strictly require a medical professional.
 
 However, the xNT does need to go into a fleshy non-gripping area of your body, with some space between it and any bones, metal, or anything hard to help protect it from breakage. Generally, a good option is the flesh between your thumb and index finger on the top side of your hand. If you place your hand palm-down and trace ~8mm towards the center of your hand from your thumb's knuckle, that's where I put my xNT.
 
@@ -61,9 +61,9 @@ I would hesitate to use the same technology to bypass more important, less-well-
 
 #### In Daily Life
 
-The implant procedure hurt about as much as a bee sting, and you can easily grit your teeth through it. My hand swole and bruised for about five days (approx 50 sq. cm of light bruising between the knuckle of my middle finger and the underside of the thumb, likely due to some imprecision with the procedure) and was a bit sore. The implant was usable same-day for me as well.
+The implant procedure hurt about as much as a bee sting, and you can easily grit your teeth through it. My hand swelled and bruised for about five days (approx 50 sq. cm of light bruising between the knuckle of my middle finger and the underside of the thumb, likely due to some imprecision with the procedure) and was a bit sore. The implant was usable same-day for me as well.
 
-After healing, I hardly notice that my xNT is present unless I'm using it or showing it off. You can feel it under my skin if I clench my hand and you run your finger over it, but I don't feel it otherwise. I very rarely get a throb from it (once every 6 months maximum, and they've very minor/passing) and the entry point of the needle is hardly visible. I've been travelling nationally & internationally with my xNT and have never been flagged for additional screening due to my hand lighting up. I rack and derack servers, hike, hold on to stuff firmly, and it's never given me any trouble or shown any sign of breakage. The one main concern I haven't tested is MRIs, but I have solace in the faith of those before me that it won't be a problem.
+After healing, I hardly notice that my xNT is present unless I'm using it or showing it off. You can feel it under my skin if I clench my hand and you run your finger over it, but I don't feel it otherwise. I very rarely get a throb from it (once every 6 months maximum, and they've very minor/passing) and the entry point of the needle is hardly visible. I've been travelling nationally & internationally with my xNT and have never been flagged for additional screening due to my hand lighting up. I rack and de-rack servers, hike, hold on to stuff firmly, and it's never given me any trouble or shown any sign of breakage. The one main concern I haven't tested is MRIs, but I have solace in the faith of those before me that it won't be a problem.
 
 The one daily use caveat of note is that the read range on the implant is very small, and the orientation matters a lot for getting good reads/writes to the chip, so you need to twist your hand in awkward ways sometimes to get a good read. It took some learning to get used to using with my workstation's reader (a "keyboard wedge" [KBR1](https://dangerousthings.com/product/kbr1/) also from Dangerous Things), but after a couple weeks I was all set.
 
@@ -85,7 +85,7 @@ While the Muse *can* be the sole source of your meditation information, I strong
 
 #### The Good
 
-Overall, the Muse has been fairly consistent, easy-to-wear even with headphones (though I think earbuds are better for this), and has some interesting options for tracking and designing your meditation sessions. It's been especially helpful to have the availity to review my meditation activity and engagement over time, and most metrics (while a little noisy) feel accurate.
+Overall, the Muse has been fairly consistent, easy-to-wear even with headphones (though I think earbuds are better for this), and has some interesting options for tracking and designing your meditation sessions. It's been especially helpful to have the ability to review my meditation activity and engagement over time, and most metrics (while a little noisy) feel accurate.
 
 The core functionality is fairly standard and surprisingly non-gimmicky, and getting audio feedback across a number of different meditation strategies takes some getting used to, but is ultimately helpful when guiding yourself. These meditations include:
 
