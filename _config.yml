@@ -41,7 +41,6 @@ twitter_site: "@_tweedge"
 gems:
   - bourbon
   - jekyll-paginate-v2
-  - jekyll-sitemap
 
 # do not publish
 exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md", "workers-site", "wrangler.toml", "LICENSE", "scss"]

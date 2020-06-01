@@ -1,5 +1,7 @@
 ---
 permalink: "manifest.json"
+sitemap:
+  exclude: 'yes'
 ---
 // https://web.dev/add-manifest/
 {

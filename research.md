@@ -2,6 +2,9 @@
 layout: page
 title: Research
 permalink: /research/
+sitemap:
+  priority: 0.7
+  freq: 'monthly'
 ---
 
 This page documents anything that I've done that matured into a presentation or publication. If you have questions, comments, ideas, etc. concerning any of these, please reach out over [LinkedIn](https://linkedin.com/in/tweedge/) - I would love to chat and learn from you!

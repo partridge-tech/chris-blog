@@ -2,6 +2,9 @@
 layout: page
 title: About Me
 permalink: /about/
+sitemap:
+  priority: 0.7
+  freq: 'monthly'
 ---
 
 Howdy - again! I'm Chris, a ~~basement-dweller~~ ~~eboy~~ cybersecurity fella on the internet. At the moment, I work with midsize businesses to help build or expand security practices, particularly around software engineering.
