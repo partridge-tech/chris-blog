@@ -11,9 +11,7 @@ Howdy - again! I'm Chris, a ~~basement-dweller~~ ~~eboy~~ cybersecurity fella on
 
 I try to be a jack-of-all-trades in my work to develop a more holistic view of the cybersecurity landscape. This has meant hopping between a number of roles before, during, and after my college career ([RIT CSEC](https://www.rit.edu/computing/department-computing-security) BS '18, with a minor in Psychology). Thus far I've done everything from frontline IT, to information security strategy, to penetration testing, to software engineering in a high velocity & full-stack environment.
 
-Ultimately, I'd like to make it easier for technical and nontechnical people to be safe on the internet. Despite the [InfoSec Bingo](https://github.com/swagitda/infosec-buzzword-bingo)-ness, much of the work I do revolves around security visibility and accessibility, which I stand by as core tenets of effective software security.
-
-In pursuit of that, I maintain a product security resource/articles/thing called [SecurityGolf](https://security.golf) where contributors and I publish neat content about product security strategy, governance, application, and more. You can find some examples of my personal technical research [here](http://localhost:4000/research/), and some other work that I'm doing with some friends under a cybersecurity research entity, [Machines Never Sleep, LLC](https://mns.llc).
+Ultimately, I'd like to make it easier for technical and nontechnical people to be safe on the internet. Despite the [InfoSec Bingo](https://github.com/swagitda/infosec-buzzword-bingo)-ness, much of the work I do revolves around security visibility and accessibility, which I stand by as core tenets of effective software security. You can find some examples of my personal technical research [here](http://localhost:4000/research/), and some other work that I'm doing with some friends under a cybersecurity research entity, [Machines Never Sleep, LLC](https://mns.llc).
 
 I also play a smidge of D&D and love cooking for myself & others. Maybe I'll start a food blog too. Anything is possible!
 
