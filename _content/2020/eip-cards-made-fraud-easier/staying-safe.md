@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "How to Ensure Your EIP Card is Real"
-permalink: /2020/eip-cards-make-fraud-easy/staying-safe/
+permalink: /2020/eip-cards-made-fraud-easier/staying-safe/
 description: "A security engineer's guide on how to stay safe with any \"EIP Card\" you got in the mail. Begone, scammers!"
 date: 2020-06-06 00:00:00
 tags:
-- eip card
+- eip card safety
 - how do I know if my eip card is real
 - how to verify eip card
 - how to validate eip card
