@@ -16,7 +16,9 @@ Following on to my prior [rant](/2020/eip-cards-made-fraud-easier/) about how EI
 
 ## Disclaimer
 
-This post "A Believable Attack Using EIP Cards" is solely for educational purpose, describing the costs of a scam and problematic components of the EIP Card distribution and validation methods that scammers could exploit. I am not advocating for or advising that anyone use it, in whole or in part, for malicious activity of any kind. To be very clear: the following section details a theoretical scheme for defrauding the American people. To enact it, in whole or in part, would be a federal crime. Don't do it.
+This post "A Believable Attack Using EIP Cards" is solely for educational purpose, describing the costs of a scam and problematic components of the EIP Card distribution and validation methods that scammers could exploit. I am not advocating for or advising that anyone use it, in whole or in part, for malicious activity of any kind.
+
+To be very clear: the following section details a theoretical scheme for defrauding the American people. To enact it, in whole or in part, would be a federal crime. Don't do it. Let the grandmothers of the world have their CARES Act money, you rat bastards, I will call the internet police. (╯°□°)╯︵ ┻━┻
 
 ## Materials
 
@@ -82,12 +84,22 @@ I *think* (though I can't confirm) most people would probably put in their full 
 
 It's fine and dandy to have cooked up an SSN-stealing scam, but would it be worth anyone's while to actually pull this off? The short answer is no - with material cost and two minutes on the phone per victim, you're looking at between $1 and $1.50 spent per scam. Given that Social Security Numbers are worth between [$1](https://www.experian.com/blogs/ask-experian/heres-how-much-your-personal-information-is-selling-for-on-the-dark-web/) and [$2](https://www.radware.com/newsevents/pressreleases/2018/americans-fear-for-their-data) on average on the dark web, you'd need a nearly 100% success rate to just break even - not counting your time spent procuring and assembling the fraudulent mail, or resources spent getting the names and addresses to target. Considering that people are known to be throwing these cards out as-is, it's guaranteed to not be worthwhile to just get their SSN.
 
-## The Value of Rapport
+## The Value of Rapport for Vishing
 
 However, this does put forward a good opportunity for [vishing](https://en.wikipedia.org/wiki/Voice_phishing). Once you get someone on the phone and ready to believe you're a government agency, you can do anything. Try this line on for size and try to objectively think about whether or not you'd fall for it:
 
 > "I'm really sorry [sir/miss], we're having trouble activating your EIP Card. Here's what I can do for you. If you like, we can re-issue the card, and it will be at your door in four to six weeks. Or, if you're willing to stay on the line for fifteen minutes, we can wire the funds directly to your bank account now, we'll just need some additional information from you to verify your identity."
 
-Would it get you? Because if that was delivered to me on a clear connection, possibly with a little joke about "four to six weeks being exactly the speed of government, I haven't gotten mine either," I'd have recited the answer to every security question that keeps attackers out of my PayPal, my bank, and even my brokerage. These are all items that will fetch higher prices - online banking and PayPal credentials typically sell for a percentage of their known value, according to [LogDog](https://nakedsecurity.sophos.com/2016/08/09/what-your-hacked-account-is-worth-on-the-dark-web/) and [KnowBe4](https://blog.knowbe4.com/1170-is-how-much-youre-worth-on-the-dark-web).
+Would it get you? Because if that was delivered to me on a clear connection, possibly with a little joke about "four to six weeks being exactly the speed of government, I haven't gotten mine either," I'd have recited my email, my preferred usernames, and the answer to every security question that keeps attackers out of my PayPal, my bank, even my brokerage. These are all items that will fetch higher prices - online banking and PayPal credentials typically sell for a percentage of their known value, according to [LogDog](https://nakedsecurity.sophos.com/2016/08/09/what-your-hacked-account-is-worth-on-the-dark-web/) and [KnowBe4](https://blog.knowbe4.com/1170-is-how-much-youre-worth-on-the-dark-web).
 
-The real crux of the issue is that fraudsters have now been offered an opportunity to get their foot in the door with many Americans. There are going to be markets that are worthwhile to scammers to try to exploit this - whether that's something as simple and automated as getting you to divulge your SSN or other information, or something as advanced as getting you on the phone for a vishing session where you're primed to trust the caller - the attacks are *coming*.
+Even still, say every account you were able to get into had $1,000 in assets. Conservatism is the answer here, what's the chance someone with $100,000 in assets is getting and responding to CARES Act money? That would probably translate to a sell price of between $60 and $80. For every person that gets on the phone, let's say you have a 20% chance of getting sufficient information to break an account over a ten minute conversation. An English-speaking operator in India billing 10x India's minimum wage would be paid roughtly $0.50 for that time, plus ~$2.50 in telephone charges.
+
+So our expected cost of people calling is $3/caller or $15/success. That leaves (on the low end) $45 of materials cost and labor, so your letter would need to convince around one in eight people to call (12.5% call rate) in in order to be breaking even.
+
+Is this the next generation of fraud? Probably not - those are pretty high going rates, but again, the material cost is what raises the price so much. Locking down a good fake credit card supplier, getting cheap labor, and lowering calling costs will all significantly increase headroom. So as it stands, this could work as a targeted attack, but an optimized version could be viable in the real world.
+
+## Final Thoughts
+
+The real crux of the issue is that fraudsters have now been offered an opportunity to get their foot in the door with many Americans. There are definitely to be markets that are worthwhile to scammers to try to exploit this - whether that's something as simple and automated as getting you to divulge your SSN or other information, or something as advanced as getting you on the phone for a vishing session where you're primed to trust the caller - attacks using EIP Cards as a diversion are probable.
+
+As far as making things better (both now and in the future), please see my other [post](/2020/eip-cards-make-fraud-easier/) about the flaws in EIP Card distribution. If you are worried about an EIP Card you received being a scam, or just feel the need to validate more thoroughly after reading this, I also wrote a little [guide](/2020/eip-cards-make-fraud-easier/staying-safe/) that relies on the IRS website security rather than easy-to-forge letters in the mail.
