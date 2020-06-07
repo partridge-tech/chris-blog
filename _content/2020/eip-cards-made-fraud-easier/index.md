@@ -2,7 +2,7 @@
 layout: post
 title: "EIP Cards Made Fraud Easier"
 permalink: /2020/eip-cards-made-fraud-easier/
-description: "Who thought distributing debit cards in unmarked envelopes that predominantly reference a non-.gov domain was a good idea? I've seen better scams."
+description: "Who thought distributing debit cards in unmarked envelopes that predominantly reference a non-.gov domain was a good idea? I almost threw this away, then thought I had my identity stolen, then got so frustrated I wrote this post."
 date: 2020-06-06 00:00:00
 tags:
 - eip card
