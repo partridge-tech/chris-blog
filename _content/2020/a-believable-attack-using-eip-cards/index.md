@@ -94,9 +94,9 @@ Would it get you? Because if that was delivered to me on a clear connection, pos
 
 Even still, say every account you were able to get into had $1,000 in assets. Conservatism is the answer here, what's the chance someone with $100,000 in assets is getting and responding to CARES Act money? That would probably translate to a sell price of between $60 and $80. For every person that gets on the phone, let's say you have a 20% chance of getting sufficient information to break an account over a ten minute conversation. An English-speaking operator in India billing 10x India's minimum wage would be paid roughtly $0.50 for that time, plus ~$2.50 in telephone charges.
 
-So our expected cost of people calling is $3/caller or $15/success. That leaves (on the low end) $45 of materials cost and labor, so your letter would need to convince around one in eight people to call (12.5% call rate) in in order to be breaking even.
+So our expected cost of people calling is $3/caller or $15/success. That leaves (on the low end) $45 of materials cost and labor, so your letter would need to convince around one in eight people to call (12.5% call rate, 2.5% overall success rate) in in order to be breaking even. That's a rough benchmark at best, as caller conversion rates are estimated and will heavily impact overhead consumption.
 
-Is this the next generation of fraud? Probably not - those are pretty high costs to sink for unknown returns, but again, the material cost is what raises the price so much. Locking down a good fake credit card supplier, getting cheap labor, and lowering calling costs will all significantly increase headroom. So as it stands, this *might* work as a targeted attack, but an optimized version could be viable in the real world.
+Is this the next generation of fraud? Probably not - those are pretty high costs to sink for unknown returns, but again, the material cost is what raises the price so much. Locking down a good fake credit card supplier, getting cheap labor, and lowering calling costs will all significantly increase headroom. So as it stands, this *might* work as a targeted attack - especially against vulnerable persons who are unfamiliar with vishing and more likely to open physical mail, such as the elderly - but an optimized version could be viable in the real world or against a general populace.
 
 ## Final Thoughts
 
