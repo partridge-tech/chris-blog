@@ -26,13 +26,13 @@ A follow-on post [here](/2020/a-believable-attack-using-eip-cards/) details how 
 
 ## What is the CARES Act?
 
-But first - the basics. For any non-Americans browsing around, the CARES Act is a ~$2,200,000,000,000 relief bill in response to economic collapse due to nCoV-19. Among many other things, the median American could expect a one-time rebate of $1,200. Married filers with children, people who earn more than $75k, etc. are all eligible for different payouts according to a helpful payscale provided by the [Tax Foundation](https://taxfoundation.org/federal-coronavirus-relief-bill-cares-act/#16).
+But first - the basics. For any non-Americans browsing around, the [CARES Act](https://home.treasury.gov/policy-issues/cares) is a ~$2,200,000,000,000 relief bill in response to economic collapse due to nCoV-19. Among many other things, the median American could expect a one-time rebate of $1,200. Married filers with children, people who earn more than $75k, etc. are all eligible for different payouts according to a helpful payscale provided by the [Tax Foundation](https://taxfoundation.org/federal-coronavirus-relief-bill-cares-act/#16).
 
 The exact details are not relevant, save for one bit: little old me should be getting the $1,200 moderate-income individual-filer no-kids rebate, but up until today, I hadn't seen a red cent of it. My roommate [Josh](https://jibby.org/) had received his rebate some time ago, in the form of a well-annotated direct deposit to his bank account from the federal government. It was no mystery where the money had come from or what it was for - everything was aboveboard.
 
 ## Surprises in the Mail
 
-Today, I got my rebate in a very different form. An Economic Impact Payment ("EIP") debit card showed up without warning in my mailbox (as is has or will be four roughly [four million](https://www.freep.com/story/money/2020/05/27/stimulus-money-visa-debit-cards-mail/5267885002/) Americans). What the EIP Card actually is is an alternate method of disbursing CARES Act relief money for people the IRS doesn't have banking information on file for. What it looked like was a scam, and let's break down what every suspicious detail was. A full photo archive is available [here](/2020/eip-cards-made-fraud-easier/letter/) for those curious, but we'll be covering most of the content in detail as it comes up in this rant.
+Today, I got my rebate in a very different form. An Economic Impact Payment ("EIP") debit card showed up without warning in my mailbox (as is has or will for roughly [four million](https://www.freep.com/story/money/2020/05/27/stimulus-money-visa-debit-cards-mail/5267885002/) Americans). What the EIP Card actually is is an alternate method of disbursing CARES Act relief money for people the IRS doesn't have banking information on file for. What it looked like was a scam, and let's break down what every suspicious detail was. A full photo archive is available [here](/2020/eip-cards-made-fraud-easier/letter/) for those curious, but we'll be covering most of the content in detail as it comes up in this rant.
 
 #### The Envelope
 
@@ -72,9 +72,9 @@ and that your retention and use of Card account after the effective date of any 
 will constitute acceptance of the new terms or fees.
 ```
 
-If you and I think alike, at this point you're pretty sure your identity has been stolen and someone just opened a new debit card in your name. I didn't ready *any* materials, I don't know of any Terms & Conditions, I didn't open an account at EIPCard.com, and I sure as hell don't want to be bound by any terms concerning MetaBank N.A. (another entity I've never heard of). The page continues into how to use a debit card, and the reverse contains a summary of specific terms and fee schedules.
+At this point I was pretty sure my identity had been [stolen](https://www.experian.com/blogs/ask-experian/5-steps-to-take-if-someone-opens-a-credit-card-in-your-name/) and someone just opened a new debit card in my name. I didn't ready *any* materials, I don't know of any Terms & Conditions, I didn't open an account at EIPCard.com, and I sure as hell don't want to be bound by any terms concerning MetaBank N.A. (another entity I've never heard of). The page continues into how to use a debit card, and the reverse contains a summary of specific terms and fee schedules.
 
-There are only two things on this entire page that tell you anything substantive about the origin of the card. First, a "The Department of the Treasury" symbol in the top; nice touch, but also something I've seen in spam, so not something I trust. Second, *underneath the card* there is a [small dialogue](/2020/eip-cards-made-fraud-easier/metabank-front-clear.png) which says:
+There are only two things on this entire page that tell us anything substantive about the origin of the card. First, a "The Department of the Treasury" symbol in the top; nice touch, but also something I've seen in spam, so not something I trust. Second, *underneath the card* there is a [small dialogue](/2020/eip-cards-made-fraud-easier/metabank-front-clear.png) which says:
 
 ```
 What is the Economic Impact Payment Card?
@@ -105,21 +105,21 @@ Safe * Convenient * Secure
 Follow the enclosed instructions to activate your Card. Visit EIPCard.com to learn more.
 ```
 
-However, the linked page (irs.gov/eip) didn't make any mention of the EIP Card, or any debit cards that are being distributed to Americans.
+However, the linked page (irs.gov/eip) didn't make any mention of the EIP Card, or any debit cards that are being distributed to Americans. I spent some time clicking around until I was finally able to find a section on the IRS site (hidden deep in the FAQ) that validates eipcard.com as a trusted source of CARES Act rebates, confirming that this was - shockingly - neither a scam nor my identity being stolen.
+
+I called the EIP Card activation number, dutifully divulged the information I needed to access the card, and swiftly routed my $1,200 to my bank - away from this hot mess.
 
 #### Digging Around Online
 
-Unfortunately, this seems like it's the best that the federal government (and their outsourced counterparts) could do on short notice.
+Was it possible that I just had a bad user experience, and missed an important detail that would have allowed me to validate this faster? Was I an outlier? Did Money Network Cardholder Services run out of envelopes that clearly denoted that this was my CARES Act rebate?
 
-News sites [reported](https://www.cnbc.com/2020/06/05/how-to-replace-your-stimulus-debit-card-if-you-threw-it-away.html) that something like this would happen, and pleaded with their readers not to throw out the junk mail they receive as there's a chance one of those letters might be your CARES Act rebate. However, few offered real advice for recognizing the card, and many did not provide safe guidance for validating that the EIP Card people received was real. This included:
+Unfortunately, my experience was in line with the experience of all Americans. News sites [reported](https://www.cnbc.com/2020/06/05/how-to-replace-your-stimulus-debit-card-if-you-threw-it-away.html) that something like this would happen, and pleaded with their readers not to throw out the junk mail they receive as there's a chance one of those letters might be your CARES Act rebate. However, few offered real advice for recognizing the card, and many did not provide safe guidance for validating that the EIP Card people received was real. This included:
 
 - The [CFPB](https://www.consumerfinance.gov/about-us/blog/economic-impact-payment-prepaid-card/) (a federal entity) saying what you received is "not a scam" if the EIP Card came from "Money Network Cardholder Services" and has "VISA", "DEBIT", and "MetaBank, N.A." on the back. These are all easily forged with a fake card and bad return address. Though to their credit, they did provide the correct links and telephone numbers to call afterwards - you'd hope people didn't return to their letter after saying "yeah, it must be safe."
 - [AARP](https://www.aarp.org/money/taxes/info-2020/stimulus-payment-debit-cards.html) advocated against searching online to validate the phone number you've been told to call. This is okay-ish to help avoid online scams, but dooms anyone with a fraudulent letter.
 - While the [FTC](https://www.consumer.ftc.gov/blog/2020/05/what-know-about-economic-impact-payment-debit-cards) provides a good summary of what to do, even they reference that "the mailer will give you instructions on how to activate the card," which could be dangerous.
 
 If you get a similar card, you may want to follow a safe guide for activating it, such as the one I've provided [here](/2020/eip-cards-made-fraud-easier/staying-safe/), which is also linked at the top and bottom of the page. It relies solely on securely connecting to the IRS site in order to determine facts and other trusted sources, and eschews nearly all use of the easily-forged paper letter.
-
-My card, thankfully, was real. I called the EIP Card activation number, dutifully divulged the information I needed to access the card, and swiftly routed my $1,200 to my bank - away from this hot mess.
 
 ## Making Fraud Easier
 
