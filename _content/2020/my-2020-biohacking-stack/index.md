@@ -126,6 +126,6 @@ I'm a little worried the Foci might be too imprecise to actually help me stay fo
 
 ## Tidying Up
 
-I'm looking forward to doing some more serious biohacking in the future - as my biohacking so far has been a success - and I'm excited for biohacking equipment to be appearing in people's daily lives. The more we know about ourselves and our bodies, the more informed decisions we can make to take care of ourselves, physically and mentally. I welcome discussion on this topic, and would be happy to chat about it by my normal methods of communication, which you can find on my [About](https://chris.partridge.tech/about/) page!
+I'm looking forward to doing some more serious biohacking in the future - as my biohacking so far has been a success - and I'm excited for biohacking equipment to be appearing in people's daily lives. The more we know about ourselves and our bodies, the more informed decisions we can make to take care of ourselves, physically and mentally. I welcome discussion on this topic, and would be happy to chat about it by my normal methods of communication, which you can find on my [About](/about/) page!
 
 And of course, thank you for reading. It means a lot to me, since it would have been much easier for you to see how long this was and decide not to bother. <3
