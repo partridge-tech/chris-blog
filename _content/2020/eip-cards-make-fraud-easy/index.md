@@ -141,7 +141,7 @@ Bearing the above disclaimer in mind, there are a few things you'd need to have 
 - Your target's name (must be embossed on the card)
 - Your target's address (to send mail to them)
 
-That's a very low information barrier to entry. The complexity here really comes from getting a supplier for fake credit cards - a regular credit card cloner just copies the magstripe information, you would need tons of cards of reasonable quality and design. Each card has to be uniquely addressed to a given name too, so no bulk discounts. Hunting on Alibaba, it didn't take more than five minutes to find a factory direct supplier in Guangdong, China that advertised they'd do everything we need: PVC/magstripe cards, embossing, custom CMYK & silkscreen printing, and specifically advertised they'd do license or card clones. So your full component list, with price breakdown, is:
+That's a very low information barrier to entry. The complexity here really comes from getting a supplier for fake credit cards - a regular credit card cloner just copies the magstripe information, you would need tons of cards of reasonable quality and design. Each card has to be uniquely addressed to a given name too, so no bulk discounts. Hunting on Alibaba, it didn't take more than five minutes to find a factory direct supplier in Guangdong, China that advertised they'd do everything we need: PVC/magstripe cards, embossing, custom CMYK & silkscreen printing, and specifically advertised they'd do license or credit card clones. So your full component list, with price breakdown, is:
 
 - Envelopes (#10) with window, $20/500 = $0.04/ea
 - A4 size high-quality printed leaflets, $105/500 = $0.21/ea
