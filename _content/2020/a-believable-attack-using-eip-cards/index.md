@@ -96,7 +96,7 @@ Even still, say every account you were able to get into had $1,000 in assets. Co
 
 So our expected cost of people calling is $3/caller or $15/success. That leaves (on the low end) $45 of materials cost and labor, so your letter would need to convince around one in eight people to call (12.5% call rate) in in order to be breaking even.
 
-Is this the next generation of fraud? Probably not - those are pretty high going rates, but again, the material cost is what raises the price so much. Locking down a good fake credit card supplier, getting cheap labor, and lowering calling costs will all significantly increase headroom. So as it stands, this could work as a targeted attack, but an optimized version could be viable in the real world.
+Is this the next generation of fraud? Probably not - those are pretty high costs to sink for unknown returns, but again, the material cost is what raises the price so much. Locking down a good fake credit card supplier, getting cheap labor, and lowering calling costs will all significantly increase headroom. So as it stands, this *might* work as a targeted attack, but an optimized version could be viable in the real world.
 
 ## Final Thoughts
 
