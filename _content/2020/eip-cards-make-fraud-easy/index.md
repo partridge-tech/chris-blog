@@ -2,7 +2,7 @@
 layout: post
 title: "EIP Cards Make Fraud Easy"
 permalink: /2020/eip-cards-make-fraud-easy/
-description: "A match made in hell. Who thought distributing debit cards, unannounced, that reference a non-.gov domain was a good idea? I've seen better scams."
+description: "A match made in hell. Who thought distributing debit cards in unmarked envelopes that predominantly reference a non-.gov domain was a good idea? I've seen better scams."
 date: 2020-06-06 00:00:00
 tags:
 - eip card
