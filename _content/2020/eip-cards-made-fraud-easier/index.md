@@ -131,7 +131,11 @@ Like any financial device you have interacted with recently, activating the EIP 
 - Steal unemployment or social security benefits.
 - Calling my bank, pretending to be me, and resetting my passwords.
 
-While this may be "Convenient," we're definitely not in "Safe" or "Secure" territory. The devil is in the details - and unfortunately, there's a lot that went wrong here. I believe you could send a low-material-cost letter to people across the country with very few details changed and get a huge success rate snagging whole SSNs. To that note, I actually [wrote up](/2020/a-believable-attack-using-eip-cards/) how a scam like this would work, how much its materials would cost, and whether or not it'd be worth it. The short answer is: this certainly helps a scammer build rapport, but just stealing Social Security Numbers isn't actually profitable.
+While this may be "Convenient," we're definitely not in "Safe" or "Secure" territory.
+
+At a basic level, I believe you could send a low-material-cost letter to people across the country with very few details changed and get a huge success rate snagging whole SSNs. However, this also introduces a great way to get people to call you for broader scams such as [vishing](https://en.wikipedia.org/wiki/Voice_phishing) because people have been primed to expect a wordy, poorly-marked, fraudulent-looking letter in the mail. Many times, they've also been told to follows its instructions for money. What happens if you change out the instructions? I explore practical attacks in my follow up post, which is available [here](/2020/a-believable-attack-using-eip-cards/) - including how a scam like this would work, how much its materials would cost, and whether or not it'd be worth it.
+
+The short answer is that it probably wouldn't be worthwhile to steal SSNs. Vishing attacks could be dangerous and profitable though, especially if you could drive your material and telephone costs down, because in piggybacking off EIP Cards you get a lot of rapport early on in a scam that you'd have to work much harder to cultivate otherwise.
 
 ## Remediation
 
