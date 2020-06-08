@@ -138,7 +138,7 @@ While this may be "Convenient," we're definitely not in "Safe" or "Secure" terri
 Purportedly, the EIP Card was "[intentionally](https://www.washingtonpost.com/business/2020/06/01/faq-stimulus-debit-card/)" made "discreet" to "protect against" fraud and abuse. That's a myopic take at best, and assumes that the only attacks against Americans would be from people stealing or tampering with EIP Cards in transit. Though to be honest, I see those attacks as quite limited:
 
 - A [porch pirate](https://www.dictionary.com/browse/porch-pirate) doesn't know your social security number and won't be able to activate the card readily.
-- A more sophisticated theft without resorting to phishing would be stealing the envelope, opening it, copying the card details, replacing it in the original mailbox, and then hoping that they can use the card details between someone activating it and using the funds. This is plausible, but if someone is rifling through your mailbox, an extra 2 seconds to find the right envelope isn't stopping them.
+- A more sophisticated theft would be stealing the envelope, opening it, copying the card details, replacing it in the original mailbox, and then hoping that they can use or sell the card details between someone activating it and using the funds. This is plausible, but if someone is rifling through your mailbox with that level of intent, an extra 2 seconds to find the right envelope isn't stopping them.
 - People in financially abusive relationships are certainly at risk here, but if that's the case, their partner will most likely have learned of the envelope anyway because of how much this has had to be publicized to prevent people throwing them out.
 
 Making the EIP Card letters unrecognizable doesn't stop any meaningful malicious activity, it only serves to decrease trust & provide dangerous opportunities for fraud mailers. Nearly all other federal communications:
@@ -147,9 +147,11 @@ Making the EIP Card letters unrecognizable doesn't stop any meaningful malicious
 - Are clear about what federal organization has sent them.
 - Are engineered to at least be semi-readable and detail a clear process.
 
+Letters that [present](https://en.wikipedia.org/wiki/Official_mail) as federal communication build appropriate expectations, and prime people to divulge privileged information to a secure and trusted entity.
+
 #### Creating New Opportunities
 
-So now, people have been primed to expect a wordy, poorly-marked, fraudulent-looking letter in the mail, and been told to *trust* the contents of the letter. Anyone who wants to exploit people's confusion around EIP Card handling (and trust in the federal government) could assemble a low-material-cost letter, send it to people across the country, and direct them to call a fraudulent number. I explore practical attacks in my follow up post, which is available [here](/2020/a-believable-attack-using-eip-cards/) - including how a scam like this would work, how much its materials would cost, and whether or not it'd be worth it.
+Instead, people have been primed to expect a wordy, poorly-marked, fraudulent-looking letter in the mail, and been *told* to trust the contents of the letter. Anyone who wants to exploit people's confusion around EIP Card handling (and trust in the federal government) could assemble a low-material-cost letter, send it to people across the country, and direct them to call a fraudulent number. I explore practical attacks in my follow up post, which is available [here](/2020/a-believable-attack-using-eip-cards/) - including how a scam like this would work, how much its materials would cost, and whether or not it'd be worth it.
 
 Per my research, it probably wouldn't be worthwhile to steal SSNs. [Vishing](https://en.wikipedia.org/wiki/Voice_phishing) attacks could be dangerous and profitable though, especially if you could drive your material and telephone costs down, because in piggybacking off EIP Cards you get a lot of rapport early on in a scam that you'd have to work much harder to cultivate otherwise.
 
