@@ -181,13 +181,13 @@ Having a single government site that details validation and activation also circ
 
 #### Recognizable Source
 
-Another thing to strongly consider changing is the return address. We went over possible rationales for why cards were sent "discreetly" in the "In the Name of Fraud Protection" section, and concluded that in-transit attacks present certain but limited opportunities.
+Another thing to strongly consider changing is the return address. We went over possible rationales for why cards were sent "discreetly" in the "In the Name of Fraud Protection" section, and I believe that in-transit attacks present certain but limited opportunities.
 
 In my opinion, it's better to absorb that risk and focus on maintaining trust from the federal government - any and all communications that are federal in nature but aren't extremely overt about it increase people's susceptibility to low-cost fraud relying on federal impersonation. An unknown-name PO box is a terrible precedent, and has lead to a lot of EIP Cards being [thrown out](https://www.washingtonpost.com/business/2020/06/01/faq-stimulus-debit-card/):
 
 > “I opened an unmarked envelope, saw what looked like a credit card I hadn’t ordered from the Money Network, and I threw it out,” said Sarah Bardinone from New York City.
 
-At least make the letters more readily identifiable with some sort of external notice that it's an EIP Card and say it's from Money Network Cardholder Services *on behalf of the US Department of the Treasury*. Yes, more will get stolen that way, but that's going to be far fewer than have been lost because this presented as junk mail, and it reduces the ability for fraudsters to cheap out on attacks against the American people.
+So if the Department of Treasury does not have additional evidence for the prevalence or potency of in-transit attacks (which they very well may!), I'd recommend making letters more readily identifiable with some sort of external notice that it's an EIP Card and say it's from Money Network Cardholder Services *on behalf of the US Department of the Treasury*. Yes, more will get stolen that way, but that's going to be far fewer than have been lost because this presented as junk mail, and from my understanding it reduces the ability for fraudsters to cheap out on attacks against the American people.
 
 ## Closing Notes
 
