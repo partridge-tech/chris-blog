@@ -21,7 +21,7 @@ Dear reader - I do have something to ask of you as well. My previous full-time r
 
 ## Contact
 
-You shoot me an email at [tweedge-public@partridge.tech](mailto:tweedge-public@partridge.tech), connect with me on [LinkedIn](https://www.linkedin.com/in/tweedge/), or follow me on Twitter [@_tweedge](https://twitter.com/_tweedge) for more shenanigans!
+You can send me an email at [tweedge-public@partridge.tech](mailto:tweedge-public@partridge.tech), connect with me on [LinkedIn](https://www.linkedin.com/in/tweedge/), or follow me on Twitter [@_tweedge](https://twitter.com/_tweedge) for more shenanigans!
 
 ## What is "tweedge"?
 
