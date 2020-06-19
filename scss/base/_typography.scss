@@ -154,3 +154,89 @@ pre {
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 */
+
+// Based on Socicon, slimmed with Baidu FontStore
+@font-face {
+  font-family: 'Entities';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Entities'), url(/fonts/entities.woff2) format('woff2');
+}
+
+[class^="entities-"], [class*=" entities-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Entities';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.entities-amazon:before {
+  content: "\e004";
+}
+.entities-facebook:before {
+  content: "\e028";
+}
+.entities-github:before {
+  content: "\e032";
+}
+.entities-google:before {
+  content: "\e034";
+}
+.entities-instagram:before {
+  content: "\e044";
+}
+.entities-keybase:before {
+  content: "\e048";
+}
+.entities-linkedin:before {
+  content: "\e04c";
+}
+.entities-patreon:before {
+  content: "\e05f";
+}
+.entities-paypal:before {
+  content: "\e060";
+}
+.entities-reddit:before {
+  content: "\e06c";
+}
+.entities-stackoverflow:before {
+  content: "\e07b";
+}
+.entities-telegram:before {
+  content: "\e087";
+}
+.entities-tumblr:before {
+  content: "\e08b";
+}
+.entities-twitch:before {
+  content: "\e08c";
+}
+.entities-twitter:before {
+  content: "\e08d";
+}
+.entities-wikipedia:before {
+  content: "\e09a";
+}
+.entities-youtube:before {
+  content: "\e0a5";
+}
+.entities-slack:before {
+  content: "\e918";
+}
+.entities-gitlab:before {
+  content: "\e945";
+}
+.entities-hackerone:before {
+  content: "\e956";
+}
+.entities-hackernews:before {
+  content: "\e946";
+}
