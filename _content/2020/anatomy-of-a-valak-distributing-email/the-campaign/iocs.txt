@@ -1,0 +1,60 @@
+# iocs.txt
+# Part of the following article: https://chris.partridge.tech/2020/anatomy-of-a-valak-distributing-email/the-campaign/
+# Published: June 1, 2020
+#
+# A small set of non-comprehensive IOCs collected during investigation into a small, Valak-delivering spearphishing campaign.
+# License: CC BY 2.0, ref: https://creativecommons.org/licenses/by/2.0/legalcode
+
+# Phishing email source IP
+# Likely a compromised end user, reported to Spectrum, should be disinfected shortly
+172.223.74.245
+
+# Initial download URL
+http://p57zu1p9b3au2w6ghu.com/urvave/cennc.php?l=haao9.cab
+
+# C2 Domains
+az361816.vo.msecnd.net
+msnbot-207-46-194-33.search.msn.com
+ec.atdmt.com
+lenceria2000.com
+syflzy.com
+7ayatok.com
+qqqf3d189430.com
+qqqabee1d18255e.com
+
+# Filepaths
+C:\ProgramData\26163563.dat
+C:\Users\Public\anFJjtYxH.eB_c_
+
+# All hashes are listed in the following order:
+# ZIP -> a campaign-specific encrypted ZIP file, name redacted
+# DOC -> Word document with VBA which was distributed in the ZIP file, originally titled documents_05.20.doc
+#      > also available on MalShare https://malshare.com/sample.php?action=detail&hash=a62f6e06fdb1e240d7a42f5143c40e1f
+# CAB -> the Valak installer, originally downloaded as haao9.cab and saved to C:\ProgramData\26163563.dat
+#      > also available on MalShare https://malshare.com/sample.php?action=detail&hash=638777032ca1d680b1168a0b0f30518f
+# JS2 -> Valak C2 JavaScript with hardcoded key, downloaded as anFJjtYxH.eB_c_
+#      > available on my site here https://chris.partridge.tech/2020/anatomy-of-a-valak-spearphish/valak-c2-js.txt
+
+# SHA256
+# Normal SHA256 hashes, but consider one of the fuzzy hash options as there is frequently campaign-specific data in these files (ex. ZIP/JS2)
+afe51073274d2f55bffa0b6e939884904656afc736a0214dae7a6876bfdb2335
+4c11bc9186737b6cf575753fd5d2d9ed2d1e3fab3e976f96fd1f50d436578805
+3d9e0c4059e476a06f09c972f44172a4b0ba058caddc122556006f15139d6464
+4e935c16494b39539657315cb89f4633ce1d88a3cd00708d2ef68690b00f1055
+
+# ssdeep
+# Context triggered piecewise (fuzzy) hashes - fast & industry standard - ref: https://ssdeep-project.github.io/ssdeep/index.html
+1536:tHGIrNLcmFh/f64oONBxnu4Gwuv8zPvA/9CDE6teaRJ:QIrK4oONvu58zHA1e0C
+1536:w3PNfrRUJf+5Io6FgOXId783KrWNq8arYa/BW1NAk/:YPNTihg5R83KKurX/B4NL/
+3072:cctevH9qPc25JZymHhbeLcMpt+zdnR8PT2fnLOJvyiUoJhffGpLWJEfgNsXkWEiA:JU9qPZRyvLxEcgbiznfBWfg2kW+8sB
+192:7ArMWzTP6cWaSPKALdETW7FM8/EYWRsmYvDT4CnsRcXJsBhay:7ArMqicWXPzLMW7FhSMkzRcZsHay
+
+# TLSH
+# Trend Micro Locality Sensitive (fuzzy) Hashes - slower but often better than ssdeep - ref: https://github.com/trendmicro/tlsh
+T1706312A6F0A7059C179C49DFD74F24906622B37057C7BB16E32722BFE44AD5C28A4A2C
+T11D73F174BA51EC01FAD10A7B909ED1E6E2104F81B3E301A7398D76497F723B38E5DA85
+T13C048D7471C1C132E42D16385C21D4E8B7BEFD008A646D9772C91F2F6E3B9D18DA8BA6
+T1AF32C688B8679055A271B596CB0FD688FEE576531408D362B4BCD4047FB0C09A1B9FEC
+
+# Please also refer to Cybereason's Valak IOC list for more samples, registry keys, etc
+# ref: https://www.cybereason.com/hubfs/Valak%20IOCs.pdf

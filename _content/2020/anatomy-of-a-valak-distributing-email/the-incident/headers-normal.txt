@@ -1,0 +1,53 @@
+# headers-normal.txt
+# Part of the following article: https://chris.partridge.tech/2020/anatomy-of-a-valak-distributing-email/the-incident/
+# Published: June 2, 2020
+#
+# Normal headers from the un-compromised user's emails, to compare the phishing campaign's headers to.
+# License: CC BY 2.0, ref: https://creativecommons.org/licenses/by/2.0/legalcode
+
+Delivered-To: <my_email>
+Received: by 2002:ad4:5302:0:0:0:0:0 with SMTP id <id>;
+        Thu, 28 May 2020 10:11:14 -0700 (PDT)
+X-Google-Smtp-Source: <source_id>
+X-Received: by 2002:a92:da52:: with SMTP id <id>;
+        Thu, 28 May 2020 10:11:14 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1590685874; cv=none;
+        <arc_seal>
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        <arc_signature>
+ARC-Authentication-Results: i=1; mx.google.com;
+        spf=neutral (google.com: <smtp.email_server.com_ip> is neither permitted nor denied by best guess record for domain of <uncompromised_email>) smtp.mailfrom=<uncompromised_email>
+Return-Path: <uncompromised_email>
+Received: from <smtp.email_server.com> (<smtp.email_server.com>. [<smtp.email_server.com_ip>])
+        by mx.google.com with ESMTPS id <esmpts_id>
+        for <target_email>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 28 May 2020 10:11:13 -0700 (PDT)
+Received-SPF: neutral (google.com: <smtp.email_server.com_ip> is neither permitted nor denied by best guess record for domain of <compromised_email>) client-ip=<smtp.email_server.com_ip>;
+Authentication-Results: mx.google.com;
+        spf=neutral (google.com: <smtp.email_server.com_ip> is neither permitted nor denied by best guess record for domain of <uncompromised_email>) smtp.mailfrom=<uncompromised_email>
+Received: from <smtp.email_server.com> (unknown [<smtp.email_server.com_ip>]) by <relay.email_server.com_ip> (SMTP Server) with ESMTPS id <esmpts_id>; Thu, 28 May 2020 13:11:13 -0400 (EDT)
+X-Sender-Id: <uncompromised_email>
+Received: from <smtp.email_server.com> ([UNAVAILABLE]. [<smtp.email_server.com_ip>]) (using TLSv1 with cipher DHE-RSA-AES256-SHA) by 0.0.0.0:25 (trex/5.7.12); Thu, 28 May 2020 13:11:13 -0400
+Received: from <mbx.email_server.com>  ([<mbx/mex_ipv6>]) by <hub.email_server.com>  ([<mbx/hub_ipv6>]) with mapi id <id>; Thu, 28 May 2020 12:11:12 -0500
+From: <sender_name> <uncompromised_email>
+To: <my_email>
+Subject: <new_thread>
+Thread-Topic: <new_thread>
+Thread-Index: <thread_id>
+Importance: high
+X-Priority: 1
+Date: Thu, 28 May 2020 17:11:12 +0000
+Message-ID: <message_id>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [<sender_ip>]
+Content-Type: multipart/alternative; boundary="<boundary_1>"
+MIME-Version: 1.0
+X-Classification-ID: <classification_id>
+
+--b1
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable

