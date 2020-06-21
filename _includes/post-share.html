@@ -1,10 +1,10 @@
 
 <aside class="share">
-
-  <h5>Share this on 
-  <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" onclick="window.open(this.href, 'facebook-share', 'width=550,height=235');return false;">Facebook</a>, 
-  <a href="http://twitter.com/share?text={{page.title}}&amp;url={{ site.url }}{{ page.url }}&amp;hashtags={{ page.tags | join: ',' }}&amp;via=_tweedge" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">Twitter</a>,
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ page.url }}&amp;title={{page.title}}&amp;summary={{ page.description | url_encode }}" onclick="window.open(this.href, 'linkedin-share', 'width=550,height=400');return false;">Linkedin</a>, or
-  <a href="https://www.reddit.com/submit?title={{page.title}}&amp;url={{ site.url }}{{ page.url }}" onclick="window.open(this.href, 'reddit-share', 'width=800,height=600');return false;">Reddit</a>
-  </h5>
+  <h4>Share this on:  
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ page.url }}&amp;title={{page.title}}&amp;summary={{ page.description | url_encode }}" onclick="window.open(this.href, 'linkedin-share', 'width=550,height=400');return false;"><span class="entities-linkedin"></span></a>
+  <a href="http://twitter.com/share?text={{page.title}}&amp;url={{ site.url }}{{ page.url }}&amp;hashtags={{ page.tags | join: ',' }}&amp;via=_tweedge" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><span class="entities-twitter"></span></a>
+  <a href="https://news.ycombinator.com/submitlink?u={{ site.url | url_encode }}{{ page.url | url_encode }}&amp;description={{ page.title | url_encode }}" onclick="window.open(this.href, 'hackernews-share', 'width=550,height=375');return false;"><span class="entities-hackernews"></span></a>
+  <a href="https://www.reddit.com/submit?title={{page.title}}&amp;url={{ site.url }}{{ page.url }}" onclick="window.open(this.href, 'reddit-share', 'width=800,height=600');return false;"><span class="entities-reddit"></span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" onclick="window.open(this.href, 'facebook-share', 'width=550,height=235');return false;"><span class="entities-facebook"></span></a>
+  </h4>
 </aside>
