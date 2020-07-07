@@ -1,7 +1,7 @@
 
 # SEO settings
 title: tweedge's blog
-description: "A software security engineer's blog about his projects, research, philosophy, and career."
+description: "A security engineer's blog about his projects, research, philosophy, and career."
 keywords: "cybersecurity, hacking, software engineering, best practices, research, web, technology"
 url: https://chris.partridge.tech
 repo: https://github.com/partridge-tech/chris-blog
@@ -22,7 +22,7 @@ sass:
 # Author settings
 author:
   name     : Chris Partridge
-  job      : Product Security Engineer
+  job      : Security Engineer
   bio      : "I do cybersecurity things with a focus on effective software security and internet-scale research."
   thumb    : /images/profile.png
   email    : chris@partridge.tech
