@@ -165,6 +165,12 @@ hr {
   @extend .link;
 }
 
+.post sup {
+  a {
+    border-bottom: 0px;
+  }
+}
+
 .post {
   @extend .clearfix;
 }
@@ -203,5 +209,11 @@ hr {
     display: block;
     font-size: rem(12);
     color: darken($medium-gray-color, 10%);
+  }
+}
+
+.footnotes {
+  ol {
+    list-style-type: decimal;
   }
 }
