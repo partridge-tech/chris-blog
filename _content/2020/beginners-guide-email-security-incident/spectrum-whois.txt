@@ -1,5 +1,5 @@
 # spectrum-whois.txt
-# Part of the following article: https://chris.partridge.tech/2020/anatomy-of-a-valak-distributing-email/the-incident/
+# Part of the following article: https://chris.partridge.tech/2020/beginners-guide-email-security-incident/
 # Retrieved: June 1, 2020
 
 #

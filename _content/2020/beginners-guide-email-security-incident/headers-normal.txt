@@ -1,6 +1,6 @@
 # headers-normal.txt
-# Part of the following article: https://chris.partridge.tech/2020/anatomy-of-a-valak-distributing-email/the-incident/
-# Published: June 2, 2020
+# Part of the following article: https://chris.partridge.tech/2020/beginners-guide-email-security-incident/
+# Published: September 27, 2020
 #
 # Normal headers from the un-compromised user's emails, to compare the phishing campaign's headers to.
 # License: CC BY 2.0, ref: https://creativecommons.org/licenses/by/2.0/legalcode
