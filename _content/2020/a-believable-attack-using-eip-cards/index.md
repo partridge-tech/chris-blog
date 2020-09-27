@@ -5,10 +5,10 @@ permalink: /2020/a-believable-attack-using-eip-cards/
 description: "Turns out it would cost you between $1 and $1.50 in materials to pull off an EIP Card scam, plus procurement and assembly - the rapport you get from doing this is easily more valuable, and could be a viable attack in the real-world."
 date: 2020-06-07 00:00:00
 tags:
-- eip card
+- eip_card
 - vishing
 - phishing
-- social engineering
+- social_engineering
 - scam
 ---
 

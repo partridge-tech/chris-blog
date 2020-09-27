@@ -1,0 +1,62 @@
+# headers-phish.txt
+# Part of the following article: https://chris.partridge.tech/2020/beginners-guide-email-security-incident/
+# Published: September 27, 2020
+#
+# The very normal-looking headers of an phishing campaign that piggybacked off existing threads where possible.
+# License: CC BY 2.0, ref: https://creativecommons.org/licenses/by/2.0/legalcode
+
+Delivered-To: <target_email>
+Received: by 2002:a4f:6003:0:0:0:0:0 with SMTP id <id>;
+        Thu, 28 May 2020 06:31:14 -0700 (PDT)
+X-Google-Smtp-Source: <source_id>
+X-Received: by 2002:a92:bbdd:: with SMTP id <id>;
+        Thu, 28 May 2020 06:31:12 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1590672672; cv=none;
+        <arc_seal>
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        <arc_signature>
+ARC-Authentication-Results: i=1; mx.google.com;
+        dkim=pass header.i=@<email_server.com> header.s=<header_s> header.b=<header_b>;
+        spf=neutral (google.com: <smtp.email_server.com_ip> is neither permitted nor denied by best guess record for domain of <compromised_email>) smtp.mailfrom=<compromised_email>
+Return-Path: <compromised_email>
+Received: from <smtp.email_server.com> (<smtp.email_server.com>. [<smtp.email_server.com_ip>])
+        by mx.google.com with ESMTPS id <esmpts_id>
+        for <target_email>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 28 May 2020 06:31:12 -0700 (PDT)
+Received-SPF: neutral (google.com: <smtp.email_server.com_ip> is neither permitted nor denied by best guess record for domain of <compromised_email>) client-ip=<smtp.email_server.com_ip>;
+Authentication-Results: mx.google.com;
+        dkim=pass header.i=@<email_server.com> header.s=<header_s> header.b=<header_b>;
+        spf=neutral (google.com: <smtp.email_server.com_ip> is neither permitted nor denied by best guess record for domain of <compromised_email>) smtp.mailfrom=<compromised_email>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=<email_server.com>;
+        <dkim_signature>
+X-Auth-ID: <compromised_email>
+Received: by <relay.email_server.com> (Authenticated sender: <compromised_email>) with ESMTPSA id <id>
+        for <target_email>; Thu, 28 May 2020 09:31:09 -0400 (EDT)
+X-Sender-Id: <compromised_email>
+Received: from localhost (172-223-074-245.res.spectrum.com [172.223.74.245])
+        (using TLSv1.2 with cipher DHE-RSA-AES128-GCM-SHA256)
+        by 0.0.0.0:587 (trex/5.7.12);
+        Thu, 28 May 2020 09:31:11 -0400
+Date: Thu, 28 May 2020 13:30:55 +0000
+To: <target_email>
+From: <sender_name> <compromised_email>
+Subject: Re: <exiting_thread>
+Message-ID: <message_id>
+X-Mailer: Microsoft Office Outlook 12.0
+References: <thread_id>
+In-Reply-To: <thread_id>
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+        boundary=<boundary_1>
+X-Classification-ID: <classification_id>
+
+This is a multi-part message in MIME format.
+
+--b1
+Content-Type: multipart/alternative;
+        boundary=<boundary_2>
+
+--b2
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
