@@ -5,7 +5,6 @@ permalink: /2020/beginners-guide-email-security-incident/
 description: "A student-friendly post about email, collecting evidence, forming hypotheses, and responding to a real-world incident with imperfect information. Batteries, references, and source materials included."
 date: 2020-09-27 00:00:00
 tags:
-- valak
 - malware
 - phishing
 - email

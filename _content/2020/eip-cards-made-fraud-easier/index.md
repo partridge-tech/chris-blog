@@ -5,11 +5,10 @@ permalink: /2020/eip-cards-made-fraud-easier/
 description: "Who thought distributing debit cards in unmarked envelopes that predominantly reference a non-.gov domain was a good idea? I almost threw it away, then thought I had my identity stolen, then got so frustrated I wrote this post."
 date: 2020-06-06 00:00:00
 tags:
-- eip card
-- eip card safety
+- eip_card
 - vishing
 - phishing
-- social engineering
+- social_engineering
 - scam
 - rant
 ---
