@@ -11,11 +11,11 @@ tags:
 - guide
 ---
 
-About seven years ago I picked up IT consulting to keep my pockets padded in high school, and frequently worked small jobs with SMB clients in my sleepy hometown. I've been out of the business for a while, but got a text from a client requesting security support for an incident where their email was used to send out a bunch of phishing emails. So, I pitched in a few hours and had a jolly good security adventure re-learning about email security.
+About seven years ago I picked up IT consulting to keep my pockets padded in high school, and frequently worked small jobs with SMB clients in my sleepy hometown. I've been out of the business for a while, but got a text from a client requesting security support for an incident where their email was used to send out a bunch of phishing emails. So, I pitched in a few hours and had a fun security adventure re-learning about the ambient nightmare that is email security.
 
 What immediately struck me about this was that despite targeting a very small business (10-20 employees), this malware campaign was exceptionally well-done. From initial compromise all the way to delivered emails, every part of this attack was executed using modern techniques, minimizing the chance that emails from this campaign would be detected and stopped.
 
-This post will focus more on discovering, gathering evidence for, and responding to a potential email security issue. To throw a wrench in the information machine, it's an all-remote task without access to impacted systems - only written and voice correspondence with a few ex-clients - so we'll have to carefully establish our claims throughout.
+This post will focus principally on discovering, gathering evidence for, and responding to a potential email security issue. To throw a wrench in the information machine, it's an all-remote task without access to impacted systems - only written and voice correspondence with a few ex-clients - so we'll have to carefully establish our claims throughout.
 
 Where possible, I've made this batteries-included for security beginners and attached screenshots, text dumps, etc. so novice security engineers can learn more about email-based incidents. All information has been sanitized to maintain the privacy of impacted clients. So, let's jump in!
 
