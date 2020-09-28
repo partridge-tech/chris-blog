@@ -114,7 +114,7 @@ There wasn't much for me to help with that Alice, being the phenomenal client th
 
 Additionally, I compiled evidence and sent a detailed account of the incident to [Spectrum's abuse team](https://community.spectrum.net/discussion/162066/reporting-internet-abuse) so they could notify the infected customer and (ideally) prevent further misuse.
 
-No further email security incidents have occurred since Alice switched to stronger passwords. Ideally, Alice's business would move to an email provider which supports 2FA and has stronger DKIM settings in the future - though I can't complain much about their DMARC settings, they're still doing better than 65% of the [SaaS top 1000](https://s3.amazonaws.com/250ok-wordpress/wp-content/uploads/2018/07/31203230/Aggregate-DMARC-Report-2018.pdf) were in 2018, a fine feat for a small and generally low-risk business.
+No further email security incidents have occurred since Alice switched to stronger passwords. Ideally, Alice's business would move to an email provider which supports 2FA and has stronger DMARC settings in the future - though I can't complain much about their DMARC, they're still doing better than 65% of the [SaaS top 1000](https://s3.amazonaws.com/250ok-wordpress/wp-content/uploads/2018/07/31203230/Aggregate-DMARC-Report-2018.pdf) were in 2018, a fine feat for a small and generally low-risk business.
 
 ## Further Work
 
