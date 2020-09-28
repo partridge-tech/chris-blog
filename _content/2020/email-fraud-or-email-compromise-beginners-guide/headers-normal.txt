@@ -1,5 +1,5 @@
 # headers-normal.txt
-# Part of the following article: https://chris.partridge.tech/2020/beginners-guide-email-security-incident/
+# Part of the following article: https://chris.partridge.tech/email-fraud-or-email-compromise-beginners-guide/
 # Published: September 27, 2020
 #
 # Normal headers from the un-compromised user's emails, to compare the phishing campaign's headers to.

@@ -1,5 +1,5 @@
 # spectrum-whois.txt
-# Part of the following article: https://chris.partridge.tech/2020/beginners-guide-email-security-incident/
+# Part of the following article: https://chris.partridge.tech/email-fraud-or-email-compromise-beginners-guide/
 # Retrieved: June 1, 2020
 
 #

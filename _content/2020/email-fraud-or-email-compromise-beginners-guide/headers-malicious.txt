@@ -1,5 +1,5 @@
 # headers-phish.txt
-# Part of the following article: https://chris.partridge.tech/2020/beginners-guide-email-security-incident/
+# Part of the following article: https://chris.partridge.tech/email-fraud-or-email-compromise-beginners-guide/
 # Published: September 27, 2020
 #
 # The very normal-looking headers of an phishing campaign that piggybacked off existing threads where possible.

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Beginner's Guide to an Email Security Incident"
-permalink: /2020/beginners-guide-email-security-incident/
+title: "Email Fraud or Email Compromise: A Beginner's Guide"
+permalink: /2020/email-fraud-or-email-compromise-beginners-guide/
 description: "A student-friendly post about email, collecting evidence, forming hypotheses, and responding to a real-world incident with imperfect information. Batteries, references, and source materials included."
 date: 2020-09-27 00:00:00
 tags:
@@ -31,7 +31,7 @@ On the morning of May 28th, 2020, a former client of mine has a potential incide
 At that point, Alice reached out to me over text and email, sending a copy of a suspicious email one of their clients forwarded back to them. After removing their personal information, it looked like this:
 
 {:refdef: style="text-align: center;"}
-![gone phishing](/2020/beginners-guide-email-security-incident/email.png)
+![gone phishing](/2020/email-fraud-or-email-compromise-beginners-guide/email.png)
 {: refdef}
 
 It was simple, but well in-line with Alice's normal formatting and had a pixel-perfect signature, both the format and details were correct. We couldn't establish whether or not all the other emails that went out were similar - since we could only see the one - so I began to investigate and rule out potential attack vectors.
@@ -83,11 +83,11 @@ X-Mailer: Microsoft Office Outlook 12.0
 References: <thread_id>
 ```
 
-The rest of the headers are available [here](/2020/beginners-guide-email-security-incident/headers-malicious.txt) as well, but unfortunately it's clear: something logged in to Alice's SMTP server as an `Authenticated sender:` for Alice's email. This is certified by the SPF and DKIM information - while SPF is 'neutral', the DKIM signature was valid and correct, so Alice's email server had signed the email.
+The rest of the headers are available [here](/2020/email-fraud-or-email-compromise-beginners-guide/headers-malicious.txt) as well, but unfortunately it's clear: something logged in to Alice's SMTP server as an `Authenticated sender:` for Alice's email. This is certified by the SPF and DKIM information - while SPF is 'neutral', the DKIM signature was valid and correct, so Alice's email server had signed the email.
 
-Interestingly, the listed connecting IP (172.223.74.245) is a residential Spectrum/Charter address per its [WHOIS](/2020/beginners-guide-email-security-incident/spectrum-whois.txt) and has a clean bill of health - no suspicious ports open, and no appearances in public threat or spam [feeds](https://www.ipvoid.com/ip-blacklist-check/). The only thing amiss is its presumed geolocation - while this can be [inaccurate](https://support.maxmind.com/geoip-faq/geoip2-and-geoip-legacy-databases/how-accurate-are-your-geoip2-and-geoip-legacy-databases/), it's reported as Cleburne, Texas, USA by all major [GeoIP](https://www.iplocation.net/) services as of writing - far from NY, USA.
+Interestingly, the listed connecting IP (172.223.74.245) is a residential Spectrum/Charter address per its [WHOIS](/2020/email-fraud-or-email-compromise-beginners-guide/spectrum-whois.txt) and has a clean bill of health - no suspicious ports open, and no appearances in public threat or spam [feeds](https://www.ipvoid.com/ip-blacklist-check/). The only thing amiss is its presumed geolocation - while this can be [inaccurate](https://support.maxmind.com/geoip-faq/geoip2-and-geoip-legacy-databases/how-accurate-are-your-geoip2-and-geoip-legacy-databases/), it's reported as Cleburne, Texas, USA by all major [GeoIP](https://www.iplocation.net/) services as of writing - far from NY, USA.
 
-To confirm this is not likely malware on Alice's machine (just in case GeoIP providers got this wrong), we'll compare those malicious headers against Alice's email headers (available [here](/2020/beginners-guide-email-security-incident/headers-normal.txt)) from when they forwarded information to me:
+To confirm this is not likely malware on Alice's machine (just in case GeoIP providers got this wrong), we'll compare those malicious headers against Alice's email headers (available [here](/2020/email-fraud-or-email-compromise-beginners-guide/headers-normal.txt)) from when they forwarded information to me:
 
 ```
 Received: from <smtp.email_server.com> (unknown [<smtp.email_server.com_ip>]) by <relay.email_server.com_ip> (SMTP Server) with ESMTPS id <esmpts_id>; Thu, 28 May 2020 13:11:13 -0400 (EDT)
