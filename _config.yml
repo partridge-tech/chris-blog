@@ -18,6 +18,10 @@ sass:
   sass_dir: scss
   style: compressed # expanded
 
+# HTML compression configuration http://jch.penibelst.de/
+compress_html:
+  comments: all
+
 # Author settings
 author:
   name     : Chris Partridge
