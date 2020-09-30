@@ -16,34 +16,20 @@ Also, if you get mail that looks like this, it might *actually* be a scam or a p
 
 # The Envelope
 
-{:refdef: style="text-align: center;"}
 ![envelope front](/2020/eip-cards-made-fraud-easier/envelope-front.png)
-{: refdef}
 
-{:refdef: style="text-align: center;"}
 ![envelope back](/2020/eip-cards-made-fraud-easier/envelope-back.png)
-{: refdef}
 
 # Main Page (With and Without Card)
 
-{:refdef: style="text-align: center;"}
 ![metabank front with card](/2020/eip-cards-made-fraud-easier/metabank-front-card.png)
-{: refdef}
 
-{:refdef: style="text-align: center;"}
 ![metabank front without card](/2020/eip-cards-made-fraud-easier/metabank-front-clear.png)
-{: refdef}
 
-{:refdef: style="text-align: center;"}
 ![metabank back](/2020/eip-cards-made-fraud-easier/metabank-back.png)
-{: refdef}
 
 # Insert
 
-{:refdef: style="text-align: center;"}
 ![federal front](/2020/eip-cards-made-fraud-easier/federal-front.png)
-{: refdef}
 
-{:refdef: style="text-align: center;"}
 ![federal back](/2020/eip-cards-made-fraud-easier/federal-back.png)
-{: refdef}

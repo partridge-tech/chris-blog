@@ -30,9 +30,7 @@ On the morning of May 28th, 2020, a former client of mine has a potential incide
 
 At that point, Alice reached out to me over text and email, sending a copy of a suspicious email one of their clients forwarded back to them. After removing their personal information, it looked like this:
 
-{:refdef: style="text-align: center;"}
 ![gone phishing](/2020/email-fraud-or-email-compromise-beginners-guide/email.png)
-{: refdef}
 
 It was simple, but well in-line with Alice's normal formatting and had a pixel-perfect signature, both the format and details were correct. We couldn't establish whether or not all the other emails that went out were similar - since we could only see the one - so I began to investigate and rule out potential attack vectors.
 

@@ -19,9 +19,7 @@ So for background, I have an [LLC](https://mns.llc), which means a physical addr
 
 Now, this post isn't about how junk mail generates [millions of tons](https://web.archive.org/web/20081031060724/http://donotmail.org/downloads/ClimateReport.pdf) of greenhouse gases. That's a travesty for sure, but it's not what got me riled up *today*. This is about one particular piece of 'junk' mail - one that millions of Americans have had to be [warned](https://www.cnbc.com/2020/06/05/how-to-replace-your-stimulus-debit-card-if-you-threw-it-away.html) *not* to throw out by accident. What was it? My COVID relief money, of all things.
 
-{:refdef: style="text-align: center;"}
 ![Crazy, right?](/2020/eip-cards-made-fraud-easier/post-header.png)
-{: refdef}
 
 Since I'm a certifiable security goon, this post will talk about the many issues with how certain CARES Act funds are being distributed. I'll critique some bad advice the internet has had for validating EIP cards, and provide recommendations on how to make this better, both now for future distribution of relief funds.
 
