@@ -87,10 +87,12 @@ function setDefaultCacheControl(extension) {
       return "max-age=1209600"
 
     /* FOUR DAY CACHE
-     * For: css, manifests
+     * For: css, js, manifests
      * Changes: likely but infrequent
      */
     case "css":
+      return "max-age=345600"
+    case "js":
       return "max-age=345600"
     case "webmanifest":
       return "max-age=345600"
@@ -115,7 +117,7 @@ function createResponseWithHeaders(body, page, cache) {
   response.headers.set('X-XSS-Protection', '1; mode=block')
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('X-Frame-Options', 'DENY')
-  response.headers.set('Content-Security-Policy', 'default-src https://chris.partridge.tech:443; script-src https://static.cloudflareinsights.com:443')
+  response.headers.set('Content-Security-Policy', 'default-src https://chris.partridge.tech:443')
   response.headers.set('Referrer-Policy', 'no-referrer-when-downgrade')
 
   return response
