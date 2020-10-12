@@ -2,6 +2,6 @@
 
 The files distributed at and below this point in the repository tree are part of a malicious extension, which switches a browser's user agent to the user's preferred agent, and also abuses the user's Facebook and Instagram accounts for artificial influencer promotion. It could also be used for higher-impact purposes, and should be considered dangerous if run as it gives an external party significant control over your browser.
 
-While it can be included in this repository safely, do not package and load this extension into your Chrome browser, as that would run it.
+While its content can be included in this repository safely, do not package and load this extension into your Chrome browser, as that would run it. Which is bad.
 
 More information is available on my [article](https://chris.partridge.tech/2020/inside-user-agent-switcher-malicious-extension/) about this malicious extension.
