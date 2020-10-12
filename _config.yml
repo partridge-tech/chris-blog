@@ -47,7 +47,7 @@ gems:
   - jekyll-target-blank
 
 # do not publish
-exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md", "workers-site", "wrangler.toml", "LICENSE", "scss"]
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md", "workers-site", "wrangler.toml", "LICENSE", "scss", "*/no-publish/*"]
 
 # collections
 collections:

@@ -1,0 +1,33 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "img/icon19.png",
+         "38": "img/icon38.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "User-Agent Switcher"
+   },
+   "content_scripts": [ {
+      "js": [ "js/content.min.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "User-Agent Switcher is a quick and easy way to switch between user-agents.",
+   "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "48": "img/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAltuaqZFWZnHvTdRq0kIN1KxTRHeP1mjUw98Oy4oHy8LKqIsMicU9JR0tDkO0/faDbzotkKyE8rry3NLw54oUBd5TPq5zfueB7vxHauolbBNeaVcqoluqsCwwdLL4ZOKMlUd9XNiRM1fSPZKnCFethR/L2n42pFTE7nccKufsAhxWxbw9uZD/HJzIoUqo3571olcZvt9DNRt1HHG/gpjMfKAMMBZBAH6x40s1qyDbKPbIG2IvgJ22vLpMTuXt1u9+RTV0HHDTtdM9VfDutKLVnS9cluHqGK49zlz/48PoBsYeolyE011Q76SaTJgXkUvTzG9jJATJiksV75cvPqbCmQIDAQAB",
+   "manifest_version": 2,
+   "name": "User-Agent Switcher",
+   "offline_enabled": true,
+   "options_page": "options.html",
+   "permissions": [ "webRequest", "webRequestBlocking", "http://*/", "https://*/", "contextMenus" ],
+   "short_name": "User-Agent Switcher",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.0.1.0"
+}

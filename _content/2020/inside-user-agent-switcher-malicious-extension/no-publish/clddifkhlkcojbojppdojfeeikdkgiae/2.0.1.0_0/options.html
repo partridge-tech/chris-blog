@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User-Agent Switcher - Options</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/options.min.css" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/options.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container-narrow">
+
+        <div>
+            <h4>
+                <img src="img/icon48.png" />
+                User-Agent Switcher - Options</h4>
+        </div>
+
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#UserAgentsTab"><i class="icon-chevron-right"></i> User-Agents</a></li>
+            <li><a href="#SettingsTab"><i class="icon-chevron-right"></i> Settings</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="UserAgentsTab">
+                <label for="UserAgentGroup"><b>Group</b></label>
+                <div class="input-append">
+                    <select class="input-xlarge" id="UserAgentGroup" name="UserAgentGroup"></select>
+                    <button class="btn btn-success" data-action="NewGroup"><i class="icon-plus-sign icon-white"></i>New group</button>
+                    <button class="btn btn-danger" data-action="RemoveGroup"><i class="icon-remove icon-white"></i>Remove group</button>
+                </div>
+                <br />
+                <br />
+                <label for="UserAgents"><b>User-Agents</b></label>
+                <table id="UserAgents" class="table table-hover table-bordered table-striped">
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" style="text-align: center;">
+                                <button class="btn btn-success btn-large" data-action="NewUserAgent" data-id=""><i class="icon-plus-sign icon-white"></i>New User-Agent</button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="tab-pane" id="SettingsTab">
+                <label class="checkbox">
+                    <input id="rememberLastUsed" type="checkbox">
+                    Remember last used User-Agent at startup.
+                </label>
+            </div>
+        </div>
+
+        <div class="footer">
+            <hr>
+            <p>Don't forget to share this extension on <a href="https://www.facebook.com/sharer/sharer.php?u=https://chrome.google.com/webstore/detail/clddifkhlkcojbojppdojfeeikdkgiae">Facebook</a>, <a href="https://plus.google.com/share?url=https://chrome.google.com/webstore/detail/clddifkhlkcojbojppdojfeeikdkgiae">Google+</a> and <a href="http://twitter.com/intent/tweet?text=User-Agent Switcher&url=https://chrome.google.com/webstore/detail/clddifkhlkcojbojppdojfeeikdkgiae">Twitter</a> if you want others to find it.</p>
+            <p>You can also <a href="https://chrome.google.com/webstore/detail/clddifkhlkcojbojppdojfeeikdkgiae/reviews">rate this extension</a> if you like it.</p>
+        </div>
+
+    </div>
+
+    <div id="groupModalWindow" class="modal hide fade">
+        <div class="modal-body">
+            <label for="GroupName"><b>Group name</b></label>
+            <input class="input-block-level" id="GroupName" name="GroupName" type="text" value="" />
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            <button data-action="SaveGroup" class="btn btn-success">Save</button>
+        </div>
+    </div>
+
+    <div id="userAgentModalWindow" class="modal hide fade">
+        <div class="modal-body">
+            <input id="UserAgentId" type="hidden" value="" />
+            <label for="UserAgentName"><b>Name</b></label>
+            <input class="input-block-level" id="UserAgentName" name="UserAgentName" type="text" value="" />
+            <label for="UserAgentString"><b>User-Agent</b></label>
+            <input class="input-block-level" id="UserAgentString" name="UserAgentString" type="text" value="" />
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            <button data-action="SaveUserAgent" class="btn btn-success">Save</button>
+        </div>
+    </div>
+
+</body>
+</html>
