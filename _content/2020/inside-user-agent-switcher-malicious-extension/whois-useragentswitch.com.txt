@@ -1,3 +1,7 @@
+# whois-useragentswitch.com.txt
+# Part of the following article: https://chris.partridge.tech/2020/inside-user-agent-switcher-malicious-extension/
+# Retrieved: October 7, 2020
+
    Domain Name: USERAGENTSWITCH.COM
    Registry Domain ID: 2556150919_DOMAIN_COM-VRSN
    Registrar WHOIS Server: whois.namecheap.com

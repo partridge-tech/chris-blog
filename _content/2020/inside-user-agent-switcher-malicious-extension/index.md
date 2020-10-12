@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Inside 'User-Agent Switcher' Malware: The Dark Side of Influencer Marketing"
+title: "Inside 'User-Agent Switcher': The Dark Side of Influencer Promotion"
 permalink: /2020/inside-user-agent-switcher-malicious-extension/
 description: "In a dystopian future where 'followers' and 'likes' can turn one person's social media account into a million-dollar brand-deal powerhouse, those unoriginal enough will pay hundreds or thousands of dollars to try to enter the social media stratosphere through shady deals and malicious methods. Oh, wait."
 date: 2020-10-12 00:00:00
@@ -50,13 +50,13 @@ function setUserAgent(e, t, s, n) {
     for (var r, a = 0; a < userAgents.length; a)
 ```
 
-Even better, we got another lead only a few lines away. What is esolutions.se/whatsmyinfo? A quick Google search shows that [eSolutions Nordic AB](https://www.esolutions.se/) is a small development company - one which also dabbles in building useful Chrome extensions, such as... [User-Agent Switcher](https://chrome.google.com/webstore/detail/user-agent-switcher/aedikcfpfonanffanecfolneiaoakmlc)!
+Even better, we got another lead only a few lines away. What is `esolutions.se/whatsmyinfo`? A quick Google search shows that [eSolutions Nordic AB](https://www.esolutions.se/) is a small development company - one which also dabbles in building useful Chrome extensions, such as... [User-Agent Switcher](https://chrome.google.com/webstore/detail/user-agent-switcher/aedikcfpfonanffanecfolneiaoakmlc)!
 
 ![Chrome Web Store's User-Agent Switcher extension page (nonmalicious).](/2020/inside-user-agent-switcher-malicious-extension/store-uas-clean-small.png)
 
 Looks like our malware authors picked a common tactic: downloading an existing extension, inserting malware, uploading their malicious copy to the Chrome Web Store, and then [inflating the download count](https://www.theregister.com/2020/05/28/chrome_web_store_fraud/) to manipulate users into trusting it as "safe."
 
-Fortunately for us, this gives us a really powerful method to trim down the code we'll need to look through. Unpacking the clean UAS extension (including beautifying its JavaScript), aligning the file structure (to account for the different version folder), and [diffing](https://linux.die.net/man/1/diff) the two extension folders, only a few files are different: `js/background.min.js`, `js/bootstrap.min.js`, `js/JsonValues.min.js`, `manifest.json`, `_metadata/computed_hashes.json`, and `_metadata/verified_contents.json`. Eliminating irrelevant files (metadata and contents), as well as `js/bootstrap.min.js` which contains different *comments* but not different *code*, we're left with only two files to go through: `js/JsonValues.min.js` and `js/background.min.js`.
+Fortunately for us, this gives us a really powerful method to trim down the code we'll need to look through. Unpacking the clean User-Agent Switcher extension (including beautifying its JavaScript), aligning the file structure (to account for the different version folder), and [diffing](https://linux.die.net/man/1/diff) the two extension folders, only a few files are different: `js/background.min.js`, `js/bootstrap.min.js`, `js/JsonValues.min.js`, `manifest.json`, `_metadata/computed_hashes.json`, and `_metadata/verified_contents.json`. Eliminating irrelevant files (metadata and contents), as well as `js/bootstrap.min.js` which contains different *comments* but not different *code*, we're left with only two files to go through: `js/JsonValues.min.js` and `js/background.min.js`.
 
 #### js/JsonValues.min.js
 
@@ -64,7 +64,7 @@ Taking a look at the [diff](/2020/inside-user-agent-switcher-malicious-extension
 
 #### js/background.min.js
 
-With a much more complex [diff](/2020/inside-user-agent-switcher-malicious-extension/unpacked-contents.diff), `js/background.min.js` is the real "brain" of UAS malware, whose activity is deceptively simple. Removing the noise from the version and minification differences between the extensions we're comparing, the malicious content the author added is only ~30 lines long. While simple, it gives the malware author more than enough control over a user's browser to do nefarious things.
+With a much more complex [diff](/2020/inside-user-agent-switcher-malicious-extension/unpacked-contents.diff), `js/background.min.js` is the real "brain" of the User-Agent Switcher's malicious components, whose activity is deceptively simple. Removing the noise from the version and minification differences between the extensions we're comparing, the malicious content the author added is only ~30 lines long. While simple, it gives the malware author more than enough control over a user's browser to do nefarious things.
 
 ## Analysis
 
@@ -72,7 +72,7 @@ The way this malware works is fairly simple, since [Socket.IO](https://socket.io
 
 #### Initializing
 
-Chrome loads `background.html` on browser start, which in turn loads `js/background.min.js` and `js/JsonValues.min.js`. The first thing UAS does is initialize a WebSocket to its Command & Control server, which is a one-liner thanks to Socket.IO:
+Chrome loads `background.html` on browser start, which in turn loads `js/background.min.js` and `js/JsonValues.min.js`. The first thing User-Agent Switcher's malicious component does is initialize a WebSocket to its Command & Control server, which is a one-liner thanks to Socket.IO:
 
 ```js
 var userAgentSwitch = io("https://www.useragentswitch.com/");
@@ -97,7 +97,7 @@ async function createFetch(e) {
 
 #### Capturing Headers & Deobfuscating
 
-The second event hook that is added to the socket is to process `handlerData` events, which lists hosts that UAS would like to intercept headers on outgoing requests for - capturing session cookies, User-Agent strings, and more. UAS also registers a function titled `handler2` which is invoked on all outgoing web requests before the headers are sent, doing two important functions:
+The second event hook that is added to the socket is to process `handlerData` events, which lists hosts that User-Agent Switcher would like to intercept headers on outgoing requests for - capturing session cookies, User-Agent strings, and more. User-Agent Switcher also registers a function titled `handler2` which is invoked on all outgoing web requests before the headers are sent, doing two important functions:
 - Checking to see if the domain that a request is being made for is in our local `handlerData` object, and if so, sending an event via `emit()` to the Command and Control server with the headers of the request.
 - Removing any "obfuscating" `-zzz` strings in header parameters from `createFetch` events (presumably to defeat some part of the Chrome Web Store's malware detection capabilities), and reconstructing the headers afterwards.
 
@@ -148,9 +148,9 @@ The most important takeaway is that this malware, while simple, can be instructe
 - Send a `handlerData` event with PayPal's domain (www.paypal.com)
 - Send a `createFetch` event for PayPal's dashboard
 
-At that point, the malware author now has my session token, and could choose between executing requests remotely or on their own infrastructure (as they also have my browser information). If they chose to execute remotely, they would simply need to send more `createFetch` events to collect context (ex. how much money is in my account) and then POST transfer requests to PayPal's API. The only protection I have is that _maybe_ PayPal would ask me to reenter my password if the transfer account was large enough or the user is not known - which UAS (thankfully) wouldn't be able to bypass...
+At that point, the malware author now has my session token, and could choose between executing requests remotely or on their own infrastructure (as they also have my browser information). If they chose to execute remotely, they would simply need to send more `createFetch` events to collect context (ex. how much money is in my account) and then POST transfer requests to PayPal's API. The only protection I have is that _maybe_ PayPal would ask me to reenter my password if the transfer account was large enough or the user is not known - which extensions running in the background (thankfully) wouldn't be able to bypass without your password.
 
-That is, unless it was updated to. Modify money transfer requests so they will be sent to an attacker-controlled account would be a trivial change, and is functionally similar to how `handler` (from not-malicious UAS) and `handler2` hook to outgoing requests for rewriting. Further, it's unlikely that this behavior would be detected by Google's automatic and manual review processes, since they haven't detected this malware lurking on the Chrome Web Store.
+However, it could be updated to have functionality which would bypass the need for your password. Modifying money transfer requests so they will be sent to an attacker-controlled account would be a trivial change, and is functionally similar to how `handler` (from the clean version of User-Agent Switcher) and `handler2` hook to outgoing requests for rewriting. Further, it's unlikely that this behavior would be detected by Google's automatic and manual review processes, since they haven't detected the techniques used by this malware - as long as the hook was written similarly and didn't directly reference PayPal, it would probably be approved without a second thought.
 
 ## Taking Action
 
@@ -160,7 +160,7 @@ Which brings us to the most disappointing section - knowing more than enough abo
 
 Despite reaching the top of [r/cybersecurity](https://reddit.com/r/cybersecurity), getting some very bad reviews, and having a bunch of people (including me) report this extension to Google over the past week ([u/ufo56](https://reddit.com/user/ufo56)'s post was Tuesday, October 06 2020), it is currently still available for download from the Chrome Web Store.
 
-Any unsuspecting user that has this extension installed is still having their accounts manipulated for influencer marketing, and is at risk of becoming a victim to high-impact attacks on other web services they use - as they have been for *at least* one month (since the extension was updated on September 7th 2020, and possibly people have been at risk for much longer than that based on the oldest comments).
+Any unsuspecting user that has this extension installed is still having their accounts manipulated for influencer promotion, and is at risk of becoming a victim to high-impact attacks on other web services they use - as they have been for *at least* one month (since the extension was updated on September 7th 2020, and possibly people have been at risk for much longer than that based on the oldest comments).
 
 With the increased pressure from this writeup - and hopefully positive community response - I'm sure this malware will eventually be removed from the Chrome Web Store, which will automatically purge it from users who had installed it previously as well. However, that begs the question: if ufo56 didn't make a post on Reddit about this, or their post hadn't gained any traction, and they'd simply filed their report and moved on: how long would this malware remain on the Chrome Web Store? Would their one report have generated any action at all?
 
