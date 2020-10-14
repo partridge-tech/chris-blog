@@ -3,7 +3,7 @@ layout: post
 title: "Inside 'User-Agent Switcher' - a Malicious Extension"
 permalink: /2020/inside-user-agent-switcher-malicious-extension/
 description: "In a dystopian future where 'followers' and 'likes' can turn one person's social media account into a million-dollar brand-deal powerhouse, those unoriginal enough will pay hundreds or thousands of dollars to try to enter the social media stratosphere through shady deals and malicious methods. Oh, wait."
-date: 2020-10-13 00:00:00
+date: 2020-10-14 00:00:00
 tags:
 - malware
 - extension
