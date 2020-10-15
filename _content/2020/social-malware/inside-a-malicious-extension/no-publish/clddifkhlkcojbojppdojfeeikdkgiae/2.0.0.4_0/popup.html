@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User-Agent Switcher</title>
+    <link rel="stylesheet" href="css/style.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/popup.min.css" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popup.min.js"></script>
+</head>
+<body>
+    <div>
+        <b>Select a User-Agent:</b><br />
+        <select id="UserAgents" name="UserAgents" size="15"></select>
+    </div>
+    <br />
+
+    <div class="text-center">
+        <label>
+            <input id="rememberLastUsed" type="checkbox"><b>Remember last used User-Agent at startup.</b>
+        </label>
+    </div>
+    <br />
+
+    <div class="clearfix">
+        <div class="text-center" style="width:50%;float:left;">
+            <button class="btn btn-success" data-action="ShowOption">Options</button>
+        </div>
+        <div class="text-center" style="width:50%;float:right;">
+            <button class="btn btn-info" data-action="ShowUserAgent">Show User-agent</button>
+        </div>
+    </div>
+</body>
+</html>
