@@ -5,7 +5,7 @@ permalink: /2020/eip-cards-made-fraud-easier/letter/
 description: "It's a scam! It's identity theft! No, wait, it's actually what passes for 'effort' at a federal level!"
 date: 2020-06-06 00:00:00
 tags:
-- eip card safety
+- eip
 pagination: 
   enabled: false
 ---

@@ -1,0 +1,393 @@
+[Nano Adblocker]
+! Title: Nano Filters
+! Expires: 1 days
+! License: See source for license and credits
+! Source: https://github.com/NanoAdblocker/NanoFilters/tree/master/NanoFiltersSource/NanoBase.txt
+! This file is a compiled binary, do not modify
+! All modifications will be overwritten on the next build
+blockadblock.com##+js(bab-defuser.js)
+adzsafe.com##+js(noeval.js)
+@@||fuckadblock.sitexw.fr^$generichide
+@@||fuckadblock.sitexw.fr^$xhr,1p
+@@/fuckadblock.*.js$script,domain=fuckadblock.sitexw.fr
+captchme.com##+js(set-constant.js, CaptchmeState.adb, undefined)
+@@||whoer.net/js/advert.js$script,1p
+@@||detectadblock.com/dfp.js$script,1p
+canyoublockit.com##section:has-text(Advertisement)
+/wp-content/plugins/end-of-adblock-cycle/*
+/wp-content/plugins/pause-adblocker/*$domain=~roboticsandautomationnews.com
+||fastly.net/js/prebid-*$script,redirect=noopjs
+###adtoniq-msgr-bar
+||absorbingcorn.com^$important
+||acidpigs.com^$important
+||arcticamber.com^$important
+||breakfastboat.com^$important
+||brothersbucket.com^$important
+||butterburst.com^$important
+||calmcactus.com^$important
+||cannontwin.com^$important
+||carscannon.com^$important
+||culturedcrayon.com^$important
+||dampdock.com^$important
+||distinctday.com^$important
+||dk4ywix.com^$important
+||dollardelta.com^$important
+||doorbrazil.com^$important
+||emptyescort.com^$important
+||fadedsnow.com^$important
+||fearfulfish.com^$important
+||forecasttiger.com^$important
+||heavyplayground.com^$important
+||hocgeese.com^$important
+||honorablehall.com^$important
+||honorableland.com^$important
+||hypnoticwound.com^$important
+||jamexistence.com^$important
+||lameletters.com^$important
+||levelbehavior.com^$important
+||lumberamount.com^$important
+||maddeningpowder.com^$important
+||markedmeasure.com^$important
+||movemeal.com^$important
+||nullnorth.com^$important
+||oafishobservation.com^$important
+||pedropanther.com^$important
+||plainplayground.com^$important
+||preciouseffect.com^$important
+||profusesupport.com^$important
+||raintwig.com^$important
+||rebelsubway.com^$important
+||repeatsweater.com^$important
+||replaceroute.com^$important
+||roofrelation.com^$important
+||samestretch.com^$important
+||shockinggrass.com^$important
+||shyseed.com^$important
+||smallbeginner.com^$important
+||sortsummer.com^$important
+||sparklingnumber.com^$important
+||spellsalsa.com^$important
+||spottednoise.com^$important
+||squirrelhands.com^$important
+||stalesummer.com^$important
+||standtrouble.com^$important
+||texturetrick.com^$important
+||ubiquitousyard.com^$important
+||unbecominghall.com^$important
+||unequalbrake.com^$important
+msnbc.com,nbcnews.com,today.com##+js(abort-on-property-read.js, stop)
+@@||videolab.io^$generichide
+vizer.tv##.open.adsByVizer.vizerNewBox
+math.semestr.ru##+js(setInterval-defuser.js, IsAdBlock, 1000)
+@@||mobilinks.info^$generichide
+mobilinks.info##ins.adsbygoogle
+mobilinks.info##+js(nano-setInterval-booster.js)
+mobilinks.info###custom_html-2:has-text(ADs)
+mobilinks.info##div > span:has-text(AdBlock)
+@@||blockersurvive.com^$generichide
+blockersurvive.com,blockergame.com##.ads > .ads-body > .ads-content > div
+blockersurvive.com,blockergame.com##.ads > .ads-body:style(background: initial !important;)
+developpez.com##div:has(:scope > [id^="gabarit_pub"])
+@@||vorek.pl^$generichide
+@@||vorek.pl/*/js/ads.js$script,1p
+@@||egarwolin.pl/static/js/ads.js$script,1p
+download.inventivetalent.org##div:has(:scope > div > button.choice-adfly)
+myegy.tv##.disclaimer:has-text(Ad-Blocker)
+elespanol.com###adblock_modal
+encyclopediadramatica.rs###siteNotice center:has-text(AdBlock)
+funnygames.*#@#.afs_ads
+bham.pl##body > div:has-text(UWAGA:)
+brainly.co.id##.brn-ads-box
+brainly.*##.brn-ab-detection-screening
+sms-receive.net##+js(abort-current-inline-script.js, $, AdBlock Plus)
+@@||richmond-news.com/gmg/*/js/ads.js$script,1p
+smods.ru###ab-warning
+opengapps.org##.advertisement
+fmovies.*##.alert.alert-warning:has-text(AdBlock)
+userscloud.com##.alert.alert-info:has-text(AdBlock)
+webinsider.pl##+js(setTimeout-defuser.js, AdBlock)
+multifilemirror.com##.noticeContainer:has-text(Ad-blocking)
+multifilemirror.com##.blockContainer:has-text(Ad-blocking)
+masrawy.com###AdBlockerNotif
+whatsmydns.net##.ad
+||fosshub.com/index/donateQ$subdocument
+eurogamer.it##+js(abort-on-property-read.js, _sp_.mms.startMsg)
+wusa9.com##.fc-pinned-message-container.fc-root
+bigspeeds.com##.link-error:has-text(Advertisers)
+||3dzone.link/wp-content/uploads/2018/05/Disable-Adblock-in-Blogger-Blogs-300x158.png$image
+readthedocs.io##.keep-us-sustainable
+||readthedocs.org/api/v2/sustainability/$script,redirect=noopjs
+camwhores.tv##body > div.top:has-text(AdBlock)
+camwhores.tv##body > div:matches-css(z-index: 9999999)
+camwhores.tv##body > div:matches-css(z-index: 9999998)
+imore.com##.swal-overlay
+imagebam.com###hideifpossible
+imgdew.pw##.adbwarning
+teemo.gg##section:has(:scope > div.alert:has-text(adblock))
+2ality.com##.ad-box
+smashboards.com##.funboxWrapper:has(#noticeMain)
+@@||belfasttelegraph.co.uk^$generichide
+belfasttelegraph.co.uk##.adsbygoogle
+belfasttelegraph.co.uk##.advert
+@@||release-apk.com^$generichide
+release-apk.com##[id*="ScriptRoot"]
+unlockapk.com###detect
+@@||nzz.ch^$generichide
+nzz.ch##.pageblock.recommendations
+@@||megaup.net/ads.js$script,1p
+beinsports.com,dumpert.nl,haberturk.com##+js(abort-current-inline-script.js, Uint8Array, googlefcPresent)
+mizonatv.com##.aviso-publicidad-sup
+solarmovie.fun##.hhotnews:has-text(AdBlocker)
+mdlinx.com##+js(nostif, show)
+mdlinx.com##.dfp-ad-outer
+outlook.live.com##a[href="https://windows.microsoft.com/outlook/ad-free-outlook"]:upward(4)
+outlook.live.com##[aria-label="advertisement"]:upward(3)
+uploadship.com##.pageErrors:has-text(AdBlock):upward(center)
+@@||html-online.com^$generichide
+raiplay.it##.tagManagerError
+sportsnet.ca##+js(abort-on-property-read.js, uxGuid)
+ekb.dk.ru##+js(setTimeout-defuser.js, myBox, 3000)
+new.torrnado.win##+js(set-constant.js, block, false)
+relyonhorror.com##+js(setTimeout-defuser.js, checkAdStatus, 500)
+evworld.com##+js(setTimeout-defuser.js, ads, 2000)
+androidrepublic.org##.samSupportUs
+globalnews.ca##+js(set-constant.js, GNCA_Ad_Support, true)
+@@||socialblade.com^$generichide
+gamepedia.com###bodyContent:style(width: 100% !important;)
+realcleardefense.com##+js(set-constant.js, warning_widget.check_ad_block_status, noopFunc)
+@@||myfavoritecontent.com/js/ads.js$script,1p
+techradar.com##+js(abort-on-property-read.js, _sp_._networkListenerData)
+xxlmag.com##.brave-bling-overlay
+mydramalist.com##.spnsr_right
+mydramalist.com##.spnsr-wrapper
+kimcartoon.me##.top_page_alert
+files.minecraftforge.net##.ad-container
+phillymag.com##.gtp-ad
+xclient.info##+js(set-constant.js, killads, true)
+tv.mademyday.com##.blnotice
+iosgods.com##+js(abort-on-property-write.js, CheckAdLoad)
+@@||wftrader.com^$generichide
+minijuegos.com###adBlockDisclaimer
+emurom.net##+js(set-constant.js, adblock, 1)
+9xbuddy.app##+js(setTimeout-defuser.js, isDetected, 2000)
+newatlas.com,pgatour.com,sevenforums.com,theodysseyonline.com##+js(abort-on-property-read.js, admiral)
+punto-informatico.it##+js(abort-on-property-read.js, blazemedia_adBlock)
+wyff4.com##+js(setTimeout-defuser.js, [native code], 500)
+@@||ps3-infos.fr^$generichide
+tweakers.net##.notificationsContainer:has-text(whitelisten of beleef Tweakers)
+motherjones.com##.mj-adblock-widget
+gearside.com##+js(set-constant.js, nebula.session.flags.adblock, undefined)
+zerohedge.com###abd-banner
+eca-anime.net##+js(abort-current-inline-script.js, document.getElementById, advert-tester)
+columbiaspectator.com##+js(setTimeout-defuser.js, ads, 2000)
+@@||knshow.com^$generichide
+knshow.com##.adsbygoogle
+knshow.com##div[id^="div-gpt-ad-"]
+tvtropes.org##+js(set-constant.js, valid_user, true)
+||global.proper.io/tvtropes.min.js$script,redirect=noopjs,domain=tvtropes.org
+@@||justtrucks.com.au^$generichide
+@@||justtrucks.com.au^$image
+justtrucks.com.au##+js(set-constant.js, Drupal.behaviors.detectAdblockers, noopFunc)
+mediafire.com##+js(abort-current-inline-script.js, document.getElementById, adblocker)
+mediafire.com##+js(setTimeout-defuser.js, scan, 500)
+flyertalk.com##+js(abort-current-inline-script.js, $, AdBlock)
+@@||nyt.com/ads/google/adsbygoogle.js$script,domain=nytimes.com
+@@||programiz.com^$xhr,1p
+gecce.com.tr##+js(set-constant.js, fakeadloaded, true)
+esercizinglese.com,pelisfull.tv##+js(abort-on-property-write.js, adBlockDetected)
+masternodes.pro###adblocker
+ancient.eu##+js(set-constant.js, ADBdetected, noopFunc)
+foodnetwork.com##.o-AdhesionNotifier
+sabishiidesu.com##+js(abort-on-property-write.js, adBlockDetected)
+gota.io##+js(abort-on-property-read.js, fuckAdBlock)
+majorgeeks.com##+js(abort-on-property-read.js, admiral)
+discord.club##+js(abort-current-inline-script.js, document.getElementById, adsChecker)
+bucketpages.com##+js(setTimeout-defuser.js, #advert-tracker, 500)
+@@||orlygift.com^$generichide
+orlygift.com##.ad-container-responsive
+orlygift.com##div[id^="div-gpt-ad"]
+@@||dermatologytimes.com^$generichide
+cfouca.fr##+js(set-constant.js, sgpbCanRunAds, true)
+||pagead2.googlesyndication.com^$xhr,redirect-rule=noopjs,domain=maxedtech.com
+polygon.com##+js(abort-on-property-write.js, loadOutbrain)
+##.adblock-whitelist-messaging__article-wrapper
+##.adblock-whitelist-messaging__wrapper
+@@||topspeed.com^$generichide
+webwereld.nl##+js(set-constant.js, adsAreShown, true)
+sbenny.com##+js(setTimeout-defuser.js, (), 2000)
+forum.sbenny.com##.message-inner:has(.ads)
+102bank.com,80beyond.spacestation-online.com,b4usa.com,badgerandblade.com,mzk.starachowice.eu##+js(abort-on-property-write.js, adBlockDetected)
+abcinema.tk##+js(abort-on-property-write.js, KillAdBlock)
+howjsay.com##+js(setTimeout-defuser.js, (), 1500)
+endocrineweb.com##+js(abort-on-property-read.js, admiral)
+@@||soundonsound.com^$generichide
+theverge.com##+js(setTimeout-defuser.js, (), 1500)
+wheel-size.com##+js(set-constant.js, detector_active, true)
+@@||xnxx.com^$generichide
+@@||pagead2.googlesyndication.com/pagead/*$image,domain=free-scores.com
+gardenista.com##+js(set-constant.js, adsAreBlocked, false)
+||fastly.net/js/prebid$script,redirect=noopjs,domain=spanishdict.com
+@@||freetls.fastly.net/js/_ads$script,domain=spanishdict.com
+spanishdict.com##.ad-wrapper
+windowscentral.com##.swal-modal, .swal-overlay
+randaris.app##.adblock-box
+vox.com##+js(setTimeout-defuser.js, adsBlocked)
+androidcentral.com##.swal-overlay
+@@||eppingforestguardian.co.uk^$generichide
+eppingforestguardian.co.uk##.dfp-ad
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,domain=yellowbridge.com
+@@||space.com^$generichide
+ruwix.com##+js(setTimeout-defuser.js, NoAd, 8000)
+@@||cloudfront.net/ad/ads.js$script,domain=der-postillon.com
+@@||byggahus.se^$generichide
+byggahus.se###ad-zone-panorama
+@@||linuxliteos.com/css/advert.css$css,1p
+polygon.com##+js(setTimeout-defuser.js, adsBlocked)
+twinkietown.com##+js(setTimeout-defuser.js, adsBlocked)
+@@||hackingleaks.com^$generichide
+@@||hackingleaks.com/ad/*$xhr,1p
+@@||dcdirtylaundry.com^$generichide
+@@||sostariffe.it^$generichide
+@@||notify.medicalnewstoday.com/ads.html$frame,1p
+medicalnewstoday.com##.sticky_ad_container
+buienradar.nl##+js(set-constant.js, hideBannerBlockedMessage, true)
+buienradar.nl###adholderContainerHeader
+techonthenet.com###sabl
+techonthenet.com###pre_header
+techonthenet.com##.bottom_slot
+techonthenet.com##.left_slot
+techonthenet.com##.hidden-print.row
+autoblog.com##.modal, .modal-backdrop
+autoblog.com##body:style(overflow-x: hidden !important; overflow-y: scroll !important;)
+glamourmagazine.co.uk##+js(set-constant.js, ads_not_blocked, true)
+9xbuddy.com##+js(setTimeout-defuser.js, adsbygoogle)
+lookmovie.ag##+js(setTimeout-defuser.js, __ext_loaded)
+heidisql.com##+js(setTimeout-defuser.js, increaserev)
+@@||ratemyprofessors.com^$generichide
+anisearch.com#@##bannerads
+surviv.io##+js(abort-on-property-write.js, adBlockDetected)
+surviv.io###ad-block-left
+nl.hardware.info##body > div:nth-of-type(1) > div:has-text(adblocker)
+nl.hardware.info##.sidebar_right_bottom
+nl.hardware.info##.sidebar_right_top
+@@||mentalmars.com^$generichide
+@@||independent.ie^$generichide
+neowin.net##+js(abort-on-property-read.js, _sp_.mms.startMsg)
+neowin.net##[class^="sp_veil"]
+neowin.net##[id^="sp_message_panel_id"]
+readcomiconline.to##+js(set-constant.js, alb, false)
+babel.com##[id^=adReplacement]
+babel.com##.infopub
+@@||airbnbhell.com^$generichide
+bitblokes.de##+js(acis, document.getElementsByTagName, null)
+@@||thesaurus.com/assets/ads.js$xhr,1p
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noopjs,domain=files2zip.com
+files2zip.com##div.black.banner
+tomsguide.com##+js(aopr, _sp_._networkListenerData)
+@@||flightaware.com^$generichide
+@@||leo.org^$generichide
+leo.org###adv-text
+typing-speed.net##+js(std, check)
+plagiarisma.net###noty_bottom_layout_container
+lazyadmin.nl##+js(aopw, adsBlocked)
+videohelp.com##+js(abort-current-inline-script.js, document.getElementById, block)
+@@||as.com^$generichide
+as.com##.publi
+pureinfotech.com##+js(acis, jQuery, ai_adb)
+@@||bbombproxy.github.io^$script,1p
+nakedcapitalism.com##+js(aopw, ABD)
+foxnews.com##:xpath(//*[contains(text(),"blocking software")]/../../..)
+/google-funding-choices.js$script,domain=foxnews.com,important
+laptopmag.com##+js(aopr, _sp_.mms.startMsg)
+@@||murha.info^$generichide
+magyarhang.org##+js(aopw, ai_adb)
+mobilarena.hu##+js(nosiif, 0x)
+mobilarena.hu##+js(nostif, 0x)
+@@||globalnews.ca^$generichide
+globalnews.ca##.ad-container
+@@||cnnturk.com^$ghide
+@@||bloomberght.com^$ghide
+minecraftforge.net##+js(nostif, body)
+forum.nlmod.net##+js(acis, document.createElement, adblock)
+insidermonkey.com##+js(aopr, ABD)
+venea.net##+js(aeld, , ads)
+libgen.*##+js(nostif, appendMessage)
+includehelp.com##+js(acis, document.getElementById, banner)
+hedgeaccordingly.com##+js(aopw, ABD)
+@@||readonepiece.com/wp-content/$script,1p
+||prepareplanes.com^$important
+livescience.com##+js(aopr, _sp_.mms.startMsg)
+@@||queer.pl^$ghide
+queer.pl#@#[class^="ad-"]
+queer.pl##.box-adv
+radarbox24.com##+js(nostif, ads)
+underconsideration.com##+js(nostif, test.remove)
+@@||whathifi.com^$ghide
+dxmaps.com##+js(set, canRunAds, true)
+dxmaps.com##+js(set, canRunAds2, true)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,domain=dxmaps.com
+@@||auslogics.com/*/js/ads.js$script,1p
+loudersound.com##+js(aopr, _sp_._networkListenerData)
+full-anime.fr##+js(acis, document.getElementById, adblock)
+creativebloq.com##+js(aopr, _sp_.mms.startMsg)
+simpleflying.com##+js(aopr, adblockDetector)
+web-capture.net##+js(acis, document.getElementById, test-block)
+t3.com##+js(aopr, _sp_.mms.startMsg)
+anime2you.de##+js(acis, document.getElementById, undefined)
+ukworkshop.co.uk##+js(nostif, google_jobrunner)
+xxxonlinegames.com##+js(nostif, offsetHeight)
+duolingo.com##h2:has-text(Using an ad blocker?):upward(3)
+4x4earth.com##+js(set, adBlockDetected, false)
+@@||receivesmsonline.net/ads.js$script,1p
+diffchecker.com##+js(nostif, adStillHere)
+||googlesyndication.com/pagead/js/adsbygoogle.js$xhr,redirect=noop.js,domain=unknowncheats.me
+start.me##.widget-page__banner
+moving2canada.com##.ad-blocker-notice
+malekal.com##+js(nostif, adb)
+digitalcameraworld.com,guitarworld.com,musicradar.com##+js(aopr, _sp_.mms.startMsg)
+abola.pt##+js(acis, $, Adblock)
+reviewmeta.com##+js(nostif, innerHTML)
+portableapps.com##+js(nostif, innerHTML)
+androidpolice.com##+js(aopw, ai_front)
+scriptinghelpers.org##.shvertise-banner
+polyflore.net##+js(nostif, adBlockDetected)
+longecity.org##+js(set, abp, false)
+cpuid.com##+js(nostif, blocked, 1000)
+webcamtaxi.com##+js(nostif, blocker)
+randomlists.com##.whine
+wikihow.com##+js(acis, document.addEventListener, contribute)
+beforeitsnews.com###top-alert
+altadefinizione.*##.sm_header.sm_nomobile:has(:scope > a[href*="/HD/play"])
+||mail-ads.google.com^
+bing.com##+js(nano-remove-elements-onready, #b_results > .b_ad)
+yts.mx##.nbox-bordered:has-text(Download only with VPN)
+mousecity.com##a[href*="://ads.ad4game.com/"]:upward(2)
+@@||wired.com^$generichide
+wired.com##.ad
+@@||rapidvideo.com/js/jquery.min.js$script,1p
+downloadsource.*##body #content .date:not(dt):style(display: block !important;)
+@@||hackintoshzone.com^$generichide
+porndig.com#@#.noadblock
+@@||onnetwork.tv/adblock_notify.js$script
+teknosafe.kertashitam.com###blockblockA
+teknosafe.kertashitam.com###blockblockB:style(visibility: visible !important; display: block !important;)
+avseesee.com###getadiv
+avseesee.com##iframe[src*="top.fadama.com"]
+avseesee.com##.ads
+avseesee.com##.right:has(:scope > .content > .ads)
+filmozercy.com##a[href$="filmozercy.com/wspieraj-nasza-prace-wylacz-adblocka"]
+bitblokes.de###idg_up
+bitblokes.de###google_ad_2_amazon
+bitblokes.de###ga_sub_single_wrap
+bitblokes.de###sidebar-ads-single
+bitblokes.de###adscale_down
+bitblokes.de##a[href^="https://go.nordvpn.net/aff_c?"]
+hostadvice.com##.banner_wrap
+web-capture.net###stw_ad
+@@||hulu.com^$generichide
+hulu.com###banner-ad-container
+hulu.com##.ad-choices
+||assetshuluimcom-a.akamaihd.net/*.mp3$media,redirect=noopmp3-0.1s,domain=hulu.com
+||ads-e-darwin.hulustream.com/published/*.mp4$media,redirect=noopmp4-1s,domain=hulu.com
+||ads-v-darwin.hulustream.com/published/*.mp4$media,redirect=noopmp4-1s,domain=hulu.com
+||akamaihd.net/prerolls$media,redirect=noopmp4-1s,domain=hulu.com
