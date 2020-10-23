@@ -1,6 +1,12 @@
 # Chris's Homepage
-[![mastered on github](https://img.shields.io/badge/master-github-black.svg)](https://github.com/partridge-tech/chris-blog)
+[![runs on cloudflare](https://img.shields.io/badge/runs%20on-cloudflare-orange.svg)](https://chris.partridge.tech/)
+[![source on github](https://img.shields.io/badge/source-github-black.svg)](https://github.com/partridge-tech/chris-blog)
 [![mirrored on gitlab](https://img.shields.io/badge/mirror-gitlab-orange.svg)](https://gitlab.com/partridge-tech/chris-blog)
+[![for the badge](https://img.shields.io/badge/badges-hella-red.svg)](https://forthebadge.com/)
+[![uptime 30d](https://img.shields.io/uptimerobot/ratio/m783278378-95c8840ae4bbbffab9497a2a)](https://status.partridge.tech/)
+[![mozilla observatory](https://img.shields.io/mozilla-observatory/grade/chris.partridge.tech?publish)](https://observatory.mozilla.org/analyze/chris.partridge.tech)
+[![security headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fchris.partridge.tech%2F)](https://securityheaders.com/?q=https%3A%2F%2Fchris.partridge.tech)
+[![hsts preload](https://img.shields.io/hsts/preload/partridge.tech)](https://hstspreload.org/?domain=partridge.tech)
 
 This is my personal blog, resume piece, and so forth. Over the years, its predecessors have gone from being hosted on a scavenged Lenovo ThinkCentre M55, a Dell PowerEdge 1950, to custom Xeon D-1541 based servers. However, selfhosting comes with certain drawbacks, including:
 * Many single points of failure, including electrical power

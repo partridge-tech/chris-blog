@@ -4,7 +4,7 @@ pages:
     - bundle install
     - bundle exec jekyll build -d public
   only:
-    - master
+    - main
   artifacts:
     paths:
     - public
