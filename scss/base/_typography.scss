@@ -71,14 +71,14 @@ p {
 }
 
 a {
-  color: $action-color;
+  color: var(--link-color);
   text-decoration: none;
   transition: color $base-duration $base-timing;
 
   &:active,
   &:focus,
   &:hover {
-    color: shade($action-color, 25%);
+    color: var(--link-hover-color);
   }
 }
 
@@ -102,9 +102,9 @@ picture {
 blockquote {
   padding: 0 0 0 $base-spacing;
   margin: $base-spacing 0;
-  color: $medium-gray-color;
+  color: var(--subtle-text-color);
   line-height: 1.8;
-  border-left: $small-spacing solid $light-gray-color;
+  border-left: $small-spacing solid var(--background-pop-color);
 }
 
 code {
@@ -115,7 +115,7 @@ code {
   font-size: 0.9em;
   margin: 0;
   padding: 0 5px;
-  background-color: lighten($light-gray-color, 13%);
+  background-color: var(--background-pop-color);
 }
 
 pre {
@@ -260,4 +260,10 @@ pre {
 }
 .entities-hackernews:before {
   content: "\e946";
+}
+.entities-sym-sun:before {
+  content: "\e957";
+}
+.entities-sym-moon:before {
+  content: "\e958";
 }

@@ -2,10 +2,10 @@
 
 .button {
   appearance: none;
-  background-color: $action-color;
+  background-color: var(--link-color);
   border: 0;
   border-radius: $base-border-radius;
-  color: $white-color;
+  color: var(--ghost-color);
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
@@ -22,8 +22,8 @@
 
   &:hover,
   &:focus {
-    background-color: shade($action-color, 20%);
-    color: $white-color;
+    background-color: var(--link-hover-color);
+    color: var(--ghost-color);
   }
 
   &:disabled {
@@ -31,7 +31,7 @@
     opacity: 0.5;
 
     &:hover {
-      background-color: $action-color;
+      background-color: var(--link-color);
     }
   }
 }

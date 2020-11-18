@@ -1,3 +1,27 @@
+html,
+html[data-theme="dark"] {
+    --subtle-text-color: #b1b3b6;
+    --text-color: #cbccce;
+    --link-color: #7660ff;
+    --link-hover-color: #836fff;
+    --background-color: #18191c;
+    --background-pop-color: #212221;
+    --line-color: #4a4d58;
+    --line-hover-color: #525560;
+    --ghost-color: #f1f1f5;
+}
+
+html[data-theme="light"] {
+    --subtle-text-color: #6b7080;
+    --text-color: #525560;
+    --link-color: #574ae2;
+    --link-hover-color: #715aff;
+    --background-color: #ffffff;
+    --background-pop-color: #f7f7f7;
+    --line-color: #bfc2cd;
+    --line-hover-color: #c6c9d4;
+    --ghost-color: #f1f1f5;
+}
 
 @import "bourbon";
 
