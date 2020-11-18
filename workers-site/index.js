@@ -117,7 +117,7 @@ function createResponseWithHeaders(body, page, cache) {
   response.headers.set('X-XSS-Protection', '1; mode=block')
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('X-Frame-Options', 'DENY')
-  response.headers.set('Content-Security-Policy', 'default-src https://chris.partridge.tech:443')
+  response.headers.set('Content-Security-Policy', 'default-src https://chris.partridge.tech:443; frame-ancestors \'none\'')
   response.headers.set('Referrer-Policy', 'no-referrer-when-downgrade')
 
   return response
