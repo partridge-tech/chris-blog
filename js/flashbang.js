@@ -5,9 +5,8 @@
  * Thanks to Derek Kedziora. https://derekkedziora.com/blog/dark-mode-revisited
  */
 
-let theme = sessionStorage.getItem('theme');
-
 function modeSwitcher() {
+    theme = sessionStorage.getItem('theme');
     if (theme === "dark") {
         document.documentElement.setAttribute('data-theme', 'light');
         sessionStorage.setItem('theme', 'light');
@@ -22,6 +21,8 @@ function modeSwitcher() {
         document.getElementById("flashbang").className = "entities-sym-moon";
     }
 }
+
+let theme = sessionStorage.getItem('theme');
 
 if (theme === "dark") {
     document.documentElement.setAttribute('data-theme', 'dark');
