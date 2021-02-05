@@ -1,7 +1,8 @@
 /**
  * js/flashbang.js
  * Optional script which allows a user to toggle to light mode for "readability."
- * Personally, I find it blinding. Hence the name.
+ * Personally, I find it blinding. https://www.youtube.com/watch?v=qfxDEZX9K0o
+ *
  * Blocking this script, or JavaScript entirely, will not impact site usability.
  * Thanks to Derek Kedziora. https://derekkedziora.com/blog/dark-mode-revisited
  */
