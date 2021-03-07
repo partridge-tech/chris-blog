@@ -25,6 +25,6 @@ jobs:
           OHDEAR_API_TOKEN: ${{ secrets.OHDEAR_API_TOKEN }}
         run: |
           sleep 10 # let Cloudflare become globally consistent
-          apt update
-          apt install curl
+          sudo apt update
+          sudo apt install curl
           curl -X POST "https://ohdear.app/api/checks/130744/request-run" -H "Authorization: Bearer $OHDEAR_API_TOKEN" -H "Accept: application/json" -H "Content-Type: application/json"
