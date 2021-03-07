@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     name: Deploy
     steps:
       - uses: actions/checkout@master
@@ -20,3 +20,13 @@ jobs:
         uses: cloudflare/wrangler-action@1.1.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
+      - name: OhDear
+        uses: wei/curl@v1.1.1
+        env:
+          OHDEAR_API_TOKEN: ${{ secrets.OHDEAR_API_TOKEN }}
+        with:
+          args: |
+            -X POST "https://ohdear.app/api/checks/130744/request-run" \
+            -H "Authorization: Bearer $OHDEAR_API_TOKEN" \
+            -H "Accept: application/json" \
+            -H "Content-Type: application/json"
