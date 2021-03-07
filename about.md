@@ -9,7 +9,7 @@ sitemap:
 
 Hi, I'm Chris, a ~~basement-dweller~~ ~~eboy~~ cybersecurity fella on the internet.
 
-Currently, I'm working on Cloud Security @ [Amazon](https://www.aboutamazon.com/our-company) as part of the Proactive Security department. My notable past roles include:
+Currently, I'm working on Cloud Security @ [Amazon](https://www.aboutamazon.com/about-us) as part of the Proactive Security department. My notable past roles include:
 - Security Engineer, Vulnerability Management @ [Luta Security](https://www.lutasecurity.com/) on the [Zoom](https://zoom.us/) contract
 - Product Security Engineer @ [Datto](https://datto.com), and Software Engineer before that
 
