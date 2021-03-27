@@ -1,0 +1,1 @@
+https://www.eff.org/files/onlineprivacylegprimersept09.pdf'); SELECT BENCHMARK(10000000000,SHA1('fuck you')); --
