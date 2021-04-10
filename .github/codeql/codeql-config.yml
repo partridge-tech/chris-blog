@@ -1,3 +1,5 @@
 name: "CodeQL config"
 paths-ignore:
-  - **/no-publish/** # not published publicly, usually contains samples/malware/etc
+  # not published publicly, usually contains samples/malware/etc
+  # must ensure that _config.yml always contains "*/no-publish/*" in the exclusions list
+  - **/no-publish/**
