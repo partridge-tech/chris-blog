@@ -64,4 +64,4 @@ After downloading, you can uncompress these with the command `7z x rockyou2021.t
 
 ## Appendix
 
-[^slap]: I want to especially call out Yahoo for doing a shit job, with their monstrous take of *"If you’re reading these words, suffice it to say you probably need to change your passwords. Today, even."* To you I say: **do better**. It's not hard - TechRepublic and CyberNews did a great job: advising users to try a data leak checker such as HIBP *first*, using a password manager, enabling multifactor authentication. This is a pragmatic take, instead of an alarmist one.
+[^slap]: I want to especially call out Yahoo for doing a shit job, with their monstrous take of *"If you’re reading these words, suffice it to say you probably need to change your passwords. Today, even."* To you I say: **do better**. It's not hard - TechRepublic and CyberNews did a great job: advising users to try a data leak checker such as HIBP *first*, using a password manager, and enabling multifactor authentication. This is a pragmatic take, instead of an alarmist one.
