@@ -56,7 +56,7 @@ So while it might be a list worth keeping in your arsenal, it's not suddenly goi
 
 Thanks to a Redditor who wishes to remain anonymous, I have obtained a copy of rockyou2021.txt and have prepared it for redistribution via torrent. The torrent contains rockyou.txt, 7z compressed into a split archive of two files, fot a total compressed size of 12.7 GB. The uncompressed size of rockyou2021.txt is a whopping 98 GB, so be sure you have enough space. The torrent is currently being seeded at 20 Gbps, but please help maintain a healthy seed swarm.
 
-A torrent file is available [here](/2021/rockyou2021.txt-a-short-summary/rockyou2021.torrent), or you can use this magnet:
+A torrent file is available [here](/2021/rockyou2021.txt-a-short-summary/rockyou2021.torrent), or you can use this [magnet](magnet:?xt=urn:btih:JEQMEEFTBXT35RJ3GUTGXU7HP3HBU5P6&dn=rockyou2021.txt%20dictionary%20from%20kys234%20on%20RaidForums&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce):
 
 > magnet:?xt=urn:btih:JEQMEEFTBXT35RJ3GUTGXU7HP3HBU5P6&dn=rockyou2021.txt%20dictionary%20from%20kys234%20on%20RaidForums&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce
 
