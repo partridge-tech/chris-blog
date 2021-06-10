@@ -66,7 +66,7 @@ After downloading, you can uncompress these with the command `7z x rockyou2021.t
 
 **rockyou2021.txt is**: a wordlist which includes mostly English-language words, possible passwords, and known breached passwords. All of which was known & publicly available prior to this point.
 
-**You should**: take this time to identify news sources which used fearmongering to draw readers in on this subject in instead of facts, and unfavorite/unsubscribe from/block those sources. Also, **please** sign up for [Have I Been Pwned](https://haveibeenpwned.com/) or comparable, use random per-site passwords managed by the password manager of your choice, and enable the strongest 2FA options wherever reasonable for you to do so.
+**You should**: take this time to identify news sources which used fearmongering to draw readers in on this subject in instead of facts, and unfavorite/unsubscribe from/block those sources.
 
 ## Appendix
 
