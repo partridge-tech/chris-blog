@@ -19,7 +19,7 @@ The unfortunate truth is, the consumer security news cycle hasn't bothered to ch
 
 ## What is rockyou2021.txt?
 
-rockyou2021.txt is a compilation of dictionaries, breached words, and probable passwords, released by kys234 on RaidForums (a forum often catering to cybercrime). The original thread has been deleted, but at the time it had allowed anyone (researchers, threat actors, oh my!) to download and redistribute it.
+rockyou2021.txt is a compilation of dictionaries, breached words, and probable passwords, released by kys234 on RaidForums (a forum often catering to cybercrime). The original thread is available [here](https://raidforums.com/Thread-82-billion-rockyou2021-passward-list-dictionary), and allows anyone (researchers, threat actors, oh my!) to download and redistribute this compilation.
 
 But while rockyou2021.txt is a new compilation of many things, none of them are actually new. Here's what's inside:
 
