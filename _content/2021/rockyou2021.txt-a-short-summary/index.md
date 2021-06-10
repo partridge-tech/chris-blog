@@ -50,17 +50,23 @@ Despite not being a password list, could it be useful when cracking passwords? I
 * **ASCII-only**: kys234 explicitly removed any non-ASCII characters, and limited password length to 20 characters. This makes for a very clean list, in stark contrast to other password breaches or dictionaries which are often very messy or unformatted, and can take time to clean before being usable. However, this also makes the list substantially less useful for international targets - any non-English speaker may prefer to use Unicode characters, and those passwords or dictionary items have been removed.
 * **Single list**: kys234 also elected to make this a single file instead of multiple files sorted by type. Many of the lists that kys234 pulled from are explicitly separated into their sources - dictionaries such as those derived from Wikipedia and Project Gutenberg are kept separate from breached passwords. This is because password crackers may want to use them separately or applying different permutations to them. For example, checking known passwords first, or only applying permutations to English-language words when attacking an English-language target.
 
-So while it might be a list worth keeping in your arsenal, it's not suddenly going to become every password-cracker's default. But if you do want it in your arsenal ...
+So while it might be a list worth keeping in a password cracker's arsenal, it's not suddenly going to become their default. But if you do want it in your arsenal, or just want to have a look for yourself ...
 
 ## Download
 
-Thanks to a Redditor who wishes to remain anonymous, I have obtained a copy of rockyou2021.txt and have prepared it for redistribution via torrent. The torrent contains rockyou.txt, 7z compressed into a split archive of two files, fot a total compressed size of 12.7 GB. The uncompressed size of rockyou2021.txt is a whopping 98 GB, so be sure you have enough space. The torrent is currently being seeded at 20 Gbps, but please help maintain a healthy seed swarm.
+Thanks to a Redditor who wishes to remain anonymous, I have obtained a copy of rockyou2021.txt and have prepared it for redistribution via torrent. The torrent contains rockyou.txt, 7z compressed into a split archive of two files, for a total compressed size of ~12.8 GB. The uncompressed size of rockyou2021.txt is a whopping ~92 GB, so be sure you have enough space. The torrent is currently being seeded at 20 Gbps, but please help maintain a healthy seed swarm.
 
-A torrent file is available [here](/2021/rockyou2021.txt-a-short-summary/rockyou2021.torrent), or you can use this [magnet](magnet:?xt=urn:btih:JEQMEEFTBXT35RJ3GUTGXU7HP3HBU5P6&dn=rockyou2021.txt%20dictionary%20from%20kys234%20on%20RaidForums&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce):
-
-> magnet:?xt=urn:btih:JEQMEEFTBXT35RJ3GUTGXU7HP3HBU5P6&dn=rockyou2021.txt%20dictionary%20from%20kys234%20on%20RaidForums&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce
+A torrent file is available [here](/2021/rockyou2021.txt-a-short-summary/rockyou2021.torrent), or you can use this [magnet link](magnet:?xt=urn:btih:JEQMEEFTBXT35RJ3GUTGXU7HP3HBU5P6&dn=rockyou2021.txt%20dictionary%20from%20kys234%20on%20RaidForums&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce).
 
 After downloading, you can uncompress these with the command `7z x rockyou2021.txt.7z.001`, or on Windows simply right-click the first file (`rockyou2021.txt.7z.001`) and hit "Extract" - 7zip will be aware of the other split file and will extract the entire wordlist without problem.
+
+## TL;DR
+
+**rockyou2021.txt is not**: a breach, a list of breached passwords, anything substantively new, or a sufficient reason to change your passwords (*on its own*).
+
+**rockyou2021.txt is**: a wordlist which includes mostly English-language words, possible passwords, and known breached passwords. All of which was known & publicly available prior to this point.
+
+**You should**: take this time to identify news sources which used fearmongering to draw readers in on this subject in instead of facts, and unfavorite/unsubscribe from/block those sources. Also, **please** sign up for [Have I Been Pwned](https://haveibeenpwned.com/) or comparable, use random per-site passwords managed by the password manager of your choice, and enable the strongest 2FA options wherever reasonable for you to do so.
 
 ## Appendix
 
