@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "rockyou2021.txt - A Short Summary"
+title: "rockyou2021.txt - A Short Summary (Download Included)"
 permalink: /2021/rockyou2021.txt-a-short-summary/
 description: "Thanks to an anonymous Redditor, I obtained a copy of rockyou2021.txt. It's easily the largest wordlist I have - but size isn't everything, and in rockyou2021.txt's case I think it's a detriment overall. You can download rockyou2021.txt here for your own research and projects."
 date: 2021-06-09 00:00:00
