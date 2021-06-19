@@ -74,6 +74,8 @@ function setDefaultCacheControl(extension) {
      */
     case "woff2":
       return "max-age=31536000"
+    case "torrent":
+      return "max-age=31536000"
 
     /* TWO WEEK CACHE
      * For: photos, videos, icons
